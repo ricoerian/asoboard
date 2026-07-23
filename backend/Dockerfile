@@ -40,29 +40,8 @@ RUN mkdir -p /app/media /app/staticfiles
 # Collect static files
 RUN python manage.py collectstatic --noinput || true
 
-# Create entrypoint script
-RUN echo '#!/bin/sh\n\
-echo "Waiting for PostgreSQL..."\n\
-while ! nc -z db 5432; do\n\
-  sleep 0.1\n\
-done\n\
-echo "PostgreSQL started"\n\
-\n\
-echo "Waiting for Redis..."\n\
-while ! nc -z redis 6379; do\n\
-  sleep 0.1\n\
-done\n\
-echo "Redis started"\n\
-\n\
-echo "Running migrations..."\n\
-python manage.py migrate --noinput\n\
-\n\
-echo "Collecting static files..."\n\
-python manage.py collectstatic --noinput\n\
-\n\
-echo "Starting Gunicorn..."\n\
-exec "$@"' > /app/entrypoint.sh
-
+# Copy and setup entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
 RUN chmod +x /app/entrypoint.sh
 
 # Expose port
