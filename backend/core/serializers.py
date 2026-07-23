@@ -378,6 +378,7 @@ class AchievementSerializer(serializers.ModelSerializer):
             "name",
             "description",
             "icon",
+            "tier",
             "category",
             "requirement_value",
             "requirement_type",

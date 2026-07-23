@@ -100,9 +100,21 @@ class StudentSessionState(models.Model):
 
 
 class Achievement(models.Model):
+    TIER_CHOICES = [
+        ("bronze", "Bronze"),
+        ("silver", "Silver"),
+        ("gold", "Gold"),
+    ]
+    
     name = models.CharField(max_length=100)
     description = models.TextField()
     icon = models.CharField(max_length=50, default="trophy")
+    tier = models.CharField(
+        max_length=10,
+        choices=TIER_CHOICES,
+        default="bronze",
+        help_text="Achievement difficulty tier"
+    )
     category = models.CharField(
         max_length=50,
         choices=[
