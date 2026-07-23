@@ -774,12 +774,23 @@ def check_and_award_achievements(user):
             )
             user_points.total_points += achievement.points
             user_points.save()
+            
+            # Create notification for achievement earned
+            create_notification(
+                user=user,
+                title=f"Achievement Unlocked!",
+                message=f"🏆 {achievement.name} - {achievement.tier.title()} tier! (+{achievement.points} points)",
+                notification_type="achievement",
+                related_object_id=achievement.id
+            )
+            
             new_achievements.append(
                 {
                     "id": achievement.id,
                     "name": achievement.name,
                     "description": achievement.description,
                     "icon": achievement.icon,
+                    "tier": achievement.tier,
                     "points_earned": achievement.points,
                 }
             )
