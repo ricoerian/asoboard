@@ -1,0 +1,739 @@
+<div class="page-bg min-h-screen">
+  <nav class="bg-white shadow-md px-6 py-3 flex justify-between items-center sticky top-0 z-50">
+    <a class="flex items-center gap-2" routerLink="/dashboard">
+      <img src="/static/logo.png" alt="AsoBoard" class="h-16" />
+    </a>
+    <a
+      routerLink="/dashboard"
+      class="flex items-center gap-2 bg-slate-100 hover:bg-slate-200 border-2 border-slate-200 text-slate-600 hover:text-slate-800 font-extrabold text-sm px-4 py-2 rounded-2xl transition-all duration-200"
+    >
+      {{ 'COURSE_DETAIL.BACK_TO_DASHBOARD' | translate }}
+      <i class="fa-solid fa-arrow-right text-sky-500"></i>
+    </a>
+  </nav>
+
+  <div class="max-w-4xl mx-auto px-6 py-10">
+    @if (isLoading) {
+      <div class="flex flex-col items-center justify-center py-20 gap-3">
+        <div class="spinner"></div>
+        <p class="text-slate-600 font-bold drop-shadow-sm">
+          {{ 'SHARED.LOADING' | translate }}
+          <i class="fa-solid fa-spinner fa-spin text-amber-500"></i>
+        </p>
+      </div>
+    }
+
+    @if (error) {
+      <div class="bg-white rounded-3xl px-6 py-12 text-center shadow-xl">
+        <div class="text-6xl mb-4 text-red-500"><i class="fa-solid fa-face-dizzy"></i></div>
+        <p class="text-slate-600 font-extrabold text-lg">{{ error }}</p>
+      </div>
+    }
+
+    @if (!isLoading && !error && course) {
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-7">
+        <div
+          class="md:col-span-2 bg-white rounded-4xl p-8 shadow-xl shadow-sky-200/50 border-b-4 border-sky-400 flex flex-col h-full"
+        >
+          <div class="flex items-start gap-5 flex-1">
+            <div class="text-5xl text-sky-500"><i class="fa-solid fa-book-open"></i></div>
+            <div class="flex-1">
+              <h1 class="text-3xl font-black text-slate-800 leading-tight mb-2">
+                {{ course.title }}
+              </h1>
+              <p class="text-slate-500 text-sm font-semibold leading-relaxed">
+                {{ course.description || ('COURSE_DETAIL.NO_DESCRIPTION' | translate) }}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3 mt-6 pt-6 border-t-2 border-slate-100">
+            @if (currentUser?.id === course.mentor_id) {
+              <button
+                (click)="deleteCourse()"
+                class="bg-red-50 hover:bg-red-100 text-red-500 font-extrabold text-sm px-5 py-3 rounded-2xl transition-all shadow-sm flex items-center gap-2"
+              >
+                <i class="fa-solid fa-trash text-rose-500"></i>
+                {{ 'COURSE_DETAIL.MODALS.DELETE_TITLE' | translate }}
+              </button>
+            }
+            @if (currentUser?.role === 'student' && !studentEnrollment) {
+              <button
+                (click)="enrollStudent()"
+                [disabled]="isEnrolling"
+                class="font-extrabold text-sm px-5 py-3 rounded-2xl shadow-md hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2"
+                [class.bg-green-500]="!isEnrolling"
+                [class.text-white]="!isEnrolling"
+                [class.bg-slate-300]="isEnrolling"
+                [class.text-slate-500]="isEnrolling"
+              >
+                @if (isEnrolling) {
+                  <i class="fa-solid fa-spinner fa-spin text-amber-500"></i>
+                  {{ 'COURSE_DETAIL.ENROLL_BUTTON' | translate }}...
+                } @else {
+                  <i class="fa-solid fa-plus text-emerald-500"></i> Enroll
+                }
+              </button>
+            }
+            @if (currentUser?.role === 'student' && studentEnrollment) {
+              <button
+                (click)="unenrollStudent()"
+                class="bg-orange-50 hover:bg-orange-100 text-orange-500 font-extrabold text-sm px-5 py-3 rounded-2xl transition-all shadow-sm flex items-center gap-2"
+              >
+                <i class="fa-solid fa-arrow-right-from-bracket text-orange-500"></i>
+                Unenroll
+              </button>
+            }
+          </div>
+
+          @if (currentUser?.role === 'student' && studentEnrollment) {
+            <div class="mt-4 pt-4 border-t-2 border-dashed border-sky-100">
+              <span
+                class="bg-green-100 text-green-700 border border-green-300 text-xs font-extrabold px-3 py-1 rounded-full"
+              >
+                <i class="fa-solid fa-check text-emerald-500"></i>
+                {{ 'COURSE_DETAIL.ENROLLED' | translate }}
+              </span>
+            </div>
+          }
+        </div>
+
+        @if (course.mentor_username) {
+          <div
+            class="bg-white rounded-4xl p-6 shadow-lg border-b-4 border-purple-400 flex flex-col h-full"
+          >
+            <div class="flex items-center gap-4 mb-4">
+              <div
+                class="relative w-16 h-16 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center font-black text-2xl shrink-0 shadow-inner overflow-hidden border-2 border-purple-200"
+              >
+                @if (course.mentor_avatar) {
+                  <img
+                    [src]="course.mentor_avatar"
+                    alt="Mentor Avatar"
+                    class="w-full h-full object-cover"
+                  />
+                } @else {
+                  {{ course.mentor_username[0]?.toUpperCase() }}
+                }
+              </div>
+              <div>
+                <p class="text-xs font-extrabold text-slate-400 uppercase tracking-widest mb-0.5">
+                  Instructor
+                </p>
+                <h3 class="text-lg font-black text-slate-800 flex items-center gap-2">
+                  {{ course.mentor_username }}
+                  @if (course.mentor_is_verified) {
+                    <i class="fa-solid fa-circle-check text-blue-500" title="Verified Mentor"></i>
+                  }
+                </h3>
+              </div>
+            </div>
+
+            <div class="bg-purple-50 rounded-2xl p-4 flex-1">
+              <p class="text-purple-900 text-sm font-semibold leading-relaxed">
+                {{ course.mentor_bio || 'This mentor has not provided a description yet.' }}
+              </p>
+            </div>
+          </div>
+        }
+      </div>
+
+      @if (
+        currentUser?.role === 'mentor' &&
+        currentUser?.id === course.mentor_id &&
+        enrolledStudents.length > 0
+      ) {
+        <div class="bg-white rounded-3xl p-6 mb-7 shadow-lg border-l-4 border-sky-400">
+          <h3 class="text-lg font-black text-slate-800 mb-4">
+            <i class="fa-solid fa-users text-sky-500"></i>
+            {{ 'COURSE_DETAIL.ENROLLED' | translate }}
+            <span
+              class="bg-sky-100 text-sky-600 text-sm font-extrabold px-3 py-0.5 rounded-full ml-2"
+            >
+              {{ enrolledStudents.length }}
+            </span>
+          </h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            @for (enrollment of enrolledStudents; track enrollment.id) {
+              <div
+                class="flex items-center gap-2 bg-sky-50 border-2 border-sky-100 rounded-2xl px-3 py-2"
+              >
+                <div class="w-8 h-8 rounded-full bg-sky-400 flex items-center justify-center">
+                  <span class="text-white font-black text-xs">{{
+                    enrollment.student_username[0]?.toUpperCase()
+                  }}</span>
+                </div>
+                <span class="text-sky-800 font-bold text-sm">{{
+                  enrollment.student_username
+                }}</span>
+              </div>
+            }
+          </div>
+        </div>
+      }
+
+      @if (currentUser?.id === course.mentor_id || currentUser?.role === 'staff') {
+        <div class="flex border-b-2 border-slate-200 mb-6 gap-6">
+          <button
+            (click)="activeTab = 'sessions'"
+            class="font-black pb-3 transition-all px-2 relative"
+            [class.text-sky-500]="activeTab === 'sessions'"
+            [class.text-slate-400]="activeTab !== 'sessions'"
+          >
+            <i class="fa-solid fa-video mr-1"></i> {{ 'COURSE_DETAIL.SESSION_LIST' | translate }}
+            @if (activeTab === 'sessions') {
+              <div class="absolute bottom-[-2px] left-0 w-full h-1 bg-sky-500 rounded-t-lg"></div>
+            }
+          </button>
+          <button
+            (click)="activeTab = 'progress'"
+            class="font-black pb-3 transition-all px-2 relative"
+            [class.text-emerald-500]="activeTab === 'progress'"
+            [class.text-slate-400]="activeTab !== 'progress'"
+          >
+            <i class="fa-solid fa-chart-line mr-1"></i> Progress Tracking
+            @if (activeTab === 'progress') {
+              <div
+                class="absolute bottom-[-2px] left-0 w-full h-1 bg-emerald-500 rounded-t-lg"
+              ></div>
+            }
+          </button>
+        </div>
+      }
+
+      @if (
+        activeTab === 'sessions' ||
+        (currentUser?.id !== course.mentor_id && currentUser?.role !== 'staff')
+      ) {
+        <div class="flex items-center justify-between mb-4">
+          <div class="flex items-center gap-3">
+            <h2 class="text-xl font-black text-slate-800 drop-shadow-sm">
+              <i class="fa-solid fa-video text-sky-500"></i>
+              {{ 'COURSE_DETAIL.SESSION_LIST' | translate }}
+            </h2>
+            <span
+              class="bg-white text-sky-600 border-2 border-sky-300 text-sm font-extrabold px-3 py-0.5 rounded-full"
+            >
+              {{ course.sessions?.length || 0 }}
+            </span>
+          </div>
+          @if (currentUser?.id === course.mentor_id) {
+            <button
+              (click)="openCreateSession()"
+              class="bg-green-400 hover:bg-green-300 text-slate-800 font-black px-4 py-2 rounded-xl shadow-md transition-all text-xs"
+            >
+              <i class="fa-solid fa-plus text-emerald-500"></i>
+              {{ 'COURSE_DETAIL.ADD_SESSION' | translate }}
+            </button>
+          }
+        </div>
+      }
+
+      @if (course.sessions?.length === 0) {
+        <div class="bg-white/80 backdrop-blur rounded-3xl py-12 text-center shadow-lg">
+          <div class="text-5xl mb-3 text-sky-300"><i class="fa-solid fa-box-open"></i></div>
+          <p class="text-slate-500 font-bold">{{ 'COURSE_DETAIL.NO_SESSIONS' | translate }}</p>
+        </div>
+      }
+
+      <div class="flex flex-col gap-4">
+        @for (session of course.sessions; track session.id; let i = $index) {
+          <div
+            class="bg-white rounded-3xl px-6 py-5 shadow-lg flex justify-between items-center transition-all duration-200 hover:-translate-y-1 hover:shadow-xl border-l-4"
+            [class.border-l-sky-400]="i % 4 === 0"
+            [class.border-l-pink-400]="i % 4 === 1"
+            [class.border-l-green-400]="i % 4 === 2"
+            [class.border-l-orange-400]="i % 4 === 3"
+          >
+            <div>
+              <div class="flex items-center gap-2">
+                <div
+                  class="font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-0.5 inline-block mb-2 border-2"
+                  [class.text-sky-600]="i % 4 === 0"
+                  [class.bg-sky-50]="i % 4 === 0"
+                  [class.border-sky-200]="i % 4 === 0"
+                  [class.text-pink-600]="i % 4 === 1"
+                  [class.bg-pink-50]="i % 4 === 1"
+                  [class.border-pink-200]="i % 4 === 1"
+                  [class.text-green-600]="i % 4 === 2"
+                  [class.bg-green-50]="i % 4 === 2"
+                  [class.border-green-200]="i % 4 === 2"
+                  [class.text-orange-600]="i % 4 === 3"
+                  [class.bg-orange-50]="i % 4 === 3"
+                  [class.border-orange-200]="i % 4 === 3"
+                >
+                  <i class="fa-solid fa-clapperboard"></i> Session {{ i + 1 }}
+                </div>
+                <div
+                  class="font-extrabold text-xs uppercase tracking-wider rounded-full px-3 py-0.5 inline-block mb-2 border-2"
+                  [class.text-sky-600]="i % 4 === 0"
+                  [class.bg-sky-50]="i % 4 === 0"
+                  [class.border-sky-200]="i % 4 === 0"
+                  [class.text-pink-600]="i % 4 === 1"
+                  [class.bg-pink-50]="i % 4 === 1"
+                  [class.border-pink-200]="i % 4 === 1"
+                  [class.text-green-600]="i % 4 === 2"
+                  [class.bg-green-50]="i % 4 === 2"
+                  [class.border-green-200]="i % 4 === 2"
+                  [class.text-orange-600]="i % 4 === 3"
+                  [class.bg-orange-50]="i % 4 === 3"
+                  [class.border-orange-200]="i % 4 === 3"
+                >
+                  @if (session.mode === 'game') {
+                    Game <i class="fa-solid fa-gamepad"></i>
+                  } @else {
+                    Lecture <i class="fa-solid fa-chalkboard-user text-orange-500"></i>
+                  }
+                </div>
+              </div>
+              <h3 class="text-slate-800 font-extrabold text-lg">{{ session.title }}</h3>
+              <p class="text-slate-400 text-xs font-semibold mt-0.5">
+                {{ session.canvas_events?.length || 0 }} events
+              </p>
+            </div>
+            <div class="flex gap-2 items-center">
+              @if (currentUser?.id === course.mentor_id) {
+                <button
+                  (click)="deleteSession(session.id)"
+                  class="text-red-400 hover:text-red-600 p-2"
+                >
+                  <i class="fa-solid fa-trash text-rose-500"></i>
+                </button>
+              }
+              <a
+                [routerLink]="['/session', session.id]"
+                class="ml-4 shrink-0 text-white font-extrabold text-sm px-5 py-2.5 rounded-2xl shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                [class.bg-sky-500]="i % 4 === 0"
+                [class.bg-pink-500]="i % 4 === 1"
+                [class.bg-green-500]="i % 4 === 2"
+                [class.bg-orange-500]="i % 4 === 3"
+              >
+                Open! <i class="fa-solid fa-tv"></i>
+              </a>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    @if (
+      activeTab === 'progress' &&
+      (currentUser?.id === course?.mentor_id || currentUser?.role === 'staff')
+    ) {
+      <div class="bg-white rounded-3xl p-6 shadow-lg border-t-4 border-emerald-400">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-xl font-black text-slate-800 drop-shadow-sm flex items-center gap-2">
+            <i class="fa-solid fa-chart-line text-emerald-500"></i>
+            Student Progress
+          </h2>
+          <div
+            class="bg-emerald-50 text-emerald-600 px-4 py-2 rounded-xl text-sm font-bold border border-emerald-100"
+          >
+            <i class="fa-solid fa-users mr-1"></i> {{ studentProgressList.length }} Enrolled
+          </div>
+        </div>
+
+        @if (studentProgressList.length === 0) {
+          <div
+            class="text-center py-10 bg-slate-50 rounded-2xl border-2 border-dashed border-slate-200"
+          >
+            <i class="fa-solid fa-ghost text-4xl text-slate-300 mb-3"></i>
+            <p class="text-slate-500 font-bold">
+              No students are currently enrolled in this course.
+            </p>
+          </div>
+        } @else {
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr
+                  class="border-b-2 border-slate-100 text-slate-400 text-xs font-black uppercase tracking-wider"
+                >
+                  <th class="pb-3 px-4">Student</th>
+                  <th class="pb-3 px-4 text-center">Sessions Completed</th>
+                  <th class="pb-3 px-4 text-center">Games Played</th>
+                  <th class="pb-3 px-4 text-center">Accuracy</th>
+                  <th class="pb-3 px-4 text-right">Last Active</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm font-bold text-slate-700">
+                @for (prog of studentProgressList; track prog.student_id) {
+                  <tr class="border-b border-slate-50 hover:bg-slate-50 transition-colors">
+                    <td class="py-4 px-4">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-8 h-8 rounded-full bg-sky-100 text-sky-500 flex items-center justify-center font-black"
+                        >
+                          {{ prog.username[0]?.toUpperCase() }}
+                        </div>
+                        <div>
+                          <p class="text-slate-800 leading-tight">
+                            {{ prog.first_name }} {{ prog.last_name }}
+                          </p>
+                          <p class="text-xs text-slate-400">@{{ prog.username }}</p>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4">
+                      <div class="flex flex-col items-center">
+                        <span class="text-emerald-500 font-black mb-1"
+                          >{{ prog.sessions_completed }}
+                          <span class="text-slate-400 text-xs font-semibold"
+                            >/ {{ prog.total_sessions }}</span
+                          ></span
+                        >
+                        <div class="w-full bg-slate-100 rounded-full h-1.5 overflow-hidden">
+                          <div
+                            class="bg-emerald-400 h-1.5 rounded-full"
+                            [style.width.%]="prog.completion_rate"
+                          ></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 text-center">
+                      <span
+                        class="inline-block bg-orange-50 text-orange-500 px-3 py-1 rounded-lg border border-orange-100"
+                      >
+                        <i class="fa-solid fa-gamepad mr-1"></i> {{ prog.games_played }}
+                      </span>
+                    </td>
+                    <td class="py-4 px-4 text-center">
+                      <div
+                        class="inline-flex items-center gap-1 font-black"
+                        [class.text-green-500]="prog.accuracy_rate >= 80"
+                        [class.text-amber-500]="prog.accuracy_rate >= 50 && prog.accuracy_rate < 80"
+                        [class.text-rose-500]="prog.accuracy_rate < 50"
+                      >
+                        {{ prog.accuracy_rate }}%
+                      </div>
+                    </td>
+                    <td class="py-4 px-4 text-right text-xs text-slate-500 font-semibold">
+                      @if (prog.last_active) {
+                        {{ prog.last_active | date: 'mediumDate' }}
+                      } @else {
+                        <span class="text-slate-300 italic">Never</span>
+                      }
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        }
+      </div>
+    }
+  </div>
+
+  @if (showCreateSessionModal) {
+    <app-modal
+      title="{{ 'COURSE_DETAIL.MODALS.ADD_SESSION_TITLE' | translate }}"
+      icon="fa-wand-sparkles"
+      color="green"
+      confirmText="Create Now!"
+      confirmIcon="fa-plus"
+      [confirmDisabled]="sessionForm.invalid"
+      (modalClose)="closeCreateSession()"
+      (confirm)="submitCreateSession()"
+    >
+      <form [formGroup]="sessionForm">
+        <div class="mb-5">
+          <label for="sessionTitleInput" class="block text-slate-700 font-extrabold mb-2 text-sm">
+            <i class="fa-solid fa-heading text-sky-500"></i>
+            {{ 'COURSE_DETAIL.MODALS.TITLE_LABEL' | translate }}
+          </label>
+          <input
+            id="sessionTitleInput"
+            type="text"
+            formControlName="title"
+            placeholder="{{ 'COURSE_DETAIL.MODALS.TITLE_PLACEHOLDER' | translate }}"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-5 py-3 text-sm font-bold focus:outline-none focus:border-green-400 focus:bg-green-50 transition-all shadow-inner"
+          />
+          @if (
+            sessionForm.get('title')?.touched && sessionForm.get('title')?.errors?.['required']
+          ) {
+            <p class="text-red-500 text-[10px] font-black mt-1.5 ml-1 uppercase tracking-wider">
+              Title is required!
+            </p>
+          }
+        </div>
+
+        <div class="mb-5">
+          <span class="block text-slate-700 font-extrabold mb-2 text-sm">
+            <i class="fa-solid fa-video text-sky-500"></i>
+            {{ 'COURSE_DETAIL.MODALS.DESC_LABEL' | translate }}
+          </span>
+          <div class="flex gap-4">
+            <button
+              type="button"
+              (click)="sessionForm.get('sessionType')?.setValue('recorded')"
+              [ngClass]="
+                sessionForm.get('sessionType')?.value === 'recorded'
+                  ? 'border-sky-400 bg-sky-50'
+                  : 'border-slate-200 hover:bg-slate-50'
+              "
+              class="flex-1 block w-full cursor-pointer rounded-xl border-2 p-4 text-center transition-all focus:outline-none"
+            >
+              <div class="text-2xl text-sky-500 mb-1">
+                <i class="fa-solid fa-microphone-lines text-indigo-500"></i>
+              </div>
+              <div class="font-extrabold text-slate-700 text-sm">Recorded Lesson</div>
+            </button>
+            <button
+              type="button"
+              (click)="sessionForm.get('sessionType')?.setValue('live')"
+              [ngClass]="
+                sessionForm.get('sessionType')?.value === 'live'
+                  ? 'border-sky-400 bg-sky-50'
+                  : 'border-slate-200 hover:bg-slate-50'
+              "
+              class="flex-1 block w-full cursor-pointer rounded-xl border-2 p-4 text-center transition-all focus:outline-none"
+            >
+              <div class="text-2xl text-sky-500 mb-1">
+                <i class="fa-solid fa-users text-teal-500"></i>
+              </div>
+              <div class="font-extrabold text-slate-700 text-sm">Live Collaboration</div>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-5">
+          <span class="block text-slate-700 font-extrabold mb-2 text-sm">
+            <i class="fa-solid fa-gamepad text-sky-500"></i> Session Mode
+          </span>
+          <div class="flex gap-4">
+            <button
+              type="button"
+              (click)="sessionForm.get('mode')?.setValue('freedom')"
+              [ngClass]="
+                sessionForm.get('mode')?.value === 'freedom'
+                  ? 'border-sky-400 bg-sky-50'
+                  : 'border-slate-200 hover:bg-slate-50'
+              "
+              class="flex-1 block w-full cursor-pointer rounded-xl border-2 p-4 text-center transition-all focus:outline-none"
+            >
+              <div class="text-2xl text-sky-500 mb-1">
+                <i class="fa-solid fa-wand-magic-sparkles text-cyan-500"></i>
+              </div>
+              <div class="font-extrabold text-slate-700 text-sm">Freedom Canvas</div>
+            </button>
+            <button
+              type="button"
+              (click)="sessionForm.get('mode')?.setValue('game')"
+              [ngClass]="
+                sessionForm.get('mode')?.value === 'game'
+                  ? 'border-sky-400 bg-sky-50'
+                  : 'border-slate-200 hover:bg-slate-50'
+              "
+              class="flex-1 block w-full cursor-pointer rounded-xl border-2 p-4 text-center transition-all focus:outline-none"
+            >
+              <div class="text-2xl text-sky-500 mb-1">
+                <i class="fa-solid fa-puzzle-piece"></i>
+              </div>
+              <div class="font-extrabold text-slate-700 text-sm">Game Mode</div>
+            </button>
+          </div>
+        </div>
+
+        @if (sessionForm.get('mode')?.value === 'game') {
+          <div class="mb-5 bg-sky-50 rounded-2xl p-4 border-2 border-sky-100">
+            <span class="block text-sky-800 font-extrabold mb-3 text-sm">Select Game Type</span>
+            <div class="grid grid-cols-3 gap-3">
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('puzzle')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'puzzle'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-sky-500 mb-1">
+                  <i class="fa-solid fa-puzzle-piece"></i>
+                </div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">Puzzle</div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('trivia')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'trivia'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-yellow-500 mb-1">
+                  <i class="fa-solid fa-circle-question"></i>
+                </div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">Trivia</div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('math')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'math'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-blue-500 mb-1"><i class="fa-solid fa-calculator"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">Math</div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('physics')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'physics'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-green-500 mb-1"><i class="fa-solid fa-atom"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">
+                  Physics
+                </div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('color')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'color'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-pink-500 mb-1"><i class="fa-solid fa-palette"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">
+                  Color Mix
+                </div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('chemistry')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'chemistry'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-teal-500 mb-1"><i class="fa-solid fa-flask"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">
+                  Chemistry
+                </div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('memory')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'memory'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-sky-500 mb-1"><i class="fa-solid fa-clone"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">Memory</div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('maze')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'maze'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-emerald-500 mb-1"><i class="fa-solid fa-route"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">Maze</div>
+              </button>
+              <button
+                type="button"
+                (click)="sessionForm.get('gameType')?.setValue('word_scramble')"
+                [ngClass]="
+                  sessionForm.get('gameType')?.value === 'word_scramble'
+                    ? 'opacity-100 border-sky-500 shadow-md'
+                    : 'opacity-70 border-sky-200 hover:opacity-100'
+                "
+                class="block bg-white rounded-xl border-2 p-3 text-center transition-all focus:outline-none"
+              >
+                <div class="text-xl text-amber-500 mb-1"><i class="fa-solid fa-shuffle"></i></div>
+                <div class="font-bold text-slate-700 text-xs text-center leading-tight">
+                  Word Scramble
+                </div>
+              </button>
+            </div>
+          </div>
+        }
+
+        <div class="mb-2">
+          <label for="audioUploadInput" class="block text-slate-700 font-extrabold mb-3 text-sm">
+            <i class="fa-solid fa-microphone text-pink-500"></i> Audio File
+            <span class="text-slate-400 font-normal text-[10px] uppercase">(Optional)</span>
+          </label>
+
+          <div class="flex items-center gap-4">
+            <button
+              type="button"
+              (click)="audioInput.click()"
+              class="bg-white hover:bg-slate-50 text-slate-700 font-black py-2.5 px-5 rounded-xl border-2 border-slate-200 transition-all text-xs flex items-center gap-2 shadow-sm hover:scale-105 active:scale-95"
+            >
+              <i class="fa-solid fa-folder-open text-sky-500"></i> Choose File
+            </button>
+            <span class="text-[10px] text-slate-500 font-bold italic truncate max-w-[180px]">
+              {{ selectedAudioFile?.name || 'No file chosen' }}
+            </span>
+          </div>
+          <p class="text-[9px] text-slate-400 mt-3 font-bold uppercase tracking-tight">
+            <i class="fa-solid fa-info-circle text-sky-400"></i> You can record audio later in the
+            studio!
+          </p>
+        </div>
+      </form>
+    </app-modal>
+  }
+
+  @if (showDeleteCourseConfirm) {
+    <app-modal
+      title="Delete Course?"
+      icon="fa-trash-can"
+      color="orange"
+      confirmText="Yes, Delete it!"
+      confirmIcon="fa-trash"
+      (modalClose)="closeDeleteCourseConfirm()"
+      (confirm)="confirmDeleteCourse()"
+    >
+      <div class="text-center">
+        <p class="text-slate-600 font-bold mb-2">
+          Are you sure you want to delete this entire course?
+        </p>
+        <p class="text-orange-500 text-[10px] font-black uppercase tracking-widest">
+          This will delete all sessions inside too!
+          <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+        </p>
+      </div>
+    </app-modal>
+  }
+
+  @if (showDeleteSessionConfirm) {
+    <app-modal
+      title="Delete Session?"
+      icon="fa-circle-xmark"
+      color="pink"
+      confirmText="Delete It!"
+      confirmIcon="fa-trash"
+      (modalClose)="closeDeleteSessionConfirm()"
+      (confirm)="confirmDeleteSession()"
+    >
+      <div class="text-center">
+        <p class="text-slate-600 font-bold">Are you sure you want to delete this session?</p>
+      </div>
+    </app-modal>
+  }
+</div>
+<input type="file" #audioInput (change)="onAudioFileSelected($event)" style="display: none" />

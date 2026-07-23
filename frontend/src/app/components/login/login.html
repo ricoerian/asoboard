@@ -1,0 +1,68 @@
+<div class="auth-bg min-h-screen flex items-center justify-center p-6">
+  <div
+    class="bounce-in w-full max-w-md bg-white rounded-4xl p-10 shadow-2xl shadow-pink-300/50 border-4 border-white"
+  >
+    <div class="flex flex-col items-center text-center mb-8">
+      <a routerLink="/"><img src="/static/logo.png" alt="AsoBoard" class="h-24" /></a>
+      <p class="text-slate-500 text-sm mt-1 font-semibold">
+        {{ 'AUTH.LOGIN.TITLE' | translate }} <i class="fa-solid fa-rocket text-sky-500"></i>
+      </p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
+      <div>
+        <label for="usernameInput" class="block text-slate-700 font-extrabold mb-2 text-sm">{{
+          'AUTH.LOGIN.USERNAME' | translate
+        }}</label>
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+            <i class="fa-solid fa-user text-sky-500"></i>
+          </span>
+          <input
+            id="usernameInput"
+            type="text"
+            formControlName="username"
+            [placeholder]="'AUTH.LOGIN.USERNAME_PLACEHOLDER' | translate"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm font-bold focus:outline-none focus:border-sky-400 focus:bg-white transition-all shadow-inner"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="passwordInput" class="block text-slate-700 font-extrabold mb-2 text-sm">{{
+          'AUTH.LOGIN.PASSWORD' | translate
+        }}</label>
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+            <i class="fa-solid fa-lock text-orange-500"></i>
+          </span>
+          <input
+            id="passwordInput"
+            type="password"
+            formControlName="password"
+            [placeholder]="'AUTH.LOGIN.PASSWORD_PLACEHOLDER' | translate"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm font-bold focus:outline-none focus:border-sky-400 focus:bg-white transition-all shadow-inner"
+          />
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        class="w-full bg-teal-500 hover:bg-teal-400 text-white font-black py-4 rounded-2xl shadow-lg shadow-teal-200 transition-all hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:scale-100 mt-2"
+      >
+        {{ 'AUTH.LOGIN.SUBMIT' | translate }} <i class="fa-solid fa-rocket ml-2"></i>
+      </button>
+    </form>
+
+    <p class="text-center text-slate-500 text-sm font-semibold mt-6">
+      {{ 'AUTH.LOGIN.NO_ACCOUNT' | translate }}
+      <a
+        routerLink="/register"
+        class="text-teal-500 hover:text-sky-500 font-extrabold transition-colors"
+        >{{ 'AUTH.LOGIN.REGISTER_LINK' | translate }}
+        <i class="fa-solid fa-arrow-right text-sky-500"></i
+      ></a>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events, @angular-eslint/template/interactive-supports-focus, @angular-eslint/template/label-has-associated-control -->
+<div class="relative inline-block">
+  <button
+    (click)="toggleDropdown()"
+    title="Notifications"
+    class="relative w-10 h-10 rounded-xl bg-white border-2 border-slate-200 flex items-center justify-center shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+    [class.border-orange-400]="unreadCount > 0"
+    [class.bg-orange-50]="unreadCount > 0"
+  >
+    <i
+      class="fa-solid fa-bell text-lg"
+      [class.text-slate-500]="unreadCount === 0"
+      [class.text-orange-500]="unreadCount > 0"
+      [class.fa-shake]="unreadCount > 0"
+    ></i>
+    @if (unreadCount > 0) {
+      <span
+        class="absolute -top-1 -right-1 min-w-[18px] h-[18px] bg-red-500 text-white text-[10px] font-black rounded-full flex items-center justify-center px-1 leading-none animate-pulse"
+      >
+        {{ unreadCount > 99 ? '99+' : unreadCount }}
+      </span>
+    }
+  </button>
+
+  @if (showDropdown) {
+    <div
+      class="absolute right-0 mt-2 w-80 bg-white rounded-3xl shadow-2xl border-2 border-slate-200 z-50 overflow-hidden"
+      (click)="$event.stopPropagation()"
+    >
+      <div class="flex items-center justify-between px-4 py-3 border-b-2 border-slate-100">
+        <h3 class="font-extrabold text-sm text-slate-700">
+          <i class="fa-solid fa-bell text-orange-400"></i> Notifications
+          @if (unreadCount > 0) {
+            <span class="bg-orange-100 text-orange-600 text-[10px] px-2 py-0.5 rounded-full ml-1">{{
+              unreadCount
+            }}</span>
+          }
+        </h3>
+        @if (unreadCount > 0) {
+          <button
+            (click)="markAllRead($event)"
+            class="text-[10px] font-black text-sky-600 hover:text-sky-800 bg-sky-50 hover:bg-sky-100 px-2 py-1 rounded-lg transition-colors"
+          >
+            Mark all read
+          </button>
+        }
+      </div>
+
+      <div class="max-h-80 overflow-y-auto">
+        @if (isLoading) {
+          <div class="p-6 text-center">
+            <i class="fa-solid fa-spinner fa-spin text-slate-400 text-lg"></i>
+          </div>
+        } @else if (notifications.length === 0) {
+          <div class="p-8 text-center">
+            <div class="text-4xl mb-3">
+              <i class="fa-solid fa-bell-slash text-slate-300"></i>
+            </div>
+            <p class="text-slate-500 text-sm font-bold">
+              All caught up! <i class="fa-solid fa-party-horn text-amber-500"></i>
+            </p>
+            <p class="text-slate-400 text-xs mt-1">No new notifications</p>
+          </div>
+        } @else {
+          @for (notif of notifications.slice(0, 6); track notif.id) {
+            <div
+              (click)="markAsRead(notif)"
+              class="px-4 py-3 border-b border-slate-50 hover:bg-slate-50 cursor-pointer transition-colors border-l-4"
+              [class]="typeColor(notif.notification_type)"
+              [class.opacity-70]="notif.is_read"
+            >
+              <div class="flex items-start gap-3">
+                <div
+                  class="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
+                  [class]="typeBadge(notif.notification_type)"
+                >
+                  <i class="fa-solid text-xs" [class]="typeIcon(notif.notification_type)"></i>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <p class="text-sm font-extrabold text-slate-700 truncate">
+                    {{ notif.title }}
+                  </p>
+                  <p class="text-xs text-slate-500 mt-0.5 line-clamp-2">
+                    {{ notif.message }}
+                  </p>
+                  <p class="text-[10px] text-slate-400 font-bold mt-1">
+                    {{ timeAgo(notif.created_at) }}
+                  </p>
+                </div>
+                <div class="flex flex-col items-center gap-1 flex-shrink-0">
+                  @if (!notif.is_read) {
+                    <span class="w-2 h-2 bg-orange-500 rounded-full"></span>
+                  }
+                  <button
+                    (click)="deleteNotification(notif, $event)"
+                    class="text-slate-300 hover:text-red-400 transition-colors text-xs"
+                    title="Delete"
+                  >
+                    <i class="fa-solid fa-xmark text-rose-500"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</div>

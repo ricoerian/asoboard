@@ -1,0 +1,552 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "เข้าสู่ระบบ",
+      "FREE_TRIAL": "ทดลองฟรี"
+    },
+    "HERO": {
+      "TITLE_1": "วิธีมหัศจรรย์ที่จะ ",
+      "TITLE_HIGHLIGHT": "เรียนรู้ วาดรูป และเล่น",
+      "TITLE_2": " ไปด้วยกัน!",
+      "SUBTITLE": "AsoBoard นำจิตวิญญาณของเกมมาสู่ไวท์บอร์ดที่สนุกสนานและปลอดภัย",
+      "START_LEARNING": "เริ่มเรียนรู้ทันที",
+      "PARENT_LOGIN": "ผู้ปกครองเข้าสู่ระบบ",
+      "SOCIAL_PROOF": "เป็นที่ชื่นชอบของนักเรียนนับพัน!"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "ปลอดภัย",
+      "AD_FREE": "ไม่มีโฆษณา",
+      "PARENTAL": "การควบคุมโดยผู้ปกครอง",
+      "FAMILIES": "กว่า 5,000 ครอบครัว"
+    },
+    "FEATURES": {
+      "TITLE": "การเรียนรู้ควรจะสนุก!",
+      "SUBTITLE": "การเรียนรู้ด้วยภาพช่วยให้เด็กเข้าใจได้เร็วขึ้น",
+      "CREATIVE_TOOLS": {
+        "TITLE": "เครื่องมือ",
+        "DESC": "สีสันสดใส"
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "เป็นมิตรกับเด็ก",
+        "DESC": "อินเทอร์เฟซที่ปลอดภัย"
+      },
+      "REAL_TIME": {
+        "TITLE": "เรียลไทม์",
+        "DESC": "ซิงค์ทันที"
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "มันทำงานอย่างไร",
+      "SUBTITLE": "เข้าร่วมใน 3 ขั้นตอน!",
+      "STEP_1": {
+        "TITLE": "โปรไฟล์",
+        "DESC": "สร้างบัญชี"
+      },
+      "STEP_2": {
+        "TITLE": "เข้าร่วม",
+        "DESC": "เชื่อมต่อกับติวเตอร์"
+      },
+      "STEP_3": {
+        "TITLE": "วาด & เรียน",
+        "DESC": "เห็นภาพแนวคิด!"
+      },
+      "BADGE": "สร้างเวทมนตร์!"
+    },
+    "ROADMAP": {
+      "TITLE": "สร้างขึ้นเพื่อวันนี้",
+      "SUBTITLE": "สัมผัสประสบการณ์ตอนนี้",
+      "AVAILABLE_NOW": "มีให้ใช้งาน",
+      "CURRENT_MVP": "คุณลักษณะปัจจุบัน",
+      "PLAYBACK": {
+        "TITLE": "การเล่นกลับ",
+        "DESC": "บันทึกไวท์บอร์ด"
+      },
+      "SKETCH": {
+        "TITLE": "ภาพวาดของคุณ",
+        "DESC": "หยุดชั่วคราวและวาด"
+      },
+      "COMING_SOON": "เร็วๆ นี้",
+      "COMING_FEATURES": "คุณสมบัติใหม่",
+      "ANALYTICS": {
+        "TITLE": "การวิเคราะห์",
+        "DESC": "ติดตามความคืบหน้า"
+      },
+      "GALLERY": {
+        "TITLE": "แกลเลอรี่",
+        "DESC": "แบ่งปัน"
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "ผู้ช่วย AI",
+        "DESC": "คำแนะนำอัจฉริยะ"
+      },
+      "GAMIFICATION": {
+        "TITLE": "เกมส์",
+        "DESC": "สัตว์เลี้ยง"
+      }
+    },
+    "PRICING": {
+      "TITLE": "ราคา",
+      "SUBTITLE": "เลือกแผนที่สมบูรณ์แบบ",
+      "FOREVER": "/ ตลอดไป",
+      "MONTH": "/ เดือน",
+      "PLAN_FREE": {
+        "TITLE": "ฟรี",
+        "DESC": "ลองใช้งาน!",
+        "F1": "เครื่องมือ",
+        "F2": "1 กระดาน",
+        "F3": "แดชบอร์ด",
+        "F4": "ที่ปรึกษา",
+        "BUTTON": "เริ่มต้น"
+      },
+      "PLAN_STAR": {
+        "BADGE": "ยอดนิยม",
+        "TITLE": "ดาว",
+        "DESC": "ดีที่สุด",
+        "F1": "ทั้งหมด",
+        "F2": "ไม่จำกัด",
+        "F3": "5 ครั้ง/เดือน",
+        "F4": "ความคืบหน้า",
+        "BUTTON": "เลือก"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "ครอบครัว",
+        "DESC": "สำหรับทุกคน",
+        "F1": "ทุกอย่าง",
+        "F2": "3 โปรไฟล์เด็ก",
+        "F3": "ไม่จำกัด",
+        "F4": "การบันทึก",
+        "BUTTON": "เลือก"
+      }
+    },
+    "FAQ": {
+      "TITLE": "คำถาม",
+      "Q1": "ปลอดภัยไหม?",
+      "A1": "ใช่ ปลอดภัย 100%",
+      "Q2": "อุปกรณ์?",
+      "A2": "ได้ทุกเบราว์เซอร์",
+      "Q3": "ความคืบหน้า?",
+      "A3": "ใช่ ดูผ่านแดชบอร์ด",
+      "Q4": "ยกเลิก?",
+      "A4": "ทุกเวลา"
+    },
+    "FUTURE": {
+      "BADGE": "อนาคต",
+      "TITLE_1": "เทคโนโลยีการศึกษา",
+      "TITLE_HIGHLIGHT": "ที่ยอดเยี่ยม",
+      "SUBTITLE_1": "เราช่วยคุณ ",
+      "SUBTITLE_HIGHLIGHT": "เข้าใจ",
+      "SUBTITLE_2": " ศักยภาพของลูกคุณ",
+      "MASTERY": {
+        "TITLE": "พัฒนาการ",
+        "DESC": "ติดตามความคืบหน้า"
+      },
+      "RESILIENCE": {
+        "TITLE": "ความอดทน",
+        "DESC": "เกมส์รางวัล"
+      },
+      "SEEDING": {
+        "TITLE": "ทักษะ",
+        "DESC": "ความสนใจในช่วงต้น"
+      }
+    },
+    "CTA": {
+      "TITLE_1": "พร้อมที่จะ ",
+      "TITLE_HIGHLIGHT": "เรียนรู้",
+      "TITLE_2": " หรือยัง?",
+      "SUBTITLE": "เข้าร่วมเลยวันนี้",
+      "BUTTON": "เริ่มต้นฟรี",
+      "NO_CC": "ไม่ต้องใช้บัตร"
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "การเรียนรู้ที่สนุกสนาน!",
+      "MENTOR": "ที่ปรึกษา",
+      "STUDENT": "นักเรียน",
+      "STAFF": "พนักงาน",
+      "PARENT": "ผู้ปกครอง",
+      "MY_PROFILE": "โปรไฟล์ของฉัน",
+      "LEADERBOARD_TITLE": "กระดานผู้นำ",
+      "RANKING": "อันดับ",
+      "LOGOUT": "ออกจากระบบ"
+    },
+    "HEADER": {
+      "TITLE": "รายชื่อหลักสูตร",
+      "GREETING_STUDENT": "สวัสดี {{name}}! วันนี้อยากเรียนอะไร",
+      "GREETING_MENTOR": "สวัสดี {{name}}! ถึงเวลาสร้างหลักสูตรสุดเจ๋งแล้ว!",
+      "GREETING_STAFF": "สวัสดี {{name}}! ทำให้ AsoBoard ดีขึ้นกันเถอะ!",
+      "GREETING_PARENT": "สวัสดี {{name}}! มาสนับสนุนการเรียนรู้ของลูกคุณกันเถอะ!"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "แม่แบบ",
+      "CREATE_COURSE": "สร้างหลักสูตรใหม่",
+      "MANAGE_ASSETS": "จัดการทรัพย์สิน",
+      "BROWSE_ALL": "เรียกดูทั้งหมด",
+      "MY_COURSES": "หลักสูตรของฉัน",
+      "MY_PROGRESS": "ความก้าวหน้าของฉัน",
+      "MY_DIARY": "ไดอารี่ของฉัน"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "ค้นหาหลักสูตร...",
+      "FOUND_SINGULAR": "พบ 1 หลักสูตร",
+      "FOUND_PLURAL": "พบ {{count}} หลักสูตร",
+      "LOADING": "กำลังโหลด...",
+      "SORT_NEWEST": "ใหม่ล่าสุด",
+      "SORT_OLDEST": "เก่าที่สุด",
+      "SORT_AZ": "A - Z",
+      "SORT_ZA": "Z - A",
+      "SORT_MOST_SESSIONS": "เซสชันมากที่สุด",
+      "SORT_LEAST_SESSIONS": "เซสชันน้อยที่สุด"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "ไม่มีคำอธิบาย.",
+      "SESSIONS": "{{count}} เซสชัน",
+      "ENROLLED": "ลงทะเบียนแล้ว",
+      "EDIT_COURSE": "แก้ไขหลักสูตร",
+      "DELETE_COURSE": "ลบหลักสูตร",
+      "ENROLL": "ลงทะเบียน",
+      "ENTER": "เข้าสู่!"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "ยังไม่มีหลักสูตร!",
+      "CREATE_PROMPT_1": "คลิกที่",
+      "CREATE_PROMPT_2": "สร้างหลักสูตรใหม่",
+      "CREATE_PROMPT_3": "เพื่อเริ่มต้น!",
+      "NO_COURSES_FOUND": "ไม่พบหลักสูตร!",
+      "COULDNT_FIND": "เราไม่พบสิ่งใดสำหรับ",
+      "CLEAR_SEARCH": "ล้างการค้นหา"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "สร้างหลักสูตรใหม่!",
+      "CREATE_CONFIRM": "สร้างหลักสูตร!",
+      "EDIT_TITLE": "แก้ไขหลักสูตร!",
+      "EDIT_CONFIRM": "บันทึกการเปลี่ยนแปลง!",
+      "INPUT_TITLE": "ชื่อหลักสูตร",
+      "INPUT_TITLE_PLACEHOLDER": "ตัวอย่าง: คณิตศาสตร์แสนสนุก!",
+      "INPUT_DESC": "คำอธิบาย (ทางเลือก)",
+      "INPUT_DESC_PLACEHOLDER": "บอกเราเกี่ยวกับหลักสูตรนี้...",
+      "ERROR_REQUIRED": "จำเป็นต้องระบุชื่อเรื่อง!",
+      "ERROR_MINLENGTH": "โปรดระบุอย่างน้อย 3 ตัวอักษร!",
+      "DELETE_TITLE": "คุณแน่ใจหรือไม่?",
+      "DELETE_CONFIRM": "ใช่ ลบเลย!",
+      "DELETE_DESC": "ลบหลักสูตรนี้และทุกอย่างที่อยู่ภายใน?",
+      "DELETE_CAUTION": "ข้อควรระวัง: การกระทำนี้ไม่สามารถยกเลิกได้!"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "เข้าสู่ระบบแพลตฟอร์มการเรียนรู้ที่สนุกสนาน!",
+      "USERNAME": "ชื่อผู้ใช้",
+      "USERNAME_PLACEHOLDER": "พิมพ์ชื่อผู้ใช้ของคุณ",
+      "PASSWORD": "รหัสผ่าน",
+      "PASSWORD_PLACEHOLDER": "พิมพ์รหัสผ่านของคุณ",
+      "SUBMIT": "เข้าสู่ระบบและเริ่มการเรียนรู้!",
+      "NO_ACCOUNT": "ยังไม่มีบัญชี?",
+      "REGISTER_LINK": "ลงทะเบียนก่อนใคร!"
+    },
+    "REGISTER": {
+      "TITLE": "สร้างบัญชีใหม่",
+      "SUBTITLE": "เข้าร่วมและเริ่มเรียนรู้อย่างสนุกสนาน!",
+      "USERNAME": "ชื่อผู้ใช้แสนสนุก",
+      "USERNAME_PLACEHOLDER": "เลือกชื่อเจ๋งๆ!",
+      "USERNAME_ERROR": "กรุณาอย่างน้อย 3 ตัวอักษร!",
+      "PASSWORD": "รหัสผ่านลับ",
+      "PASSWORD_PLACEHOLDER": "ให้มันปลอดภัย!",
+      "PASSWORD_ERROR": "กรุณามีอักขระอย่างน้อย 4 ตัว!",
+      "ROLE_LABEL": "คุณเป็นใคร?",
+      "ROLE_STUDENT": "นักเรียน",
+      "ROLE_PARENT": "พ่อแม่",
+      "ROLE_MENTOR": "พี่เลี้ยง",
+      "ROLE_STAFF": "พนักงาน",
+      "SUBMIT": "สร้างบัญชีของฉัน!",
+      "HAS_ACCOUNT": "มีบัญชีอยู่แล้ว?",
+      "LOGIN_LINK": "เข้าสู่ระบบที่นี่!"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "เซสชัน {{count}}",
+    "NO_DESCRIPTION": "ไม่มีคำอธิบาย",
+    "ENROLLED": "ลงทะเบียนแล้ว",
+    "BACK_TO_DASHBOARD": "กลับไปที่แดชบอร์ด",
+    "ENROLL_BUTTON": "ลงทะเบียนเรียนในหลักสูตร",
+    "START_LEARNING": "เริ่มการเรียนรู้",
+    "SESSION_LIST": "รายการเซสชัน",
+    "NO_SESSIONS": "ยังไม่มีเซสชั่นใด ๆ",
+    "MENTOR_ONLY": "มีเพียงพี่เลี้ยงเท่านั้นที่สามารถเพิ่มเซสชันได้",
+    "ADD_SESSION": "เพิ่มเซสชัน",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "เพิ่มเซสชั่นใหม่!",
+      "EDIT_SESSION_TITLE": "แก้ไขเซสชัน!",
+      "TITLE_LABEL": "ชื่อเซสชัน",
+      "TITLE_PLACEHOLDER": "ตัวอย่าง: คณิตศาสตร์เวทย์มนตร์",
+      "DESC_LABEL": "คำอธิบาย",
+      "DESC_PLACEHOLDER": "วันนี้เราจะเรียนรู้อะไร?",
+      "DATE_LABEL": "วันที่กำหนด",
+      "SAVE_BUTTON": "บันทึกเซสชัน!",
+      "DELETE_TITLE": "ลบเซสชันใช่ไหม",
+      "DELETE_DESC": "คุณแน่ใจหรือไม่ว่าต้องการลบเซสชันนี้ การดำเนินการนี้ไม่สามารถยกเลิกได้",
+      "CONFIRM_DELETE": "ใช่ ลบมัน!"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "กลับสู่หลักสูตร",
+    "WAITING_MENTOR": "รออาจารย์ที่ปรึกษา...",
+    "RECORDING": "การบันทึก",
+    "LIVE": "สด",
+    "JOIN_CALL": "เข้าร่วมเสียง/วิดีโอ",
+    "LEAVE_CALL": "ทิ้งสาย",
+    "MUTE": "ปิดเสียง",
+    "UNMUTE": "เปิดเสียง",
+    "STOP_VIDEO": "หยุดวิดีโอ",
+    "START_VIDEO": "เริ่มวิดีโอ",
+    "PARTICIPANTS": "ผู้เข้าร่วม",
+    "CHAT": "แชท",
+    "TOOLS": "เครื่องมือ",
+    "RAISE_HAND": "ยกมือ",
+    "LOWER_HAND": "มือล่าง",
+    "CLEAR_BOARD": "ล้างบอร์ด",
+    "SAVE_BOARD": "บันทึกบอร์ด",
+    "UNDO": "เลิกทำ",
+    "REDO": "ทำซ้ำ"
+  },
+  "PROFILE": {
+    "TITLE": "โปรไฟล์ของฉัน",
+    "ROLE": "บทบาท: {{role}}",
+    "EDIT_PROFILE": "แก้ไขโปรไฟล์",
+    "SAVE_CHANGES": "บันทึกการเปลี่ยนแปลง",
+    "CANCEL": "ยกเลิก",
+    "LOGOUT": "ออกจากระบบ"
+  },
+  "LEADERBOARD": {
+    "TITLE": "ลีดเดอร์บอร์ด",
+    "SUBTITLE": "ดูว่าใครกระตือรือร้นและเก่งที่สุด!",
+    "BACK": "กลับ",
+    "ALL_TIME": "ตลอดกาล",
+    "THIS_WEEK": "สัปดาห์นี้",
+    "THIS_MONTH": "เดือนนี้",
+    "LOADING": "กำลังโหลดลีดเดอร์บอร์ด...",
+    "EMPTY_TITLE": "ยังไม่มีการจัดอันดับ",
+    "EMPTY_DESC": "ยังไม่มีนักเรียนที่มีคะแนน เสร็จสิ้นเซสชันและรับคะแนนเพื่อเริ่มต้น!",
+    "YOU": "คุณ",
+    "ACHIEVEMENTS": "ความสำเร็จ",
+    "POINTS": "คะแนน",
+    "ERROR": "โหลดลีดเดอร์บอร์ดไม่สำเร็จ",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "อ๊ะ! หลงทางในอวกาศ",
+    "SUBTITLE": "หน้าที่คุณกำลังมองหาดูเหมือนลอยไปในจักรวาล!",
+    "SUBTITLE_2": "ไม่ต้องกังวล มาพากลับมาเถอะ!",
+    "SUGGESTION_TITLE": "บางทีคุณอาจต้องการเยี่ยมชม:",
+    "SUGGESTION_HOME": "หน้าแรกเพื่อเริ่มเรียนรู้",
+    "SUGGESTION_DASHBOARD": "แดชบอร์ดของคุณเพื่อดูคอร์ส",
+    "SUGGESTION_LOGIN": "เข้าสู่ระบบหากยังไม่ได้ลงชื่อเข้าใช้",
+    "GO_HOME": "ไปหน้าแรก",
+    "MY_DASHBOARD": "แดชบอร์ดของฉัน",
+    "STILL_LOST": "ยังหลงอยู่? ลองใช้เมนูนำทางด้านบน!",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "ความก้าวหน้าของนักเรียน",
+    "SUBTITLE": "ติดตามการเดินทางเรียนรู้และความสำเร็จ",
+    "SESSIONS": "{{count}} เซสชัน",
+    "CANVAS_TIME": "เวลารวมบนแคนวาส",
+    "CANVAS_TIME_UNIT": "{{count}} นาที",
+    "GAMES_COMPLETED": "เกมที่เสร็จสิ้น",
+    "ACCURACY_RATE": "อัตราความแม่นยำ",
+    "ERROR": "โหลดข้อมูลความก้าวหน้าไม่สำเร็จ",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "ความสำเร็จ",
+    "EARNED": "ได้รับแล้ว",
+    "TOTAL_POINTS": "คะแนนรวม",
+    "LOADING": "กำลังโหลดความสำเร็จ...",
+    "EMPTY": "ยังไม่มีความสำเร็จที่ใช้ได้",
+    "EARNED_BADGE": "ได้รับแล้ว",
+    "LOCKED_BADGE": "ล็อคอยู่",
+    "HOW_TO_EARN": "วิธีรับ",
+    "REQUIRED": "ต้องการ: {{value}} ({{type}})",
+    "POINTS": "+{{count}} คะแนน",
+    "UNLOCKED": "ปลดล็อคความสำเร็จแล้ว!",
+    "POINTS_EARNED": "+{{count}} คะแนน"
+  },
+  "SHARED": {
+    "LOADING": "กำลังโหลด...",
+    "SUCCESS": "สำเร็จ!",
+    "ERROR": "ข้อผิดพลาด!",
+    "WARNING": "คำเตือน!"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

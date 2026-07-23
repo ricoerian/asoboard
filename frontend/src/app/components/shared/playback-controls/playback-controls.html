@@ -1,0 +1,76 @@
+<div class="playback-container">
+  <audio
+    #audioPlayer
+    [src]="audioUrl"
+    (play)="onPlay()"
+    (pause)="onPause()"
+    (loadedmetadata)="onLoadedMetadata($event)"
+    class="hidden-audio"
+  ></audio>
+
+  <div class="time-row">
+    <span class="time-chip">{{ formatTime(currentTime) }}</span>
+    <div
+      class="progress-bar-container"
+      (click)="onSeek($event)"
+      (keyup.enter)="onSeek($event)"
+      tabindex="0"
+      role="slider"
+      aria-label="Playback position"
+      [attr.aria-valuenow]="currentTime"
+      [attr.aria-valuemin]="0"
+      [attr.aria-valuemax]="duration"
+    >
+      <div class="progress-track">
+        <div class="progress-fill" [style.width.%]="(currentTime / duration) * 100"></div>
+        <div class="progress-knob" [style.left.%]="(currentTime / duration) * 100"></div>
+      </div>
+    </div>
+    <span class="time-chip total">{{ formatTime(duration) }}</span>
+  </div>
+
+  <div class="controls-row">
+    <button
+      (click)="seek(-10000)"
+      class="seek-btn"
+      title="Rewind 10s"
+      aria-label="Rewind 10 seconds"
+    >
+      <i class="seek-icon fa-solid fa-backward"></i>
+    </button>
+
+    <button
+      (click)="togglePlay()"
+      class="play-pause-btn"
+      [class.playing]="isPlaying"
+      [attr.aria-label]="isPlaying ? 'Pause' : 'Play'"
+    >
+      <i class="play-icon" [ngClass]="isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play'"></i>
+    </button>
+
+    <button
+      (click)="seek(10000)"
+      class="seek-btn"
+      title="Forward 10s"
+      aria-label="Forward 10 seconds"
+    >
+      <i class="seek-icon fa-solid fa-forward"></i>
+    </button>
+
+    <div class="speed-wrap">
+      <label class="speed-label" for="speedSelect">{{
+        'PLAYBACK_CONTROLS.SPEED' | translate
+      }}</label>
+      <select
+        id="speedSelect"
+        [value]="playbackSpeed"
+        (change)="onSpeedChange($event)"
+        class="speed-select"
+      >
+        @for (speed of speedOptions; track speed) {
+          <option [value]="speed" [selected]="speed === playbackSpeed">{{ speed }}x</option>
+        }
+      </select>
+    </div>
+  </div>
+</div>

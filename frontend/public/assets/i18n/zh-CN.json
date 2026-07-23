@@ -1,0 +1,552 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "登录",
+      "FREE_TRIAL": "免费试用"
+    },
+    "HERO": {
+      "TITLE_1": "共同",
+      "TITLE_HIGHLIGHT": "学习、绘画和玩耍",
+      "TITLE_2": "的奇妙方式！",
+      "SUBTITLE": "创造一个充满灵感的空间，让您孩子的想象力栩栩如生！AsoBoard 专为充满好奇心的年轻头脑和敬业的教育工作者设计，将“游戏”精神融入有趣、安全、协作的白板中。",
+      "START_LEARNING": "立即开始学习",
+      "PARENT_LOGIN": "家长登录",
+      "SOCIAL_PROOF": "受到成千上万名学生和导师的喜爱！"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "符合 COPPA 标准",
+      "AD_FREE": "100% 无广告区",
+      "PARENTAL": "家长控制",
+      "FAMILIES": "超过 5,000 个幸福家庭加入"
+    },
+    "FEATURES": {
+      "TITLE": "学习应该是有趣的！",
+      "SUBTITLE": "我们相信交互式视觉学习可以帮助孩子们更快地掌握概念，同时让他们完全投入并感到快乐。",
+      "CREATIVE_TOOLS": {
+        "TITLE": "创意工具",
+        "DESC": "鲜艳的色彩和形状让每节课都像是一个艺术项目。"
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "适合儿童",
+        "DESC": "一个安全、极其直观的界面，任何人都可以无需说明即可使用。"
+      },
+      "REAL_TIME": {
+        "TITLE": "实时同步",
+        "DESC": "导师和学生可以随时随地在同一个白板上立即协同工作。"
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "魔法是如何运作的",
+      "SUBTITLE": "通过三个简单有趣的步骤加入 AsoBoard 大家庭！",
+      "STEP_1": {
+        "TITLE": "设置个人资料",
+        "DESC": "家长创建一个安全、受监督的帐户，并自定义孩子的学习目标。"
+      },
+      "STEP_2": {
+        "TITLE": "加入课程",
+        "DESC": "与经过验证的导师实时连接，或探索我们的单人创意沙盒。"
+      },
+      "STEP_3": {
+        "TITLE": "绘画与学习",
+        "DESC": "使用鲜艳的交互式工具将概念可视化、玩游戏并掌握新技能！"
+      },
+      "BADGE": "正在创造魔法！"
+    },
+    "ROADMAP": {
+      "TITLE": "立足当下，着眼未来",
+      "SUBTITLE": "立即体验我们强大的交互式核心，同时我们构建未来的智能教育技术生态系统。",
+      "AVAILABLE_NOW": "现已推出",
+      "CURRENT_MVP": "当前 MVP 功能",
+      "PLAYBACK": {
+        "TITLE": "基于事件的演示文稿回放",
+        "DESC": "我们不使用笨重的 MP4，而是记录并将实时画布事件与音频同步。它非常流畅且极具带宽效率。"
+      },
+      "SKETCH": {
+        "TITLE": "交互式“你的草图”",
+        "DESC": "学生可以随时暂停回放、画图解决问题，并将特定的草图保存到数据库中。他们可以在以后重新访问或编辑它，而不会打断原始课程。"
+      },
+      "COMING_SOON": "敬请期待",
+      "COMING_FEATURES": "即将推出的功能",
+      "ANALYTICS": {
+        "TITLE": "行为分析系统",
+        "DESC": "跟踪元数据（暂停、笔画）以生成深刻的学习风格报告。"
+      },
+      "GALLERY": {
+        "TITLE": "“自豪的草图”画廊",
+        "DESC": "将绘画过程渲染成简短的延时 MP4/GIF，以便在社交媒体上分享。"
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "AI 智能助手",
+        "DESC": "如果学生在画布上卡住了，提供上下文 AI 提示，立即减少挫败感。"
+      },
+      "GAMIFICATION": {
+        "TITLE": "情感游戏化",
+        "DESC": "通过对白板的一致跟踪和勇敢的参与，培养虚拟宠物/植物（如电子鸡）。"
+      }
+    },
+    "PRICING": {
+      "TITLE": "简单且适合家庭的定价",
+      "SUBTITLE": "选择完美的计划，激发孩子的想象力，而不会花太多钱。",
+      "FOREVER": "/ 永久",
+      "MONTH": "/ 月",
+      "PLAN_FREE": {
+        "TITLE": "免费探索者",
+        "DESC": "非常适合试用！",
+        "F1": "基本绘画工具",
+        "F2": "1 个单人画布",
+        "F3": "家长仪表板",
+        "F4": "实时辅导",
+        "BUTTON": "免费开始"
+      },
+      "PLAN_STAR": {
+        "BADGE": "最受欢迎",
+        "TITLE": "明星学生",
+        "DESC": "解锁无限创造力。",
+        "F1": "所有工具和形状",
+        "F2": "无限制单人课程",
+        "F3": "每月 5 次实时辅导",
+        "F4": "进度跟踪",
+        "BUTTON": "选择明星计划"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "天才家庭",
+        "DESC": "适合全家人。",
+        "F1": "明星计划的所有内容",
+        "F2": "多达 3 个子配置文件",
+        "F3": "无限制实时辅导",
+        "F4": "课程记录",
+        "BUTTON": "选择家庭计划"
+      }
+    },
+    "FAQ": {
+      "TITLE": "家长常问的问题",
+      "Q1": "平台安全吗？",
+      "A1": "绝对安全。我们完全符合 COPPA 标准。实时课程中的所有互动都被记录并密切监控，我们的导师经过严格的背景调查。",
+      "Q2": "哪些设备效果最好？",
+      "A2": "AsoBoard 适用于任何现代 Web 浏览器！但是，为了获得最有趣的白板体验，我们强烈建议使用 iPad 或触摸屏平板电脑。",
+      "Q3": "我可以监控孩子的进度吗？",
+      "A3": "是的！我们专用的家长仪表板允许您查看保存的画布杰作、跟踪实时课程出勤率，并阅读导师的反馈笔记。",
+      "Q4": "我可以随时取消吗？",
+      "A4": "当然可以。您可以随时通过家长仪表板取消、降级或升级您的家庭计划，绝对没有隐藏的取消费用。"
+    },
+    "FUTURE": {
+      "BADGE": "未来前景",
+      "TITLE_1": "一个数据驱动的",
+      "TITLE_HIGHLIGHT": "教育技术生态系统",
+      "SUBTITLE_1": "我们相信每个孩子都有自己独特的天赋。我们的长期愿景是建立一个不仅能教学，而且能",
+      "SUBTITLE_HIGHLIGHT": "理解",
+      "SUBTITLE_2": "的平台。通过捕捉行为细微差别，我们帮助您解锁孩子独特的认知潜力，并庆祝每一次微小的进步。",
+      "MASTERY": {
+        "TITLE": "认知掌握",
+        "DESC": "跟踪行为里程碑，提供孩子智力成长的更清晰画面。"
+      },
+      "RESILIENCE": {
+        "TITLE": "情绪适应力",
+        "DESC": "内置游戏化功能，奖励勇气、好奇心和持续的努力。"
+      },
+      "SEEDING": {
+        "TITLE": "技能播种",
+        "DESC": "及早发现兴趣，帮助您播下将成长为终生热情的技能种子。"
+      }
+    },
+    "CTA": {
+      "TITLE_1": "准备好让您孩子的",
+      "TITLE_HIGHLIGHT": "想象力",
+      "TITLE_2": "尽情驰骋了吗？",
+      "SUBTITLE": "加入成千上万其他已经在使用 AsoBoard 让学习成为一次不可思议冒险的家长们的行列。",
+      "BUTTON": "免费开始",
+      "NO_CC": "免费探索者计划无需信用卡。"
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "快乐学习！",
+      "MENTOR": "导师",
+      "STUDENT": "学生",
+      "STAFF": "员工",
+      "PARENT": "家长",
+      "MY_PROFILE": "我的主页",
+      "LEADERBOARD_TITLE": "排行榜",
+      "RANKING": "排名",
+      "LOGOUT": "登出"
+    },
+    "HEADER": {
+      "TITLE": "课程列表",
+      "GREETING_STUDENT": "你好，{{name}}！今天你想学什么？",
+      "GREETING_MENTOR": "你好，{{name}}！是时候创建一个超棒的课程了！",
+      "GREETING_STAFF": "你好，{{name}}！让我们把 AsoBoard 变得更好！",
+      "GREETING_PARENT": "你好，{{name}}！让我们一起支持孩子的学习之旅！"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "模板",
+      "CREATE_COURSE": "创建新课程",
+      "MANAGE_ASSETS": "管理资产",
+      "BROWSE_ALL": "浏览所有课程",
+      "MY_COURSES": "我的课程",
+      "MY_PROGRESS": "我的进度",
+      "MY_DIARY": "我的日记"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "查找课程...",
+      "FOUND_SINGULAR": "找到 1 门课程",
+      "FOUND_PLURAL": "找到 {{count}} 门课程",
+      "LOADING": "加载中...",
+      "SORT_NEWEST": "最新",
+      "SORT_OLDEST": "最旧",
+      "SORT_AZ": "A - Z",
+      "SORT_ZA": "Z - A",
+      "SORT_MOST_SESSIONS": "课时最多",
+      "SORT_LEAST_SESSIONS": "课时最少"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "暂无描述。",
+      "SESSIONS": "{{count}} 课时",
+      "ENROLLED": "已报名",
+      "EDIT_COURSE": "编辑课程",
+      "DELETE_COURSE": "删除课程",
+      "ENROLL": "报名",
+      "ENTER": "进入！"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "还没有课程！",
+      "CREATE_PROMPT_1": "点击",
+      "CREATE_PROMPT_2": "创建新课程",
+      "CREATE_PROMPT_3": "开始吧！",
+      "NO_COURSES_FOUND": "没有找到课程！",
+      "COULDNT_FIND": "我们找不到关于",
+      "CLEAR_SEARCH": "清除搜索"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "创建新课程！",
+      "CREATE_CONFIRM": "创建课程！",
+      "EDIT_TITLE": "编辑课程！",
+      "EDIT_CONFIRM": "保存更改！",
+      "INPUT_TITLE": "课程标题",
+      "INPUT_TITLE_PLACEHOLDER": "示例：趣味数学！",
+      "INPUT_DESC": "描述（可选）",
+      "INPUT_DESC_PLACEHOLDER": "告诉我们关于这个课程...",
+      "ERROR_REQUIRED": "标题是必填项！",
+      "ERROR_MINLENGTH": "请至少输入 3 个字符！",
+      "DELETE_TITLE": "你确定吗？",
+      "DELETE_CONFIRM": "是的，删除它！",
+      "DELETE_DESC": "删除此课程及其中所有内容？",
+      "DELETE_CAUTION": "注意：此操作无法撤销！"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "登录趣味学习平台！",
+      "USERNAME": "用户名",
+      "USERNAME_PLACEHOLDER": "输入您的用户名",
+      "PASSWORD": "密码",
+      "PASSWORD_PLACEHOLDER": "输入您的密码",
+      "SUBMIT": "登录并开始学习！",
+      "NO_ACCOUNT": "没有帐户？",
+      "REGISTER_LINK": "先注册！"
+    },
+    "REGISTER": {
+      "TITLE": "创建新帐户",
+      "SUBTITLE": "加入并开始有趣地学习！",
+      "USERNAME": "有趣的用户名",
+      "USERNAME_PLACEHOLDER": "选一个酷一点的名字吧！",
+      "USERNAME_ERROR": "请至少 3 个字符！",
+      "PASSWORD": "秘密密码",
+      "PASSWORD_PLACEHOLDER": "确保安全！",
+      "PASSWORD_ERROR": "请至少 4 个字符！",
+      "ROLE_LABEL": "你是谁？",
+      "ROLE_STUDENT": "学生",
+      "ROLE_PARENT": "家长",
+      "ROLE_MENTOR": "导师",
+      "ROLE_STAFF": "职员",
+      "SUBMIT": "创建我的帐户！",
+      "HAS_ACCOUNT": "已经有帐户？",
+      "LOGIN_LINK": "在此登录！"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "{{count}} 会话",
+    "NO_DESCRIPTION": "没有可用的描述。",
+    "ENROLLED": "已注册",
+    "BACK_TO_DASHBOARD": "返回仪表板",
+    "ENROLL_BUTTON": "报名课程",
+    "START_LEARNING": "开始学习",
+    "SESSION_LIST": "会话列表",
+    "NO_SESSIONS": "还没有可用的会话。",
+    "MENTOR_ONLY": "只有导师可以添加课程。",
+    "ADD_SESSION": "添加会话",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "添加新会话！",
+      "EDIT_SESSION_TITLE": "编辑会话！",
+      "TITLE_LABEL": "会议标题",
+      "TITLE_PLACEHOLDER": "示例：数学魔法",
+      "DESC_LABEL": "描述",
+      "DESC_PLACEHOLDER": "今天我们要学什么？",
+      "DATE_LABEL": "预定日期",
+      "SAVE_BUTTON": "保存会话！",
+      "DELETE_TITLE": "删除会话？",
+      "DELETE_DESC": "您确定要删除此会话吗？此操作无法撤消。",
+      "CONFIRM_DELETE": "是的，删除它！"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "返回课程",
+    "WAITING_MENTOR": "等待导师...",
+    "RECORDING": "记录",
+    "LIVE": "居住",
+    "JOIN_CALL": "加入音频/视频",
+    "LEAVE_CALL": "留下电话",
+    "MUTE": "沉默的",
+    "UNMUTE": "取消静音",
+    "STOP_VIDEO": "停止视频",
+    "START_VIDEO": "开始视频",
+    "PARTICIPANTS": "参加者",
+    "CHAT": "聊天",
+    "TOOLS": "工具",
+    "RAISE_HAND": "举手",
+    "LOWER_HAND": "下手",
+    "CLEAR_BOARD": "透明板",
+    "SAVE_BOARD": "保存板",
+    "UNDO": "撤消",
+    "REDO": "重做"
+  },
+  "PROFILE": {
+    "TITLE": "我的个人资料",
+    "ROLE": "角色：{{role}}",
+    "EDIT_PROFILE": "编辑个人资料",
+    "SAVE_CHANGES": "保存更改",
+    "CANCEL": "取消",
+    "LOGOUT": "退出"
+  },
+  "LEADERBOARD": {
+    "TITLE": "排行榜",
+    "SUBTITLE": "看看谁最活跃、最出色！",
+    "BACK": "返回",
+    "ALL_TIME": "所有时间",
+    "THIS_WEEK": "本周",
+    "THIS_MONTH": "本月",
+    "LOADING": "加载排行榜中...",
+    "EMPTY_TITLE": "暂无排名",
+    "EMPTY_DESC": "还没有学生获得积分。完成课程并获取积分以开始！",
+    "YOU": "你",
+    "ACHIEVEMENTS": "项成就",
+    "POINTS": "积分",
+    "ERROR": "排行榜加载失败",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "哎呀！迷失在太空中",
+    "SUBTITLE": "您要找的页面似乎飘向了宇宙！",
+    "SUBTITLE_2": "别担心，让我们带您回来！",
+    "SUGGESTION_TITLE": "也许您想访问：",
+    "SUGGESTION_HOME": "开始学习的主页",
+    "SUGGESTION_DASHBOARD": "查看课程的仪表板",
+    "SUGGESTION_LOGIN": "如果还未登录，请登录",
+    "GO_HOME": "回首页",
+    "MY_DASHBOARD": "我的仪表板",
+    "STILL_LOST": "还是迷路了？试试顶部的导航菜单！",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "学生进度",
+    "SUBTITLE": "追踪学习旅程和成就",
+    "SESSIONS": "{{count}} 课时",
+    "CANVAS_TIME": "总画布时间",
+    "CANVAS_TIME_UNIT": "{{count}} 分钟",
+    "GAMES_COMPLETED": "完成游戏数",
+    "ACCURACY_RATE": "准确率",
+    "ERROR": "加载进度数据失败",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "成就",
+    "EARNED": "已获得",
+    "TOTAL_POINTS": "总积分",
+    "LOADING": "加载成就中...",
+    "EMPTY": "暂无可用成就。",
+    "EARNED_BADGE": "已获得",
+    "LOCKED_BADGE": "已锁定",
+    "HOW_TO_EARN": "如何获得",
+    "REQUIRED": "需要：{{value}}（{{type}}）",
+    "POINTS": "+{{count}} 分",
+    "UNLOCKED": "成就解锁！",
+    "POINTS_EARNED": "+{{count}} 积分"
+  },
+  "SHARED": {
+    "LOADING": "加载中...",
+    "SUCCESS": "成功！",
+    "ERROR": "错误！",
+    "WARNING": "警告！"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

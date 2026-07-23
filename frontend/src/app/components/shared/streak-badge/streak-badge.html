@@ -1,0 +1,18 @@
+<div class="streak-card" [class.milestone]="leveledUp">
+  <div class="streak-flame">
+    <i class="fa-solid fa-fire streak-icon"></i>
+    <span class="streak-count">{{ streak?.current_streak || 0 }}</span>
+  </div>
+  <div class="streak-info">
+    <span class="streak-label">{{ 'STREAK_BADGE.DAYS_STREAK' | translate }}</span>
+    <span class="streak-best"
+      >Terbaik: {{ streak?.longest_streak || 0 }} <i class="fa-solid fa-fire text-rose-500"></i
+    ></span>
+  </div>
+  @if (leveledUp) {
+    <div class="milestone-popup">
+      <i class="fa-solid fa-trophy milestone-icon"></i>
+      <span class="milestone-text">{{ streak?.current_streak }} Hari!</span>
+    </div>
+  }
+</div>

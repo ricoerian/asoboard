@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "/Users/ricoeri/Documents/asoboard/logs/.761b877f95be3a67af2716dc162b36297715ddca-audit.json",
+    "files": [
+        {
+            "date": 1784707816337,
+            "name": "/Users/ricoeri/Documents/asoboard/logs/mcp-puppeteer-2026-07-22.log",
+            "hash": "0959bb546b0867724bd325994bce8431d25aa6549d92ec61416153c6df82a558"
+        }
+    ],
+    "hashType": "sha256"
+}

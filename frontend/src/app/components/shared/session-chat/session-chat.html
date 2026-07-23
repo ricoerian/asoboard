@@ -1,0 +1,94 @@
+<div class="relative">
+  <button
+    (click)="toggleChat()"
+    class="bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center border-2 border-orange-400 hover:bg-orange-50 transition-all"
+  >
+    <i class="fas fa-comment-dots text-orange-500 text-xl"></i>
+    @if (messages().length > 0) {
+      <span
+        class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center"
+        >{{ messages().length > 9 ? '9+' : messages().length }}</span
+      >
+    }
+  </button>
+  <div
+    class="absolute bottom-14 right-0 bg-white rounded-xl shadow-2xl border-2 border-orange-400 overflow-hidden transition-all duration-300 z-50"
+    [class.opacity-0]="!isOpen()"
+    [class.pointer-events-none]="!isOpen()"
+    [class.scale-95]="!isOpen()"
+    [class.opacity-100]="isOpen()"
+    [class.scale-100]="isOpen()"
+    style="width: min(320px, calc(100vw-2rem)); max-height: min(480px, calc(100vh-120px))"
+  >
+    <div class="bg-orange-500 text-white px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="fas fa-comments text-white"></i
+        ><span class="font-bold">{{ 'SESSION.CHAT' | translate }}</span>
+      </div>
+      <button (click)="toggleChat()" class="hover:bg-orange-600 rounded-full p-2 transition">
+        <i class="fas fa-times text-white"></i>
+      </button>
+    </div>
+    <div class="overflow-y-auto bg-gray-50" style="max-height: min(340px, calc(100vh-240px))">
+      @for (msg of messages(); track msg.timestamp) {
+        <div class="p-3 border-b border-gray-100 bg-white">
+          <div class="flex items-start gap-2 mb-1">
+            <div
+              class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0"
+              [class.bg-blue-500]="msg.role === 'mentor'"
+              [class.bg-green-500]="msg.role === 'student'"
+              [class.bg-orange-500]="msg.role === 'staff'"
+              [class.bg-gray-500]="!msg.role"
+            >
+              {{ getInitial(msg.username) }}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-1">
+                <span class="font-bold text-sm text-gray-800 truncate">{{
+                  msg.username || 'Unknown'
+                }}</span>
+                <span
+                  class="text-xs px-1.5 py-0.5 rounded-full border"
+                  [class]="getRoleBadgeColor(msg.role)"
+                  ><i class="fas {{ getRoleIcon(msg.role) }}"></i> {{ msg.role || 'user' }}</span
+                >
+                <span class="text-xs text-gray-400 ml-auto shrink-0">{{
+                  formatTime(msg.timestamp)
+                }}</span>
+              </div>
+              <div class="text-sm text-gray-700 mt-1 break-words">{{ msg.message }}</div>
+            </div>
+          </div>
+        </div>
+      }
+      @if (messages().length === 0) {
+        <div class="px-3 py-8 text-center text-gray-400">
+          <i class="fas fa-comment-slash text-4xl mb-2"></i>
+          <div class="text-sm">No messages yet</div>
+          <div class="text-xs mt-1">Be the first to say hello!</div>
+        </div>
+      }
+    </div>
+    <div class="bg-white border-t border-gray-200 p-3">
+      <div class="flex gap-2">
+        <input
+          type="text"
+          [ngModel]="messageInput()"
+          (ngModelChange)="onInputChange($event)"
+          (keydown)="onKeydown($event)"
+          placeholder="Type a message..."
+          maxlength="500"
+          class="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-orange-400"
+        />
+        <button
+          (click)="sendMessage()"
+          [disabled]="!messageInput().trim()"
+          class="bg-orange-500 text-white px-4 py-2 rounded-lg font-bold hover:bg-orange-600 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+        >
+          <i class="fas fa-paper-plane text-white"></i>
+        </button>
+      </div>
+      <div class="text-xs text-gray-400 mt-1 text-right">{{ messageInput().length }}/500</div>
+    </div>
+  </div>
+</div>

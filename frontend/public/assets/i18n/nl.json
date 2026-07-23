@@ -1,0 +1,552 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "Inloggen",
+      "FREE_TRIAL": "Gratis Proefperiode"
+    },
+    "HERO": {
+      "TITLE_1": "De magische manier om samen te ",
+      "TITLE_HIGHLIGHT": "leren, tekenen en spelen",
+      "TITLE_2": "!",
+      "SUBTITLE": "Creëer een inspirerende ruimte waar de verbeelding van uw kind tot leven komt! AsoBoard brengt de geest van \"Asobi\" in een leuk en veilig whiteboard.",
+      "START_LEARNING": "BEGING NU MET LEREN",
+      "PARENT_LOGIN": "OUDER LOGIN",
+      "SOCIAL_PROOF": "Geliefd door duizenden studenten en mentoren!"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "COPPA-COMPLIANT",
+      "AD_FREE": "100% ADVERTENTIEVRIJ",
+      "PARENTAL": "OUDERLIJK TOEZICHT",
+      "FAMILIES": "SLUIT JE AAN BIJ 5.000+ GEZINNEN"
+    },
+    "FEATURES": {
+      "TITLE": "Leren Moet Leuk Zijn!",
+      "SUBTITLE": "Wij geloven dat interactief visueel leren kinderen helpt concepten sneller te begrijpen.",
+      "CREATIVE_TOOLS": {
+        "TITLE": "Creatieve Tools",
+        "DESC": "Levendige kleuren en vormen die elke les als een kunstproject laten voelen."
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "Kindvriendelijk",
+        "DESC": "Een veilige en intuïtieve interface die iedereen zonder instructies kan gebruiken."
+      },
+      "REAL_TIME": {
+        "TITLE": "Realtime Synchronisatie",
+        "DESC": "Mentoren en studenten werken overal direct samen op hetzelfde bord."
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Hoe de Magie Werkt",
+      "SUBTITLE": "Word lid van de AsoBoard-familie in drie eenvoudige stappen!",
+      "STEP_1": {
+        "TITLE": "Profiel Instellen",
+        "DESC": "Ouders maken een veilig account aan en passen de leerdoelen aan."
+      },
+      "STEP_2": {
+        "TITLE": "Neem deel aan een sessie",
+        "DESC": "Maak in realtime verbinding met geverifieerde mentoren."
+      },
+      "STEP_3": {
+        "TITLE": "Teken & Leer",
+        "DESC": "Gebruik interactieve tools om concepten te visualiseren en vaardigheden te beheersen!"
+      },
+      "BADGE": "MAGIE MAKEN!"
+    },
+    "ROADMAP": {
+      "TITLE": "Gebouwd voor Vandaag, Ontwikkeld voor Morgen",
+      "SUBTITLE": "Ervaar onze interactieve kern vandaag nog.",
+      "AVAILABLE_NOW": "NU BESCHIKBAAR",
+      "CURRENT_MVP": "Huidige MVP Functies",
+      "PLAYBACK": {
+        "TITLE": "Gebeurtenisgebaseerde afspeelfunctie",
+        "DESC": "In plaats van zware MP4's registreren en synchroniseren we live bord-gebeurtenissen."
+      },
+      "SKETCH": {
+        "TITLE": "Interactieve \"Jouw Schets\"",
+        "DESC": "Studenten kunnen pauzeren en tekenen om een probleem op te lossen."
+      },
+      "COMING_SOON": "BINNENKORT VERWACHT",
+      "COMING_FEATURES": "Aankomende Functies",
+      "ANALYTICS": {
+        "TITLE": "Gedragsanalysesysteem",
+        "DESC": "Metadata bijhouden om diepgaande leerstijlrapporten te genereren."
+      },
+      "GALLERY": {
+        "TITLE": "\"Trotse Schets\" Galerij",
+        "DESC": "Tekenprocessen omzetten in korte MP4/GIF's om te delen."
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "Slimme AI Assistent",
+        "DESC": "Contextuele AI-hints als een student vastloopt."
+      },
+      "GAMIFICATION": {
+        "TITLE": "Emotionele Gamification",
+        "DESC": "Een virtueel huisdier laten groeien door consistente betrokkenheid."
+      }
+    },
+    "PRICING": {
+      "TITLE": "Eenvoudige, Gezinsvriendelijke Prijzen",
+      "SUBTITLE": "Kies het perfecte plan zonder uw budget te overschrijden.",
+      "FOREVER": "/ voor altijd",
+      "MONTH": "/ maand",
+      "PLAN_FREE": {
+        "TITLE": "Gratis Ontdekker",
+        "DESC": "Perfect om ons uit te proberen!",
+        "F1": "Basis tekentools",
+        "F2": "1 solo-bord",
+        "F3": "Ouder dashboard",
+        "F4": "Live mentorschap",
+        "BUTTON": "Begin Gratis"
+      },
+      "PLAN_STAR": {
+        "BADGE": "MEEST POPULAIR",
+        "TITLE": "Sterstudent",
+        "DESC": "Ontgrendel volledige creativiteit.",
+        "F1": "Alle tools en vormen",
+        "F2": "Onbeperkte solo-sessies",
+        "F3": "5 live mentorsessies / maand",
+        "F4": "Voortgangsregistratie",
+        "BUTTON": "Kies Ster Plan"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "Geniaal Gezin",
+        "DESC": "Voor het hele huishouden.",
+        "F1": "Alles in Ster",
+        "F2": "Tot 3 kinderprofielen",
+        "F3": "Onbeperkt live mentorschap",
+        "F4": "Sessie-opnames",
+        "BUTTON": "Kies Gezinsplan"
+      }
+    },
+    "FAQ": {
+      "TITLE": "Vragen van Ouders",
+      "Q1": "Is het platform veilig?",
+      "A1": "Absoluut. We zijn volledig COPPA-compliant. Alle interacties worden gemonitord.",
+      "Q2": "Welke apparaten werken het beste?",
+      "A2": "AsoBoard werkt op elke browser! We raden echter iPads aan.",
+      "Q3": "Kan ik de voortgang van mijn kind volgen?",
+      "A3": "Ja! Met ons dashboard kunt u opgeslagen meesterwerken bekijken.",
+      "Q4": "Kan ik op elk moment annuleren?",
+      "A4": "Natuurlijk. U kunt op elk moment kosteloos annuleren of upgraden."
+    },
+    "FUTURE": {
+      "BADGE": "Toekomstperspectieven",
+      "TITLE_1": "Een Datagestuurd ",
+      "TITLE_HIGHLIGHT": "Onderwijstechnologie-Ecosysteem",
+      "SUBTITLE_1": "We geloven dat elk kind een genie is. Onze visie is een platform dat niet alleen onderwijst, maar ",
+      "SUBTITLE_HIGHLIGHT": "begrijpt",
+      "SUBTITLE_2": ". We helpen u het potentieel van uw kind te ontsluiten.",
+      "MASTERY": {
+        "TITLE": "Cognitieve Beheersing",
+        "DESC": "Gedragsmijlpalen bijhouden voor een duidelijker beeld."
+      },
+      "RESILIENCE": {
+        "TITLE": "Emotionele Veerkracht",
+        "DESC": "Ingebouwde gamification die moed en inspanning beloont."
+      },
+      "SEEDING": {
+        "TITLE": "Vaardigheden Zaaien",
+        "DESC": "Interesses vroeg identificeren om vaardigheden te ontwikkelen."
+      }
+    },
+    "CTA": {
+      "TITLE_1": "Klaar om de ",
+      "TITLE_HIGHLIGHT": "verbeelding",
+      "TITLE_2": " van uw kind de vrije loop te laten?",
+      "SUBTITLE": "Sluit u aan bij duizenden ouders die AsoBoard al gebruiken.",
+      "BUTTON": "BEGIN GRATIS",
+      "NO_CC": "Geen creditcard nodig voor het Gratis plan."
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "Leuk Leren!",
+      "MENTOR": "Mentor",
+      "STUDENT": "Student",
+      "STAFF": "Personeel",
+      "PARENT": "Ouder",
+      "MY_PROFILE": "Mijn Profiel",
+      "LEADERBOARD_TITLE": "Scorebord",
+      "RANKING": "Ranglijst",
+      "LOGOUT": "Uitloggen"
+    },
+    "HEADER": {
+      "TITLE": "Cursuslijst",
+      "GREETING_STUDENT": "Hallo, {{name}}! Wat wil je vandaag leren?",
+      "GREETING_MENTOR": "Hallo, {{name}}! Tijd om een geweldige cursus te maken!",
+      "GREETING_STAFF": "Hallo, {{name}}! Laten we AsoBoard beter maken!",
+      "GREETING_PARENT": "Hallo, {{name}}! Laten we de leerreis van uw kind ondersteunen!"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "Sjablonen",
+      "CREATE_COURSE": "Nieuwe Cursus",
+      "MANAGE_ASSETS": "Beheer Middelen",
+      "BROWSE_ALL": "Blader Door Alles",
+      "MY_COURSES": "Mijn Cursussen",
+      "MY_PROGRESS": "Mijn Voortgang",
+      "MY_DIARY": "Mijn Dagboek"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "Zoek een cursus...",
+      "FOUND_SINGULAR": "1 cursus gevonden",
+      "FOUND_PLURAL": "{{count}} cursussen gevonden",
+      "LOADING": "Laden...",
+      "SORT_NEWEST": "Nieuwste",
+      "SORT_OLDEST": "Oudste",
+      "SORT_AZ": "A - Z",
+      "SORT_ZA": "Z - A",
+      "SORT_MOST_SESSIONS": "Meeste Sessies",
+      "SORT_LEAST_SESSIONS": "Minste Sessies"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "Geen beschrijving.",
+      "SESSIONS": "{{count}} Sessies",
+      "ENROLLED": "Ingeschreven",
+      "EDIT_COURSE": "Bewerk",
+      "DELETE_COURSE": "Verwijder",
+      "ENROLL": "Inschrijven",
+      "ENTER": "Binnenkomen!"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "Nog geen cursussen!",
+      "CREATE_PROMPT_1": "Klik op",
+      "CREATE_PROMPT_2": "Nieuwe Cursus",
+      "CREATE_PROMPT_3": "om te beginnen!",
+      "NO_COURSES_FOUND": "Geen cursussen gevonden!",
+      "COULDNT_FIND": "We hebben niets gevonden voor",
+      "CLEAR_SEARCH": "Wis Zoekopdracht"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "Nieuwe Cursus!",
+      "CREATE_CONFIRM": "Maak Cursus!",
+      "EDIT_TITLE": "Bewerk Cursus!",
+      "EDIT_CONFIRM": "Opslaan!",
+      "INPUT_TITLE": "Cursustitel",
+      "INPUT_TITLE_PLACEHOLDER": "Bijvoorbeeld: Leuke Wiskunde!",
+      "INPUT_DESC": "Beschrijving",
+      "INPUT_DESC_PLACEHOLDER": "Vertel ons over de cursus...",
+      "ERROR_REQUIRED": "Titel is verplicht!",
+      "ERROR_MINLENGTH": "Minimaal 3 tekens!",
+      "DELETE_TITLE": "Weet je het zeker?",
+      "DELETE_CONFIRM": "Ja, verwijder!",
+      "DELETE_DESC": "Deze cursus en alles erin verwijderen?",
+      "DELETE_CAUTION": "Let op: Deze actie kan niet ongedaan worden gemaakt!"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Log in op het leuke leerplatform!",
+      "USERNAME": "Gebruikersnaam",
+      "USERNAME_PLACEHOLDER": "Typ uw gebruikersnaam",
+      "PASSWORD": "Wachtwoord",
+      "PASSWORD_PLACEHOLDER": "Typ uw wachtwoord",
+      "SUBMIT": "Inloggen en beginnen met leren!",
+      "NO_ACCOUNT": "Heeft u geen account?",
+      "REGISTER_LINK": "Schrijf je eerst in!"
+    },
+    "REGISTER": {
+      "TITLE": "Maak een nieuw account aan",
+      "SUBTITLE": "Doe mee en begin spelenderwijs te leren!",
+      "USERNAME": "Leuke gebruikersnaam",
+      "USERNAME_PLACEHOLDER": "Kies een coole naam!",
+      "USERNAME_ERROR": "Minimaal 3 tekens alstublieft!",
+      "PASSWORD": "Geheim wachtwoord",
+      "PASSWORD_PLACEHOLDER": "Houd het veilig!",
+      "PASSWORD_ERROR": "Minimaal 4 tekens alstublieft!",
+      "ROLE_LABEL": "Wie ben je?",
+      "ROLE_STUDENT": "Student",
+      "ROLE_PARENT": "Ouder",
+      "ROLE_MENTOR": "Mentor",
+      "ROLE_STAFF": "Personeel",
+      "SUBMIT": "Maak mijn account aan!",
+      "HAS_ACCOUNT": "Heeft u al een account?",
+      "LOGIN_LINK": "Log hier in!"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "{{count}}-sessies",
+    "NO_DESCRIPTION": "Geen beschrijving beschikbaar.",
+    "ENROLLED": "Ingeschreven",
+    "BACK_TO_DASHBOARD": "Terug naar Dashboard",
+    "ENROLL_BUTTON": "Schrijf je in voor de cursus",
+    "START_LEARNING": "Begin met leren",
+    "SESSION_LIST": "Sessielijst",
+    "NO_SESSIONS": "Er zijn nog geen sessies beschikbaar.",
+    "MENTOR_ONLY": "Alleen mentoren kunnen sessies toevoegen.",
+    "ADD_SESSION": "Sessie toevoegen",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "Voeg nieuwe sessie toe!",
+      "EDIT_SESSION_TITLE": "Sessie bewerken!",
+      "TITLE_LABEL": "Sessietitel",
+      "TITLE_PLACEHOLDER": "Voorbeeld: Wiskundemagie",
+      "DESC_LABEL": "Beschrijving",
+      "DESC_PLACEHOLDER": "Wat zullen we vandaag leren?",
+      "DATE_LABEL": "Geplande datum",
+      "SAVE_BUTTON": "Sessie opslaan!",
+      "DELETE_TITLE": "Sessie verwijderen?",
+      "DELETE_DESC": "Weet u zeker dat u deze sessie wilt verwijderen? Deze actie kan niet ongedaan worden gemaakt.",
+      "CONFIRM_DELETE": "Ja, verwijder het!"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "Terug naar Cursus",
+    "WAITING_MENTOR": "Wachten op mentor...",
+    "RECORDING": "Opname",
+    "LIVE": "LIVE",
+    "JOIN_CALL": "Sluit je aan bij Audio/Video",
+    "LEAVE_CALL": "Verlaat oproep",
+    "MUTE": "Stom",
+    "UNMUTE": "Dempen opheffen",
+    "STOP_VIDEO": "Video stoppen",
+    "START_VIDEO": "Video starten",
+    "PARTICIPANTS": "Deelnemers",
+    "CHAT": "Chatten",
+    "TOOLS": "Hulpmiddelen",
+    "RAISE_HAND": "Hand opsteken",
+    "LOWER_HAND": "Onderhand",
+    "CLEAR_BOARD": "Duidelijk bord",
+    "SAVE_BOARD": "Bord opslaan",
+    "UNDO": "Ongedaan maken",
+    "REDO": "Opnieuw uitvoeren"
+  },
+  "PROFILE": {
+    "TITLE": "Mijn profiel",
+    "ROLE": "Rol: {{role}}",
+    "EDIT_PROFILE": "Profiel bewerken",
+    "SAVE_CHANGES": "Wijzigingen opslaan",
+    "CANCEL": "Annuleren",
+    "LOGOUT": "Uitloggen"
+  },
+  "LEADERBOARD": {
+    "TITLE": "Ranglijst",
+    "SUBTITLE": "Bekijk wie het meest actief en succesvol is!",
+    "BACK": "Terug",
+    "ALL_TIME": "Alle tijd",
+    "THIS_WEEK": "Deze week",
+    "THIS_MONTH": "Deze maand",
+    "LOADING": "Ranglijst laden...",
+    "EMPTY_TITLE": "Nog geen ranglijst",
+    "EMPTY_DESC": "Nog geen studenten hebben punten. Voltooi sessies en verdien punten om te beginnen!",
+    "YOU": "Jij",
+    "ACHIEVEMENTS": "prestaties",
+    "POINTS": "punten",
+    "ERROR": "Ranglijst laden mislukt",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "Oeps! Verdwaald in de ruimte",
+    "SUBTITLE": "De pagina die je zoekt lijkt weggedreven in de kosmos!",
+    "SUBTITLE_2": "Geen zorgen, laten we je terugbrengen!",
+    "SUGGESTION_TITLE": "Misschien bedoelde je:",
+    "SUGGESTION_HOME": "Startpagina om te beginnen met leren",
+    "SUGGESTION_DASHBOARD": "Je dashboard om cursussen te zien",
+    "SUGGESTION_LOGIN": "Log in als je nog niet bent ingelogd",
+    "GO_HOME": "Naar huis",
+    "MY_DASHBOARD": "Mijn dashboard",
+    "STILL_LOST": "Nog steeds verdwaald? Probeer het navigatiemenu bovenaan!",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "Voortgang student",
+    "SUBTITLE": "Volg de leerreis en prestaties",
+    "SESSIONS": "{{count}} sessies",
+    "CANVAS_TIME": "Totale canvastijd",
+    "CANVAS_TIME_UNIT": "{{count}} min",
+    "GAMES_COMPLETED": "Voltooide spellen",
+    "ACCURACY_RATE": "Nauwkeurigheidspercentage",
+    "ERROR": "Voortgangsgegevens laden mislukt",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "Prestaties",
+    "EARNED": "Verdiend",
+    "TOTAL_POINTS": "Totale punten",
+    "LOADING": "Prestaties laden...",
+    "EMPTY": "Nog geen prestaties beschikbaar.",
+    "EARNED_BADGE": "Verdiend",
+    "LOCKED_BADGE": "Vergrendeld",
+    "HOW_TO_EARN": "Hoe te verdienen",
+    "REQUIRED": "Vereist: {{value}} ({{type}})",
+    "POINTS": "+{{count}} pts",
+    "UNLOCKED": "Prestatie ontgrendeld!",
+    "POINTS_EARNED": "+{{count}} punten"
+  },
+  "SHARED": {
+    "LOADING": "Laden...",
+    "SUCCESS": "Succes!",
+    "ERROR": "Fout!",
+    "WARNING": "Waarschuwing!"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

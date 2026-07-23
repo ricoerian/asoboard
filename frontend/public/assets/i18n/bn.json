@@ -1,0 +1,552 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "লগ ইন",
+      "FREE_TRIAL": "ফ্রি ট্রায়াল"
+    },
+    "HERO": {
+      "TITLE_1": "একসাথে ",
+      "TITLE_HIGHLIGHT": "শেখার, আঁকার এবং খেলার",
+      "TITLE_2": " জাদুকরী উপায়!",
+      "SUBTITLE": "AsoBoard একটি মজার এবং নিরাপদ হোয়াইটবোর্ড।",
+      "START_LEARNING": "এখনই শিখতে শুরু করুন",
+      "PARENT_LOGIN": "পিতামাতার লগইন",
+      "SOCIAL_PROOF": "হাজার হাজার ছাত্রের প্রিয়!"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "নিরাপদ",
+      "AD_FREE": "বিজ্ঞাপন মুক্ত",
+      "PARENTAL": "পিতামাতার নিয়ন্ত্রণ",
+      "FAMILIES": "৫০০০ এর বেশি পরিবার"
+    },
+    "FEATURES": {
+      "TITLE": "শেখা মজার হওয়া উচিত!",
+      "SUBTITLE": "ভিজ্যুয়াল লার্নিং শিশুদের দ্রুত শিখতে সাহায্য করে।",
+      "CREATIVE_TOOLS": {
+        "TITLE": "টুলস",
+        "DESC": "রঙিন।"
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "শিশুবান্ধব",
+        "DESC": "নিরাপদ ইন্টারফেস।"
+      },
+      "REAL_TIME": {
+        "TITLE": "রিয়েল-টাইম",
+        "DESC": "সিঙ্ক।"
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "কীভাবে কাজ করে",
+      "SUBTITLE": "৩টি ধাপে যোগ দিন!",
+      "STEP_1": {
+        "TITLE": "প্রোফাইল",
+        "DESC": "অ্যাকাউন্ট তৈরি করুন।"
+      },
+      "STEP_2": {
+        "TITLE": "মেন্টর",
+        "DESC": "যোগাযোগ করুন।"
+      },
+      "STEP_3": {
+        "TITLE": "শিখুন",
+        "DESC": "আঁকুন!"
+      },
+      "BADGE": "জাদু!"
+    },
+    "ROADMAP": {
+      "TITLE": "ভবিষ্যত",
+      "SUBTITLE": "AsoBoard।",
+      "AVAILABLE_NOW": "এখন উপলব্ধ",
+      "CURRENT_MVP": "MVP",
+      "PLAYBACK": {
+        "TITLE": "প্লেব্যাক",
+        "DESC": "রেকর্ড।"
+      },
+      "SKETCH": {
+        "TITLE": "আপনার স্কেচ",
+        "DESC": "আঁকুন।"
+      },
+      "COMING_SOON": "শীঘ্রই আসছে",
+      "COMING_FEATURES": "নতুন",
+      "ANALYTICS": {
+        "TITLE": "বিশ্লেষণ",
+        "DESC": "ডেটা।"
+      },
+      "GALLERY": {
+        "TITLE": "গ্যালারি",
+        "DESC": "শেয়ার।"
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "AI",
+        "DESC": "সাহায্য।"
+      },
+      "GAMIFICATION": {
+        "TITLE": "গেম",
+        "DESC": "পুরস্কার।"
+      }
+    },
+    "PRICING": {
+      "TITLE": "মূল্য",
+      "SUBTITLE": "সহজ।",
+      "FOREVER": "/ চিরকাল",
+      "MONTH": "/ মাস",
+      "PLAN_FREE": {
+        "TITLE": "বিনামূল্যে",
+        "DESC": "ট্রায়াল!",
+        "F1": "টুলস",
+        "F2": "১টি বোর্ড",
+        "F3": "পিতামাতার ড্যাশবোর্ড",
+        "F4": "লাইভ",
+        "BUTTON": "বিনামূল্যে শুরু করুন"
+      },
+      "PLAN_STAR": {
+        "BADGE": "জনপ্রিয়",
+        "TITLE": "স্টার",
+        "DESC": "সবকিছু।",
+        "F1": "সব টুলস",
+        "F2": "সীমাহীন",
+        "F3": "৫টি সেশন",
+        "F4": "অগ্রগতি",
+        "BUTTON": "বেছে নিন"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "পরিবার",
+        "DESC": "সবার জন্য।",
+        "F1": "সবকিছু",
+        "F2": "৩টি শিশু",
+        "F3": "সীমাহীন",
+        "F4": "এনরোল",
+        "BUTTON": "বেছে নিন"
+      }
+    },
+    "FAQ": {
+      "TITLE": "প্রশ্ন",
+      "Q1": "নিরাপদ?",
+      "A1": "হ্যাঁ।",
+      "Q2": "ডিভাইস?",
+      "A2": "সব।",
+      "Q3": "অগ্রগতি?",
+      "A3": "হ্যাঁ।",
+      "Q4": "বাতিল?",
+      "A4": "যে কোনো সময়।"
+    },
+    "FUTURE": {
+      "BADGE": "ভবিষ্যত",
+      "TITLE_1": "শিক্ষা ",
+      "TITLE_HIGHLIGHT": "প্রযুক্তি",
+      "SUBTITLE_1": "AsoBoard চমৎকার",
+      "SUBTITLE_HIGHLIGHT": "...",
+      "SUBTITLE_2": ".",
+      "MASTERY": {
+        "TITLE": "অগ্রগতি",
+        "DESC": "উন্নতি।"
+      },
+      "RESILIENCE": {
+        "TITLE": "ধৈর্য",
+        "DESC": "গেম।"
+      },
+      "SEEDING": {
+        "TITLE": "আগ্রহ",
+        "DESC": "ফোকাস।"
+      }
+    },
+    "CTA": {
+      "TITLE_1": "শিখতে ",
+      "TITLE_HIGHLIGHT": "প্রস্তুত",
+      "TITLE_2": "?",
+      "SUBTITLE": "আজই যোগ দিন।",
+      "BUTTON": "শুরু করুন",
+      "NO_CC": "কার্ডের প্রয়োজন নেই।"
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "মজাদার শিক্ষা!",
+      "MENTOR": "মেন্টর",
+      "STUDENT": "ছাত্র",
+      "STAFF": "স্টাফ",
+      "PARENT": "পিতামাতা",
+      "MY_PROFILE": "আমার প্রোফাইল",
+      "LEADERBOARD_TITLE": "লিডারবোর্ড",
+      "RANKING": "র‌্যাঙ্কিং",
+      "LOGOUT": "লগ আউট"
+    },
+    "HEADER": {
+      "TITLE": "কোর্স তালিকা",
+      "GREETING_STUDENT": "হ্যালো, {{name}}! আজ কী শিখতে চাও?",
+      "GREETING_MENTOR": "হ্যালো, {{name}}! একটি দুর্দান্ত কোর্স তৈরি করার সময়!",
+      "GREETING_STAFF": "হ্যালো, {{name}}! চলুন AsoBoard কে আরও ভালো করি!",
+      "GREETING_PARENT": "হ্যালো, {{name}}! চলুন আপনার সন্তানের শিক্ষাকে সমর্থন করি!"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "টেমপ্লেট",
+      "CREATE_COURSE": "নতুন কোর্স তৈরি করুন",
+      "MANAGE_ASSETS": "সম্পদ পরিচালনা করুন",
+      "BROWSE_ALL": "সব ব্রাউজ করুন",
+      "MY_COURSES": "আমার কোর্স",
+      "MY_PROGRESS": "আমার অগ্রগতি",
+      "MY_DIARY": "আমার ডায়েরি"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "কোর্স খুঁজুন...",
+      "FOUND_SINGULAR": "১টি কোর্স পাওয়া গেছে",
+      "FOUND_PLURAL": "{{count}}টি কোর্স পাওয়া গেছে",
+      "LOADING": "লোড হচ্ছে...",
+      "SORT_NEWEST": "নতুন",
+      "SORT_OLDEST": "পুরানো",
+      "SORT_AZ": "A - Z",
+      "SORT_ZA": "Z - A",
+      "SORT_MOST_SESSIONS": "সবচেয়ে বেশি সেশন",
+      "SORT_LEAST_SESSIONS": "সবচেয়ে কম সেশন"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "কোন বিবরণ নেই।",
+      "SESSIONS": "{{count}} সেশন",
+      "ENROLLED": "এনরোল করা",
+      "EDIT_COURSE": "কোর্স এডিট করুন",
+      "DELETE_COURSE": "কোর্স মুছুন",
+      "ENROLL": "এনরোল করুন",
+      "ENTER": "প্রবেশ করুন!"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "এখনও কোন কোর্স নেই!",
+      "CREATE_PROMPT_1": "শুরু করতে",
+      "CREATE_PROMPT_2": "নতুন কোর্স তৈরি করুন",
+      "CREATE_PROMPT_3": "-এ ক্লিক করুন!",
+      "NO_COURSES_FOUND": "কোন কোর্স পাওয়া যায়নি!",
+      "COULDNT_FIND": "আমরা এর জন্য কিছুই খুঁজে পাইনি",
+      "CLEAR_SEARCH": "খোঁজ মুছুন"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "নতুন কোর্স তৈরি করুন!",
+      "CREATE_CONFIRM": "কোর্স তৈরি করুন!",
+      "EDIT_TITLE": "কোর্স এডিট করুন!",
+      "EDIT_CONFIRM": "সংরক্ষণ করুন!",
+      "INPUT_TITLE": "কোর্সের শিরোনাম",
+      "INPUT_TITLE_PLACEHOLDER": "উদাহরণ: মজার গণিত!",
+      "INPUT_DESC": "বিবরণ",
+      "INPUT_DESC_PLACEHOLDER": "কোর্স সম্পর্কে আমাদের বলুন...",
+      "ERROR_REQUIRED": "শিরোনাম আবশ্যক!",
+      "ERROR_MINLENGTH": "অন্তত ৩টি অক্ষর!",
+      "DELETE_TITLE": "আপনি কি নিশ্চিত?",
+      "DELETE_CONFIRM": "হ্যাঁ, এটি মুছুন!",
+      "DELETE_DESC": "এই কোর্সটি এবং এর ভেতরের সবকিছু মুছে ফেলবেন?",
+      "DELETE_CAUTION": "সাবধান: এই কাজটি ফিরিয়ে নেওয়া যাবে কালী!"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "মজা শেখার প্ল্যাটফর্মে লগইন করুন!",
+      "USERNAME": "ব্যবহারকারীর নাম",
+      "USERNAME_PLACEHOLDER": "আপনার ব্যবহারকারীর নাম টাইপ করুন",
+      "PASSWORD": "পাসওয়ার্ড",
+      "PASSWORD_PLACEHOLDER": "আপনার পাসওয়ার্ড টাইপ করুন",
+      "SUBMIT": "লগইন করুন এবং শেখা শুরু করুন!",
+      "NO_ACCOUNT": "একটি অ্যাকাউন্ট নেই?",
+      "REGISTER_LINK": "প্রথমে নিবন্ধন করুন!"
+    },
+    "REGISTER": {
+      "TITLE": "নতুন অ্যাকাউন্ট তৈরি করুন",
+      "SUBTITLE": "যোগ দিন এবং playfully শেখা শুরু করুন!",
+      "USERNAME": "মজার ইউজারনেম",
+      "USERNAME_PLACEHOLDER": "একটি দুর্দান্ত নাম চয়ন করুন!",
+      "USERNAME_ERROR": "অন্তত 3 অক্ষর দয়া করে!",
+      "PASSWORD": "গোপন পাসওয়ার্ড",
+      "PASSWORD_PLACEHOLDER": "এটা নিরাপদ রাখুন!",
+      "PASSWORD_ERROR": "অন্তত 4 অক্ষর দয়া করে!",
+      "ROLE_LABEL": "আপনি কে?",
+      "ROLE_STUDENT": "ছাত্র",
+      "ROLE_PARENT": "অভিভাবক",
+      "ROLE_MENTOR": "পরামর্শদাতা",
+      "ROLE_STAFF": "স্টাফ",
+      "SUBMIT": "আমার অ্যাকাউন্ট তৈরি করুন!",
+      "HAS_ACCOUNT": "ইতিমধ্যে একটি অ্যাকাউন্ট আছে?",
+      "LOGIN_LINK": "এখানে লগইন করুন!"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "{{count}} সেশন",
+    "NO_DESCRIPTION": "কোন বিবরণ উপলব্ধ.",
+    "ENROLLED": "নথিভুক্ত",
+    "BACK_TO_DASHBOARD": "ড্যাশবোর্ডে ফিরে যান",
+    "ENROLL_BUTTON": "কোর্সে ভর্তি হন",
+    "START_LEARNING": "শেখা শুরু করুন",
+    "SESSION_LIST": "অধিবেশন তালিকা",
+    "NO_SESSIONS": "এখনও কোন সেশন উপলব্ধ.",
+    "MENTOR_ONLY": "শুধুমাত্র পরামর্শদাতারা সেশন যোগ করতে পারেন।",
+    "ADD_SESSION": "সেশন যোগ করুন",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "নতুন অধিবেশন যোগ করুন!",
+      "EDIT_SESSION_TITLE": "অধিবেশন সম্পাদনা করুন!",
+      "TITLE_LABEL": "অধিবেশন শিরোনাম",
+      "TITLE_PLACEHOLDER": "উদাহরণ: ম্যাথ ম্যাজিক",
+      "DESC_LABEL": "বর্ণনা",
+      "DESC_PLACEHOLDER": "আমরা আজ কি শিখব?",
+      "DATE_LABEL": "নির্ধারিত তারিখ",
+      "SAVE_BUTTON": "সেশন সংরক্ষণ করুন!",
+      "DELETE_TITLE": "সেশন মুছবেন?",
+      "DELETE_DESC": "আপনি কি এই অধিবেশন মুছে ফেলার বিষয়ে নিশ্চিত? এই ক্রিয়াটি পূর্বাবস্থায় ফেরানো যাবে না৷",
+      "CONFIRM_DELETE": "হ্যাঁ, মুছুন!"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "ব্যাক টু কোর্স",
+    "WAITING_MENTOR": "পরামর্শদাতার জন্য অপেক্ষা করছি...",
+    "RECORDING": "রেকর্ডিং",
+    "LIVE": "লাইভ",
+    "JOIN_CALL": "অডিও/ভিডিওতে যোগ দিন",
+    "LEAVE_CALL": "কল ছেড়ে দিন",
+    "MUTE": "নিঃশব্দ",
+    "UNMUTE": "আনমিউট করুন",
+    "STOP_VIDEO": "ভিডিও বন্ধ করুন",
+    "START_VIDEO": "ভিডিও শুরু করুন",
+    "PARTICIPANTS": "অংশগ্রহণকারীরা",
+    "CHAT": "চ্যাট",
+    "TOOLS": "টুলস",
+    "RAISE_HAND": "হাত বাড়ান",
+    "LOWER_HAND": "নিচের হাত",
+    "CLEAR_BOARD": "ক্লিয়ার বোর্ড",
+    "SAVE_BOARD": "বোর্ড সংরক্ষণ করুন",
+    "UNDO": "পূর্বাবস্থায় ফেরান",
+    "REDO": "আবার করুন"
+  },
+  "PROFILE": {
+    "TITLE": "আমার প্রোফাইল",
+    "ROLE": "ভূমিকা: {{role}}",
+    "EDIT_PROFILE": "প্রোফাইল সম্পাদনা করুন",
+    "SAVE_CHANGES": "পরিবর্তনগুলি সংরক্ষণ করুন",
+    "CANCEL": "বাতিল করুন",
+    "LOGOUT": "লগআউট"
+  },
+  "LEADERBOARD": {
+    "TITLE": "লিডারবোর্ড",
+    "SUBTITLE": "দেখুন কে সবচেয়ে সক্রিয় এবং কৃতিত্বসম্পন্ন!",
+    "BACK": "ফিরে যান",
+    "ALL_TIME": "সর্বকাল",
+    "THIS_WEEK": "এই সপ্তাহ",
+    "THIS_MONTH": "এই মাস",
+    "LOADING": "লিডারবোর্ড লোড হচ্ছে...",
+    "EMPTY_TITLE": "এখনও কোনো র‌্যাংকিং নেই",
+    "EMPTY_DESC": "এখনও কোনো ছাত্রের পয়েন্ট নেই। শুরু করতে সেশন সম্পন্ন করুন এবং পয়েন্ট অর্জন করুন!",
+    "YOU": "আপনি",
+    "ACHIEVEMENTS": "অর্জন",
+    "POINTS": "পয়েন্ট",
+    "ERROR": "লিডারবোর্ড লোড করতে ব্যর্থ",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "উফ! মহাকাশে হারিয়ে গেছি",
+    "SUBTITLE": "আপনি যে পৃষ্ঠাটি খুঁজছেন তা মহাবিশ্বে ভেসে গেছে বলে মনে হচ্ছে!",
+    "SUBTITLE_2": "চিন্তা করবেন না, আসুন আপনাকে সঠিক পথে ফিরিয়ে আনি!",
+    "SUGGESTION_TITLE": "হয়তো আপনি পরিদর্শন করতে চেয়েছিলেন:",
+    "SUGGESTION_HOME": "শেখা শুরু করতে হোম পেজ",
+    "SUGGESTION_DASHBOARD": "কোর্স দেখতে আপনার ড্যাশবোর্ড",
+    "SUGGESTION_LOGIN": "যদি সাইন ইন না করে থাকেন তাহলে লগইন করুন",
+    "GO_HOME": "হোমে যান",
+    "MY_DASHBOARD": "আমার ড্যাশবোর্ড",
+    "STILL_LOST": "এখনও হারিয়ে গেছেন? উপরে নেভিগেশন মেনু ব্যবহার করুন!",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "ছাত্রের অগ্রগতি",
+    "SUBTITLE": "শেখার যাত্রা এবং অর্জন ট্র্যাক করুন",
+    "SESSIONS": "{{count}} সেশন",
+    "CANVAS_TIME": "মোট ক্যানভাস সময়",
+    "CANVAS_TIME_UNIT": "{{count}} মিনিট",
+    "GAMES_COMPLETED": "সম্পন্ন গেম",
+    "ACCURACY_RATE": "নির্ভুলতার হার",
+    "ERROR": "অগ্রগতি ডেটা লোড করতে ব্যর্থ",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "অর্জন",
+    "EARNED": "অর্জিত",
+    "TOTAL_POINTS": "মোট পয়েন্ট",
+    "LOADING": "অর্জন লোড হচ্ছে...",
+    "EMPTY": "এখনও কোনো অর্জন উপলব্ধ নেই।",
+    "EARNED_BADGE": "অর্জিত",
+    "LOCKED_BADGE": "লক করা",
+    "HOW_TO_EARN": "কীভাবে অর্জন করবেন",
+    "REQUIRED": "প্রয়োজন: {{value}} ({{type}})",
+    "POINTS": "+{{count}} পয়েন্ট",
+    "UNLOCKED": "অর্জন আনলক হয়েছে!",
+    "POINTS_EARNED": "+{{count}} পয়েন্ট"
+  },
+  "SHARED": {
+    "LOADING": "লোড হচ্ছে...",
+    "SUCCESS": "সফলতা!",
+    "ERROR": "ত্রুটি!",
+    "WARNING": "সতর্কতা!"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

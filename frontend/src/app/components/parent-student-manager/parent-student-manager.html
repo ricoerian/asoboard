@@ -1,0 +1,245 @@
+<div class="page-bg min-h-screen">
+  <nav
+    class="bg-white shadow-md shadow-sky-200/40 px-6 py-3 flex justify-between items-center sticky top-0 z-50"
+  >
+    <a class="flex items-center gap-3" routerLink="/dashboard">
+      <img src="/static/logo.png" alt="AsoBoard" class="h-16" />
+      <span
+        class="hidden sm:inline-block bg-sky-500 text-white text-xs font-extrabold px-3 py-1 rounded-full"
+      >
+        Staff Portal
+      </span>
+    </a>
+    <div class="flex items-center gap-3">
+      <a
+        routerLink="/dashboard"
+        class="bg-sky-50 hover:bg-sky-100 border-2 border-sky-200 text-sky-600 font-extrabold text-xs px-4 py-2 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
+      >
+        <i class="fa-solid fa-arrow-left text-sky-500"></i> Back to Dashboard
+      </a>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+      <div>
+        <h1 class="text-4xl font-black text-slate-800 drop-shadow-sm flex items-center gap-3">
+          <i class="fa-solid fa-link text-sky-500"></i> Manage Family Links
+        </h1>
+        <p class="text-slate-600 mt-2 font-bold text-base">
+          Connect parents to students so they can view progress and diaries.
+        </p>
+      </div>
+      <button
+        (click)="openCreateModal()"
+        class="bg-sky-500 hover:bg-sky-600 text-white font-black px-6 py-3.5 rounded-2xl shadow-lg shadow-sky-400/40 hover:shadow-sky-400/60 hover:-translate-y-1 transition-all duration-200 flex items-center gap-2"
+      >
+        <i class="fa-solid fa-plus text-white"></i> Create New Link
+      </button>
+    </div>
+
+    <!-- Search / Filter -->
+    <div
+      class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-sky-400 mb-8 flex gap-4 items-center"
+    >
+      <div class="relative flex-1">
+        <i class="fa-solid fa-search absolute left-5 top-1/2 -translate-y-1/2 text-slate-400"></i>
+        <input
+          type="text"
+          placeholder="Search by Parent or Student Username..."
+          (input)="onSearch($event)"
+          class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl pl-12 pr-5 py-3 text-slate-700 font-bold focus:outline-none focus:border-sky-400 focus:bg-sky-50 transition-all shadow-inner"
+        />
+      </div>
+      <div
+        class="bg-sky-100 text-sky-700 font-extrabold px-4 py-2 rounded-xl text-sm flex items-center gap-2 border border-sky-200"
+      >
+        <i class="fa-solid fa-users"></i> {{ filteredLinks.length }} Links Found
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    @if (isLoading) {
+      <div class="flex flex-col items-center justify-center py-20 gap-4">
+        <div class="spinner border-sky-200 border-top-sky-500 relative"></div>
+        <p class="text-slate-600 font-bold text-lg">Loading family links...</p>
+      </div>
+    }
+
+    <!-- Links Table -->
+    @if (!isLoading) {
+      @if (filteredLinks.length === 0) {
+        <div
+          class="bg-white/80 backdrop-blur rounded-3xl py-20 text-center shadow-lg border-2 border-dashed border-slate-200"
+        >
+          <div class="text-7xl mb-4 text-slate-300"><i class="fa-solid fa-link-slash"></i></div>
+          <p class="text-slate-500 font-extrabold text-xl">No links found</p>
+          <p class="text-slate-400 font-bold mt-2">
+            Try adjusting your search or create a new link.
+          </p>
+        </div>
+      } @else {
+        <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="bg-slate-50 border-b-2 border-slate-100">
+                  <th class="p-5 font-black text-slate-500 uppercase tracking-widest text-xs">
+                    ID
+                  </th>
+                  <th class="p-5 font-black text-slate-500 uppercase tracking-widest text-xs">
+                    Parent
+                  </th>
+                  <th class="p-5 font-black text-slate-500 uppercase tracking-widest text-xs">
+                    Student
+                  </th>
+                  <th
+                    class="p-5 font-black text-slate-500 uppercase tracking-widest text-xs text-right"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100">
+                @for (link of filteredLinks; track link.id) {
+                  <tr class="hover:bg-sky-50/50 transition-colors group">
+                    <td class="p-5 font-bold text-slate-400 text-sm">#{{ link.id }}</td>
+                    <td class="p-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center font-black border-2 border-orange-200 shadow-sm shrink-0 overflow-hidden"
+                        >
+                          @if (link.parent_avatar) {
+                            <img
+                              [src]="link.parent_avatar"
+                              class="w-full h-full object-cover"
+                              alt="Avatar"
+                            />
+                          } @else {
+                            {{ link.parent_username?.[0]?.toUpperCase() }}
+                          }
+                        </div>
+                        <div>
+                          <span class="font-extrabold text-slate-800">{{
+                            link.parent_username
+                          }}</span>
+                          <span class="block text-xs font-bold text-slate-400">Parent</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="p-5">
+                      <div class="flex items-center gap-3">
+                        <div
+                          class="w-10 h-10 rounded-full bg-sky-100 text-sky-600 flex items-center justify-center font-black border-2 border-sky-200 shadow-sm shrink-0 overflow-hidden"
+                        >
+                          @if (link.student_avatar) {
+                            <img
+                              [src]="link.student_avatar"
+                              class="w-full h-full object-cover"
+                              alt="Avatar"
+                            />
+                          } @else {
+                            {{ link.student_username?.[0]?.toUpperCase() }}
+                          }
+                        </div>
+                        <div>
+                          <span class="font-extrabold text-slate-800">{{
+                            link.student_username
+                          }}</span>
+                          <span class="block text-xs font-bold text-slate-400">Student</span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="p-5 text-right">
+                      <button
+                        (click)="confirmDelete(link.id)"
+                        class="bg-red-50 text-red-500 hover:bg-red-500 hover:text-white px-3 py-2 rounded-xl font-bold text-sm transition-all shadow-sm"
+                        title="Delete Link"
+                      >
+                        <i class="fa-solid fa-link-slash"></i> Unlink
+                      </button>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </div>
+      }
+    }
+  </div>
+
+  <!-- Create Modal -->
+  @if (showCreateModal) {
+    <app-modal
+      title="Create Family Link"
+      icon="fa-link"
+      color="sky"
+      confirmText="Create Link"
+      confirmIcon="fa-plus"
+      [confirmDisabled]="linkForm.invalid || isCreating"
+      (modalClose)="closeCreateModal()"
+      (confirm)="createLink()"
+    >
+      <form [formGroup]="linkForm">
+        <div class="mb-5">
+          <label for="parentSelect" class="block text-sky-700 text-sm font-extrabold mb-2">
+            <i class="fa-solid fa-user-tie"></i> Select Parent
+          </label>
+          <select
+            id="parentSelect"
+            formControlName="parent_id"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-700 font-bold focus:outline-none focus:border-sky-400 focus:bg-sky-50"
+          >
+            <option value="">-- Choose Parent --</option>
+            @for (parent of availableParents; track parent.id) {
+              <option [value]="parent.id">
+                {{ parent.username }} ({{ parent.email || 'No email' }})
+              </option>
+            }
+          </select>
+        </div>
+        <div class="mb-6">
+          <label for="studentSelect" class="block text-sky-700 text-sm font-extrabold mb-2">
+            <i class="fa-solid fa-child"></i> Select Student
+          </label>
+          <select
+            id="studentSelect"
+            formControlName="student_id"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl px-4 py-3 text-slate-700 font-bold focus:outline-none focus:border-sky-400 focus:bg-sky-50"
+          >
+            <option value="">-- Choose Student --</option>
+            @for (student of availableStudents; track student.id) {
+              <option [value]="student.id">{{ student.username }}</option>
+            }
+          </select>
+        </div>
+      </form>
+    </app-modal>
+  }
+
+  <!-- Delete Modal -->
+  @if (showDeleteModal) {
+    <app-modal
+      title="Remove Link?"
+      icon="fa-triangle-exclamation"
+      color="orange"
+      confirmText="Yes, Remove Link"
+      confirmIcon="fa-trash"
+      [confirmDisabled]="isDeleting"
+      (modalClose)="closeDeleteModal()"
+      (confirm)="deleteLink()"
+    >
+      <div class="text-center mb-6">
+        <div
+          class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-red-50"
+        >
+          <i class="fa-solid fa-link-slash text-2xl text-red-500"></i>
+        </div>
+        <p class="text-slate-500 font-bold">
+          The parent will no longer be able to monitor this student's progress and diaries.
+        </p>
+      </div>
+    </app-modal>
+  }
+</div>

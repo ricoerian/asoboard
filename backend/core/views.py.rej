@@ -1,0 +1,51 @@
+@@ -1021,3 +1021,50 @@
+                 }
+             )
+         return Response(data)
++
++
++class SystemAnalyticsView(APIView):
++    permission_classes = [IsAuthenticated]
++
++    def get(self, request):
++        if request.user.role != "staff":
++            return Response({"error": "Only staff can access system analytics"}, status=403)
++
++        from .models import User, Course, Session
++        from django.utils import timezone
++        from datetime import timedelta
++
++        now = timezone.now()
++        thirty_days_ago = now - timedelta(days=30)
++        
++        total_students = User.objects.filter(role="student").count()
++        total_mentors = User.objects.filter(role="mentor").count()
++        total_parents = User.objects.filter(role="parent").count()
++        total_courses = Course.objects.count()
++        total_sessions = Session.objects.count()
++        
++        # Simple Daily Active Users approximation (users who logged in today or active)
++        active_users_30d = User.objects.filter(last_login__gte=thirty_days_ago).count()
++
++        return Response({
++            "total_students": total_students,
++            "total_mentors": total_mentors,
++            "total_parents": total_parents,
++            "total_courses": total_courses,
++            "total_sessions": total_sessions,
++            "active_users_30d": active_users_30d,
++        })
++
++
++class MentorAnalyticsView(APIView):
++    permission_classes = [IsAuthenticated]
++
++    def get(self, request):
++        if request.user.role != "mentor":
++            return Response({"error": "Only mentors can access mentor analytics"}, status=403)
++
++        from .models import Enrollment
++        total_courses = request.user.courses.count()
++        total_students_enrolled = Enrollment.objects.filter(course__mentor=request.user).count()
++
++        return Response({

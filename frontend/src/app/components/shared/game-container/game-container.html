@@ -1,0 +1,1305 @@
+<div class="w-full h-full overflow-y-auto relative px-4 py-12" style="background: #fef2f2">
+  @if (session.game_type === 'trivia') {
+    <div class="absolute top-6 left-6 z-10">
+      <div
+        class="bg-yellow-400 text-yellow-900 px-4 py-2 rounded-2xl font-black shadow-lg border-2 border-yellow-200"
+      >
+        <i class="fa-solid fa-star text-amber-500"></i> Trivia Mode
+      </div>
+    </div>
+  }
+
+  <div class="flex flex-col items-center w-full">
+    <div
+      class="max-w-4xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-sky-100"
+    >
+      @if (isMentor) {
+        <div>
+          <div class="bg-sky-400 p-6 flex items-center justify-between">
+            <h2 class="text-white font-black text-2xl">
+              <i class="fa-solid fa-wrench"></i> Mentor Builder:
+              {{ session.game_type | titlecase }}
+            </h2>
+            <button
+              (click)="saveMentorsConfig()"
+              class="bg-sky-600 hover:bg-sky-700 text-white px-6 py-2 rounded-xl font-bold shadow-md transition-all"
+            >
+              <i class="fa-solid fa-upload text-emerald-500"></i> Publish Game
+            </button>
+          </div>
+
+          @if (session.game_type === 'trivia') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">The Question</span>
+                <textarea
+                  [(ngModel)]="triviaQuestion"
+                  rows="3"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                ></textarea>
+              </div>
+              <div class="space-y-4">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Options & Correct Answer
+                </span>
+                @for (option of triviaOptions; track $index) {
+                  <div class="flex items-center gap-4">
+                    <input
+                      type="radio"
+                      name="correctAnswer"
+                      [value]="$index"
+                      [(ngModel)]="triviaCorrectIndex"
+                      class="w-6 h-6 text-sky-600 focus:ring-sky-500 cursor-pointer"
+                    />
+                    <input
+                      type="text"
+                      [(ngModel)]="triviaOptions[$index]"
+                      class="flex-1 bg-slate-50 border-2 border-slate-200 rounded-xl px-4 py-3 text-slate-700 font-bold focus:outline-none focus:border-sky-400"
+                    />
+                    <button
+                      (click)="removeTriviaOption($index)"
+                      class="text-red-500 hover:text-red-700 font-bold"
+                    >
+                      <i class="fa-solid fa-trash text-rose-500"></i>
+                    </button>
+                  </div>
+                }
+                <button
+                  (click)="addTriviaOption()"
+                  class="bg-slate-200 px-4 py-2 rounded-xl text-slate-600 font-bold hover:bg-slate-300"
+                >
+                  + Add Option
+                </button>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'puzzle') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Ordered Sequence (Comma Separated)
+                </span>
+                <p class="text-slate-500 text-sm mb-2">
+                  Enter the items in their EXACT correct order. They will be shuffled for the
+                  student.
+                </p>
+                <textarea
+                  [(ngModel)]="puzzleText"
+                  rows="3"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. 1914, 1918, 1939, 1945 OR I, walked, to, the, park"
+                ></textarea>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'math') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Left Side Label (The Target to Balance)
+                </span>
+                <input
+                  type="text"
+                  [(ngModel)]="mathLeftLabel"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                />
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Available Weights (Comma Separated)
+                </span>
+                <textarea
+                  [(ngModel)]="mathOptionsStr"
+                  rows="2"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all"
+                  placeholder="e.g. 500g, 250g, 100g, 50g"
+                ></textarea>
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Correct Combination (Comma Separated, subset of above)
+                </span>
+                <textarea
+                  [(ngModel)]="mathCorrectCombinationStr"
+                  rows="2"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all"
+                  placeholder="e.g. 500g, 500g"
+                ></textarea>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'color') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">Target Color</span>
+                <input
+                  type="text"
+                  [(ngModel)]="colorTargetLabel"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. Purple"
+                />
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Available Colors (Comma Separated)
+                </span>
+                <textarea
+                  [(ngModel)]="colorOptionsStr"
+                  rows="2"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all"
+                  placeholder="e.g. Red, Blue, Yellow, Green"
+                ></textarea>
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Correct Combination (Comma Separated)
+                </span>
+                <textarea
+                  [(ngModel)]="colorCorrectCombinationStr"
+                  rows="2"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all"
+                  placeholder="e.g. Red, Blue"
+                ></textarea>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'chemistry') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">Formula Name</span>
+                <input
+                  type="text"
+                  [(ngModel)]="chemFormulaName"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. Water"
+                />
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">Components</span>
+                <div class="space-y-3">
+                  @for (comp of chemComponents; track $index) {
+                    <div class="flex items-center gap-4">
+                      <input
+                        type="text"
+                        [(ngModel)]="comp.label"
+                        placeholder="Atom"
+                        class="w-24 bg-sky-50 border-2 border-sky-200 rounded-xl px-3 py-2 font-bold text-center"
+                      />
+                      <input
+                        type="number"
+                        [(ngModel)]="comp.count"
+                        class="w-20 bg-sky-50 border-2 border-sky-200 rounded-xl px-3 py-2 font-bold text-center"
+                        min="1"
+                      />
+                      <button
+                        (click)="removeChemComponent($index)"
+                        class="text-red-500 hover:text-red-700 font-bold"
+                      >
+                        <i class="fa-solid fa-trash text-rose-500"></i>
+                      </button>
+                    </div>
+                  }
+                  <button
+                    (click)="addChemComponent()"
+                    class="bg-slate-200 px-4 py-2 rounded-xl text-slate-600 font-bold hover:bg-slate-300"
+                  >
+                    + Add Component
+                  </button>
+                </div>
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">
+                  Decoy Atoms (Comma Separated)
+                </span>
+                <textarea
+                  [(ngModel)]="chemDecoysStr"
+                  rows="2"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all"
+                  placeholder="e.g. C, N, Cl"
+                ></textarea>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'memory') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2"
+                  >Quick Add (Comma Separated)</span
+                >
+                <p class="text-slate-500 text-sm mb-2">
+                  Enter labels separated by commas. Emoji will be auto-assigned.
+                </p>
+                <div class="flex gap-3">
+                  <textarea
+                    [(ngModel)]="memoryPairsText"
+                    rows="2"
+                    class="flex-1 bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all"
+                    placeholder="e.g. Apple, Banana, Cat, Dog"
+                  ></textarea>
+                  <button
+                    (click)="autoFillMemoryPairs()"
+                    class="bg-sky-500 text-white px-5 py-2 rounded-2xl font-bold hover:bg-sky-400 self-center whitespace-nowrap"
+                  >
+                    Auto Generate
+                  </button>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <div class="flex items-center justify-between mb-3">
+                  <span class="block text-sky-800 font-extrabold"
+                    >Card Pairs ({{ memoryPairs.length }})</span
+                  >
+                  <button
+                    (click)="addMemoryPair()"
+                    class="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold hover:bg-orange-400 text-sm"
+                  >
+                    + Add Pair
+                  </button>
+                </div>
+
+                @if (memoryPairs.length === 0) {
+                  <div
+                    class="text-center py-8 bg-orange-50 rounded-2xl border-4 border-dashed border-orange-200"
+                  >
+                    <p class="text-orange-400 font-bold text-lg">No pairs yet! Add some above.</p>
+                  </div>
+                }
+
+                <div class="space-y-3">
+                  @for (pair of memoryPairs; track $index) {
+                    <div
+                      class="flex items-center gap-3 bg-orange-50 rounded-2xl border-2 border-orange-100 p-4 shadow-sm hover:shadow-md transition-all"
+                    >
+                      <div
+                        class="w-14 h-14 bg-orange-500 rounded-xl flex items-center justify-center text-2xl text-white shadow-md cursor-pointer"
+                        [ngClass]="{
+                          'bg-emerald-400': pair.icon,
+                        }"
+                      >
+                        <i class="fa-solid" [ngClass]="pair.icon ? 'fa-' + pair.icon : ''"></i>
+                      </div>
+                      <div class="flex-1">
+                        <span class="text-xs text-orange-500 font-bold">Label</span>
+                        <input
+                          type="text"
+                          [(ngModel)]="pair.label"
+                          class="w-full bg-white border-2 border-orange-200 rounded-xl px-3 py-2 font-bold focus:outline-none focus:border-orange-400 transition-all"
+                          placeholder="Card name..."
+                        />
+                      </div>
+                      <div class="flex flex-col gap-1">
+                        <span class="text-xs text-orange-500 font-bold">Icon</span>
+                        <input
+                          type="text"
+                          [(ngModel)]="pair.icon"
+                          class="w-24 bg-white border-2 border-orange-200 rounded-xl px-3 py-2 font-bold text-center focus:outline-none focus:border-orange-400 transition-all"
+                          placeholder="fa-star"
+                        />
+                      </div>
+                      <button
+                        (click)="removeMemoryPair($index)"
+                        class="text-red-400 hover:text-red-600 font-bold transition-colors p-2"
+                      >
+                        <i class="fa-solid fa-trash text-lg"></i>
+                      </button>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <span class="block text-sky-800 font-extrabold mb-2">Preview Grid</span>
+                <div class="flex flex-wrap gap-2">
+                  @for (pair of memoryPairs; track $index) {
+                    @for (dup of [1, 2]; track dup) {
+                      <div
+                        class="w-16 h-16 bg-emerald-500 rounded-xl flex items-center justify-center text-white font-black text-xl shadow-md"
+                      >
+                        {{ pair.label[0] || '?' }}
+                      </div>
+                    }
+                  }
+                </div>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'maze') {
+            <div class="p-8">
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <span class="block text-sky-800 font-extrabold mb-2">Rows</span>
+                  <input
+                    type="number"
+                    [(ngModel)]="mazeRows"
+                    (change)="regenerateMaze()"
+                    min="3"
+                    max="15"
+                    class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 font-bold text-center text-xl"
+                  />
+                </div>
+                <div>
+                  <span class="block text-sky-800 font-extrabold mb-2">Columns</span>
+                  <input
+                    type="number"
+                    [(ngModel)]="mazeCols"
+                    (change)="regenerateMaze()"
+                    min="3"
+                    max="15"
+                    class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 font-bold text-center text-xl"
+                  />
+                </div>
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2"> Grid Editor </span>
+                <p class="text-slate-500 text-sm mb-2">
+                  Click cells to toggle walls. Right-click to set start, middle-click to set end.
+                </p>
+                <div class="flex justify-center">
+                  <div
+                    class="inline-block border-4 border-sky-200 rounded-xl overflow-hidden bg-white"
+                  >
+                    @for (row of MazeGrid; track $index; let r = $index) {
+                      <div class="flex">
+                        @for (cell of row; track $index; let c = $index) {
+                          <button
+                            (click)="toggleMazeWall(r, c)"
+                            (contextmenu)="$event.preventDefault(); setMazeStart(r, c)"
+                            (auxclick)="$event.preventDefault(); setMazeEnd(r, c)"
+                            class="w-10 h-10 border border-slate-200 font-bold text-xs flex items-center justify-center transition-all"
+                            [ngClass]="{
+                              'bg-green-500 text-white': r === MazeStart.row && c === MazeStart.col,
+                              'bg-red-500 text-white': r === MazeEnd.row && c === MazeEnd.col,
+                              'bg-slate-800 text-white':
+                                MazeGrid[r][c] === 1 &&
+                                !(r === MazeStart.row && c === MazeStart.col) &&
+                                !(r === MazeEnd.row && c === MazeEnd.col),
+                              'bg-white hover:bg-sky-50':
+                                MazeGrid[r][c] === 0 &&
+                                !(r === MazeStart.row && c === MazeStart.col) &&
+                                !(r === MazeEnd.row && c === MazeEnd.col),
+                            }"
+                          >
+                            @if (r === MazeStart.row && c === MazeStart.col) {
+                              S
+                            }
+                            @if (r === MazeEnd.row && c === MazeEnd.col) {
+                              E
+                            }
+                          </button>
+                        }
+                      </div>
+                    }
+                  </div>
+                </div>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'word_scramble') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">The Word (Answer)</span>
+                <input
+                  type="text"
+                  [(ngModel)]="wordAnswer"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. Elephant"
+                />
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">Hint (Optional)</span>
+                <input
+                  type="text"
+                  [(ngModel)]="wordHint"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. A large animal with a trunk"
+                />
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'flashcard') {
+            <div class="p-8">
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">The Question</span>
+                <textarea
+                  [(ngModel)]="flashcardQuestion"
+                  rows="3"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. What is the capital of France?"
+                ></textarea>
+              </div>
+              <div class="mb-6">
+                <span class="block text-sky-800 font-extrabold mb-2">The Answer</span>
+                <input
+                  type="text"
+                  [(ngModel)]="flashcardAnswer"
+                  class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 text-slate-700 font-bold focus:outline-none focus:border-sky-500 transition-all text-xl"
+                  placeholder="e.g. Paris"
+                />
+              </div>
+              <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4">
+                <p class="text-amber-700 font-bold text-sm">
+                  <i class="fa-solid fa-lightbulb"></i> Students will see the question card, type
+                  their answer, and flip to check!
+                </p>
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'physics') {
+            <div class="p-8">
+              <div class="mb-6 p-6 bg-slate-50 rounded-3xl border-2 border-slate-200">
+                <h3 class="font-black text-slate-700 mb-4">Physics World Entities</h3>
+                <div class="space-y-3 mb-4 max-h-64 overflow-y-auto pr-2">
+                  @for (obj of physicsObjects; track $index) {
+                    <div
+                      class="flex gap-2 items-center bg-white p-3 rounded-xl border-2 border-slate-200"
+                    >
+                      <select
+                        [(ngModel)]="obj.type"
+                        (change)="setupPhysicsWorld()"
+                        class="w-24 bg-slate-100 rounded-lg p-2 font-bold text-sm"
+                      >
+                        <option value="rectangle">Rect</option>
+                        <option value="circle">Circle</option>
+                      </select>
+                      <input
+                        type="color"
+                        [(ngModel)]="obj.color"
+                        (change)="setupPhysicsWorld()"
+                        class="w-8 h-8 rounded cursor-pointer"
+                      />
+                      <div class="flex flex-col text-xs font-bold text-slate-500">
+                        <span>X</span>
+                        <input
+                          type="number"
+                          [(ngModel)]="obj.x"
+                          (change)="setupPhysicsWorld()"
+                          class="w-16 bg-slate-100 p-1 rounded"
+                        />
+                      </div>
+                      <div class="flex flex-col text-xs font-bold text-slate-500">
+                        <span>Y</span>
+                        <input
+                          type="number"
+                          [(ngModel)]="obj.y"
+                          (change)="setupPhysicsWorld()"
+                          class="w-16 bg-slate-100 p-1 rounded"
+                        />
+                      </div>
+                      <div class="flex flex-col text-xs font-bold text-slate-500">
+                        <span>W/R</span>
+                        <input
+                          type="number"
+                          [(ngModel)]="obj.w"
+                          (change)="setupPhysicsWorld()"
+                          class="w-16 bg-slate-100 p-1 rounded"
+                        />
+                      </div>
+                      <div class="flex flex-col text-xs font-bold text-slate-500">
+                        <span>H</span>
+                        <input
+                          type="number"
+                          [(ngModel)]="obj.h"
+                          (change)="setupPhysicsWorld()"
+                          class="w-16 bg-slate-100 p-1 rounded"
+                          [disabled]="obj.type === 'circle'"
+                        />
+                      </div>
+                      <div class="flex flex-col text-xs font-bold text-slate-500">
+                        <span>Stat</span>
+                        <input
+                          type="checkbox"
+                          [(ngModel)]="obj.isStatic"
+                          (change)="setupPhysicsWorld()"
+                          class="w-6 h-6"
+                        />
+                      </div>
+                      <button (click)="removePhysicsObject($index)" class="text-red-500 ml-auto">
+                        <i class="fa-solid fa-trash text-rose-500"></i>
+                      </button>
+                    </div>
+                  }
+                </div>
+                <button
+                  (click)="addPhysicsObject()"
+                  class="bg-blue-500 text-white px-4 py-2 rounded-xl font-bold hover:bg-blue-400"
+                >
+                  + Add Entity
+                </button>
+              </div>
+
+              <div class="grid grid-cols-2 gap-4 mb-6">
+                <div>
+                  <span class="block text-sky-800 font-extrabold mb-2">Gravity Y</span>
+                  <input
+                    type="number"
+                    step="0.1"
+                    [(ngModel)]="physicsGravity"
+                    (change)="setupPhysicsWorld()"
+                    class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 font-bold text-center"
+                  />
+                </div>
+                <div>
+                  <span class="block text-sky-800 font-extrabold mb-2">Wind X</span>
+                  <input
+                    type="number"
+                    step="0.1"
+                    [(ngModel)]="physicsWind"
+                    (change)="setupPhysicsWorld()"
+                    class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl p-4 font-bold text-center"
+                  />
+                </div>
+              </div>
+
+              <div class="flex justify-center mb-6">
+                <div
+                  class="rounded-2xl overflow-hidden border-4 border-slate-300 bg-slate-50 relative"
+                >
+                  <canvas #physicsCanvas></canvas>
+                  <div
+                    class="absolute top-2 right-2 text-slate-400 font-black opacity-50 pointer-events-none"
+                  >
+                    Sandbox
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-6 bg-orange-50 p-6 rounded-3xl border-2 border-orange-200">
+                <h3 class="font-black text-orange-800 mb-4">Student Multiple Choice Question</h3>
+                <input
+                  type="text"
+                  [(ngModel)]="physicsQuestion"
+                  class="w-full bg-white border-2 border-orange-200 rounded-xl p-3 font-bold mb-4"
+                  placeholder="What happens when simulated?"
+                />
+                <div class="space-y-2">
+                  @for (option of physicsOptions; track $index) {
+                    <div class="flex items-center gap-4">
+                      <input
+                        type="radio"
+                        name="physicsAnswer"
+                        [value]="$index"
+                        [(ngModel)]="physicsCorrectIndex"
+                        class="w-6 h-6 text-orange-600 focus:ring-orange-500 cursor-pointer"
+                      />
+                      <input
+                        type="text"
+                        [(ngModel)]="physicsOptions[$index]"
+                        class="flex-1 bg-white border-2 border-slate-200 rounded-xl px-4 py-2 font-bold focus:outline-none focus:border-orange-400"
+                      />
+                      <button
+                        (click)="removePhysicsOption($index)"
+                        class="text-red-500 hover:text-red-700 font-bold"
+                      >
+                        <i class="fa-solid fa-trash text-rose-500"></i>
+                      </button>
+                    </div>
+                  }
+                  <button
+                    (click)="addPhysicsOption()"
+                    class="bg-orange-200 px-4 py-2 rounded-xl text-orange-800 font-bold hover:bg-orange-300"
+                  >
+                    + Add Option
+                  </button>
+                </div>
+              </div>
+            </div>
+          }
+        </div>
+      }
+
+      @if (!isMentor) {
+        <div>
+          <div class="bg-sky-500 p-8 text-center border-b-8 border-sky-600">
+            <h2 class="text-white font-black text-3xl drop-shadow-md">
+              <i class="fa-solid fa-gamepad text-yellow-300 mr-2"></i> {{ session.title }}
+            </h2>
+          </div>
+
+          @if (session.game_type === 'trivia') {
+            <div class="p-8">
+              <div
+                class="bg-sky-50 rounded-3xl p-8 mb-8 text-center shadow-inner border-2 border-sky-100"
+              >
+                <h3 class="text-sky-900 text-3xl font-black">
+                  {{ triviaQuestion || 'Waiting for question...' }}
+                </h3>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                @for (option of triviaOptions; track $index) {
+                  <button
+                    (click)="submitTriviaAnswer($index)"
+                    [disabled]="hasStudentAnswered"
+                    [ngClass]="{
+                      'bg-white text-sky-600 border-sky-200 hover:bg-sky-50': !hasStudentAnswered,
+                      'bg-green-500 border-green-600 text-white':
+                        hasStudentAnswered &&
+                        studentAnswerIsCorrect === true &&
+                        studentSelectedAnswer === $index,
+                      'bg-red-500 border-red-600 text-white':
+                        hasStudentAnswered &&
+                        studentAnswerIsCorrect === false &&
+                        studentSelectedAnswer === $index,
+                      'bg-slate-100 border-slate-200 text-slate-400':
+                        hasStudentAnswered && studentSelectedAnswer !== $index,
+                    }"
+                    class="p-6 rounded-2xl border-4 text-xl font-bold transition-all text-center"
+                  >
+                    {{ option }}
+                  </button>
+                }
+              </div>
+              @if (hasStudentAnswered) {
+                <div
+                  class="text-center text-xl font-black mt-6"
+                  [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                >
+                  {{ studentAnswerIsCorrect ? 'Correct!' : 'Incorrect' }}
+                </div>
+              }
+            </div>
+          }
+
+          @if (session.game_type === 'puzzle') {
+            <div class="p-8">
+              <div
+                class="bg-sky-50 rounded-3xl p-8 mb-8 shadow-inner border-2 border-sky-100 min-h-[120px]"
+              >
+                <p class="text-center text-sky-400 font-bold mb-4 uppercase tracking-widest">
+                  Drag to reorder the sequence
+                </p>
+                <div #puzzleList class="flex flex-wrap gap-3 justify-center min-h-[60px] p-2">
+                  @for (word of studentPuzzleWords; track $index) {
+                    <div
+                      class="bg-emerald-500 text-white px-6 py-3 rounded-xl font-black shadow-md cursor-grab active:cursor-grabbing hover:-translate-y-1 transition-transform"
+                    >
+                      {{ word }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="text-center">
+                @if (!hasStudentAnswered) {
+                  <button
+                    (click)="submitPuzzle()"
+                    class="bg-green-500 text-white px-8 py-3 rounded-2xl font-black text-xl hover:bg-green-400"
+                  >
+                    Submit Sequence
+                  </button>
+                }
+                @if (hasStudentAnswered) {
+                  <div
+                    class="text-xl font-black mt-4"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Perfect Order!' : 'Incorrect Order' }}
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'math') {
+            <div class="p-8">
+              <div
+                class="flex items-center justify-center gap-6 text-4xl font-black text-blue-900 mb-12"
+              >
+                <div
+                  class="w-32 h-32 bg-orange-400 border-4 border-orange-500 rounded-2xl flex items-center justify-center text-white shadow-lg text-2xl text-center p-2"
+                >
+                  {{ mathLeftLabel }}
+                </div>
+                <div>=</div>
+                <div
+                  #mathSlotList
+                  class="w-64 min-h-[8rem] bg-sky-100 border-4 border-dashed border-sky-400 rounded-2xl flex flex-wrap gap-2 items-center justify-center p-4 shadow-inner"
+                >
+                  @if (studentMathSlot.length === 0) {
+                    <div class="text-sm text-sky-400 font-bold">Drag blocks here</div>
+                  }
+                  @for (slt of studentMathSlot; track $index) {
+                    <div
+                      class="px-4 py-2 bg-blue-500 text-white rounded-xl flex items-center justify-center shadow-lg text-xl"
+                    >
+                      {{ slt }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="bg-slate-50 rounded-3xl p-6 border-2 border-slate-200">
+                <p class="text-center font-bold text-slate-400 mb-4">Available Blocks</p>
+                <div #mathOptionsList class="flex flex-wrap justify-center gap-4 min-h-[60px]">
+                  @for (opt of mathOptions; track $index) {
+                    <div
+                      class="px-6 py-3 bg-blue-500 text-white rounded-xl flex items-center justify-center font-black text-2xl shadow-md cursor-grab active:cursor-grabbing hover:-translate-y-1 transition-transform"
+                    >
+                      {{ opt }}
+                    </div>
+                  }
+                </div>
+              </div>
+              <div class="text-center mt-8">
+                @if (!hasStudentAnswered) {
+                  <button
+                    (click)="submitMath()"
+                    class="bg-green-500 text-white px-8 py-3 rounded-2xl font-black text-xl shadow-lg hover:bg-green-400 disabled:opacity-50"
+                  >
+                    Balance
+                  </button>
+                }
+                @if (hasStudentAnswered) {
+                  <div
+                    class="text-xl font-black mt-4"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Perfectly Balanced!' : 'Unbalanced' }}
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'color') {
+            <div class="p-8">
+              <div
+                class="bg-pink-50 rounded-3xl p-6 mb-8 text-center shadow-inner border-2 border-pink-100"
+              >
+                <h3 class="text-pink-900 text-3xl font-black mb-2">
+                  Create: {{ colorTargetLabel }}
+                </h3>
+                <p class="text-pink-600 font-bold">Click ingredients to add them to the pot.</p>
+              </div>
+              <div class="flex justify-center mb-8 relative">
+                <div
+                  class="w-48 h-48 bg-slate-800 rounded-b-[40%] rounded-t-xl border-8 border-slate-600 flex flex-col items-center justify-end overflow-hidden relative shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
+                >
+                  <div
+                    class="w-full bg-pink-500 transition-all duration-500 flex items-center justify-center text-white font-black flex-col gap-1 p-2"
+                    [ngStyle]="{ height: studentColors.length > 0 ? '70%' : '20%' }"
+                  >
+                    @for (col of studentColors; track col) {
+                      <span class="text-xs">{{ col }}</span>
+                    }
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-wrap justify-center gap-4 mb-8">
+                @for (col of colorOptions; track col) {
+                  <button
+                    (click)="toggleColor(col)"
+                    [disabled]="hasStudentAnswered"
+                    class="px-6 py-4 rounded-2xl border-4 shadow-md transition-transform hover:-translate-y-1 active:scale-95 flex items-center justify-center font-black outline-none"
+                    [ngClass]="
+                      studentColors.includes(col)
+                        ? 'bg-pink-100 border-pink-400 text-pink-700'
+                        : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300'
+                    "
+                  >
+                    {{ col }}
+                  </button>
+                }
+              </div>
+              <div class="text-center">
+                @if (!hasStudentAnswered) {
+                  <button
+                    (click)="submitColor()"
+                    [disabled]="studentColors.length === 0"
+                    class="bg-pink-500 text-white px-8 py-3 rounded-2xl font-black text-xl shadow-lg hover:bg-pink-400 disabled:opacity-50"
+                  >
+                    <i class="fa-solid fa-blender"></i> Mix Ingredients
+                  </button>
+                }
+                @if (hasStudentAnswered) {
+                  <div
+                    class="text-xl font-black mt-4"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Perfect Mixture!' : 'Wrong Mixture!' }}
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'chemistry') {
+            <div class="p-8">
+              <div
+                class="bg-teal-50 rounded-3xl p-6 mb-8 text-center shadow-inner border-2 border-teal-100"
+              >
+                <h3 class="text-teal-900 text-3xl font-black">Synthesize {{ chemFormulaName }}</h3>
+              </div>
+              <div class="flex flex-wrap gap-4 mb-8 justify-center">
+                @for (atom of availableAtoms; track atom) {
+                  <div class="flex flex-col items-center gap-2">
+                    <button
+                      (click)="incrementStudentChem(atom)"
+                      [disabled]="hasStudentAnswered || chemAnimating"
+                      class="w-16 h-16 rounded-2xl bg-white border-4 border-teal-200 text-teal-700 font-black text-3xl hover:bg-teal-50 shadow-md transition-transform active:scale-95"
+                    >
+                      {{ atom }}
+                    </button>
+                    <div class="flex items-center gap-2 bg-slate-100 rounded-full px-2 py-1">
+                      <button
+                        (click)="decrementStudentChem(atom)"
+                        [disabled]="hasStudentAnswered || chemAnimating"
+                        class="w-6 h-6 rounded-full bg-slate-300 text-white font-bold flex items-center justify-center hover:bg-red-400"
+                      >
+                        -
+                      </button>
+                      <span class="font-black text-slate-700 w-4 text-center">
+                        {{ studentChemCounts[atom] || 0 }}
+                      </span>
+                    </div>
+                  </div>
+                }
+              </div>
+              <div class="text-center mt-8">
+                @if (!hasStudentAnswered) {
+                  <button
+                    (click)="submitChem()"
+                    [disabled]="chemAnimating || studentChemTotal === 0"
+                    class="bg-teal-500 text-white px-8 py-3 rounded-2xl font-black text-xl shadow-lg hover:bg-teal-400 disabled:opacity-50 transition-all"
+                  >
+                    <i class="fa-solid fa-fire text-rose-500"></i> React
+                  </button>
+                }
+                @if (hasStudentAnswered) {
+                  <div
+                    class="text-xl font-black mt-4"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Synthesis Successful!' : 'Reaction Failed!' }}
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'physics') {
+            <div class="p-8">
+              <div class="flex justify-center mb-6">
+                <div
+                  class="rounded-2xl overflow-hidden border-4 border-slate-300 bg-slate-50 relative shadow-inner"
+                >
+                  <canvas #physicsCanvas></canvas>
+                  @if (!physicsAnimating && !hasStudentAnswered) {
+                    <div
+                      class="absolute inset-0 bg-white/50 backdrop-blur-sm flex items-center justify-center z-10"
+                    >
+                      <div
+                        class="bg-white px-6 py-4 rounded-2xl shadow-xl border-2 border-slate-200 text-center max-w-sm"
+                      >
+                        <h3 class="font-black text-orange-600 text-xl mb-4">
+                          {{ physicsQuestion }}
+                        </h3>
+                        <div class="space-y-2">
+                          @for (opt of physicsOptions; track $index) {
+                            <button
+                              (click)="selectPhysicsAnswer($index)"
+                              class="w-full p-3 rounded-xl border-2 font-bold transition-all text-left"
+                              [ngClass]="
+                                studentSelectedAnswer === $index
+                                  ? 'bg-orange-100 border-orange-500 text-orange-800'
+                                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-white'
+                              "
+                            >
+                              <div class="flex items-center justify-between">
+                                <span>{{ opt }}</span>
+                                @if (studentSelectedAnswer === $index) {
+                                  <i class="fa-solid fa-check text-orange-500"></i>
+                                }
+                              </div>
+                            </button>
+                          }
+                        </div>
+                      </div>
+                    </div>
+                  }
+                </div>
+              </div>
+
+              <div class="text-center">
+                @if (!hasStudentAnswered) {
+                  <button
+                    (click)="simulatePhysics()"
+                    [disabled]="physicsAnimating || studentSelectedAnswer === null"
+                    class="bg-orange-500 text-white px-8 py-3 rounded-2xl font-black text-xl shadow-lg hover:bg-orange-400 transition-all disabled:opacity-50"
+                  >
+                    <i class="fa-solid fa-play text-sky-500"></i> Submit & Simulate
+                  </button>
+                }
+                @if (hasStudentAnswered && !physicsAnimating) {
+                  <div
+                    class="text-xl font-black mt-4"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Correct Analysis!' : 'Incorrect Prediction' }}
+                  </div>
+                }
+              </div>
+            </div>
+          }
+
+          @if (session.game_type === 'memory') {
+            <div class="p-8">
+              @if (memoryCelebrating) {
+                <div class="memory-celebration-overlay">
+                  <div class="memory-celebration-content">
+                    <div class="text-8xl mb-4 animation-bounce">
+                      <i class="fa-solid fa-sparkles"></i>
+                    </div>
+                    <h2 class="text-5xl font-black text-yellow-500 mb-4 drop-shadow-lg">
+                      AMAZING!
+                    </h2>
+                    <p class="text-2xl font-bold text-emerald-600">All Pairs Found!</p>
+                    <p class="text-xl text-slate-600 mt-2">
+                      {{ 'LEADERBOARD.SCORE' | translate }}: {{ memoryScore | number }}
+                    </p>
+                  </div>
+                </div>
+              }
+
+              <div
+                class="bg-sky-50 rounded-3xl p-6 mb-8 text-center shadow-lg border-4 border-emerald-100"
+              >
+                <h3 class="text-emerald-800 text-3xl font-black mb-3">
+                  <i class="fa-solid fa-brain"></i> Memory Match!
+                </h3>
+                <div class="flex justify-center gap-6 flex-wrap">
+                  <div class="bg-white px-4 py-2 rounded-2xl shadow border-2 border-red-100">
+                    <span class="text-slate-500 text-xs font-bold">⏱️ TIME</span>
+                    <p class="text-2xl font-black text-red-500 font-mono">
+                      {{ memoryFormattedTime }}
+                    </p>
+                  </div>
+                  <div class="bg-white px-4 py-2 rounded-2xl shadow border-2 border-orange-100">
+                    <span class="text-slate-500 text-xs font-bold"
+                      ><i class="fa-solid fa-bullseye"></i> ATTEMPTS</span
+                    >
+                    <p class="text-2xl font-black text-orange-500 font-mono">
+                      {{ memoryAttempts }}
+                    </p>
+                  </div>
+                  <div class="bg-white px-4 py-2 rounded-2xl shadow border-2 border-green-100">
+                    <span class="text-slate-500 text-xs font-bold"
+                      ><i class="fa-solid fa-circle-check"></i> MATCHED</span
+                    >
+                    <p class="text-2xl font-black text-green-500 font-mono">
+                      {{ memoryMatchedPairIds.length }}/{{ memoryShuffledCards.length / 2 }}
+                    </p>
+                  </div>
+                </div>
+
+                @if (memoryMatchedPairIds.length > 0) {
+                  <div
+                    class="mt-4 mx-auto max-w-sm bg-white rounded-full h-4 overflow-hidden border-2 border-emerald-200 shadow-inner"
+                  >
+                    <div
+                      class="h-full bg-emerald-500 transition-all duration-700 ease-out"
+                      [ngStyle]="{
+                        width:
+                          (memoryMatchedPairIds.length / (memoryShuffledCards.length / 2)) * 100 +
+                          '%',
+                      }"
+                    ></div>
+                  </div>
+                }
+              </div>
+
+              @if (!hasStudentAnswered && !memoryTimerStarted) {
+                <div class="text-center mb-6">
+                  <p class="text-emerald-500 font-bold mb-4">Click any card to start the game!</p>
+                </div>
+              }
+
+              <div
+                class="memory-grid justify-center mx-auto"
+                [ngStyle]="{
+                  'grid-template-columns':
+                    'repeat(' +
+                    (memoryShuffledCards.length > 12 ? 5 : memoryShuffledCards.length > 8 ? 4 : 3) +
+                    ', minmax(0, 1fr))',
+                  'max-width':
+                    (memoryShuffledCards.length > 12
+                      ? 600
+                      : memoryShuffledCards.length > 8
+                        ? 500
+                        : 400) + 'px',
+                }"
+              >
+                @for (card of memoryShuffledCards; track card.id) {
+                  <div
+                    class="memory-card-container"
+                    [class.memory-flipped]="isMemoryCardFlipped(card.id)"
+                    [class.memory-matched]="isMemoryCardMatched(card.id)"
+                    [class.memory-locked]="memoryLock && !isMemoryCardFlipped(card.id)"
+                  >
+                    <button
+                      (click)="flipMemoryCard(card.id)"
+                      [disabled]="hasStudentAnswered || memoryLock || isMemoryCardMatched(card.id)"
+                      class="memory-card-inner"
+                    >
+                      <div class="memory-card-face memory-card-front">
+                        <i class="fa-solid fa-question text-4xl text-orange-500"></i>
+                      </div>
+                      <div class="memory-card-face memory-card-back">
+                        @if (card.icon) {
+                          <i
+                            class="fa-solid text-4xl"
+                            [ngClass]="'fa-' + card.icon"
+                            style="color: #f97316"
+                          ></i>
+                        }
+                        <span
+                          class="font-black text-sm leading-tight text-center"
+                          [ngClass]="card.icon ? 'text-xs mt-1' : 'text-lg'"
+                        >
+                          {{ card.label }}
+                        </span>
+                        @if (isMemoryCardMatched(card.id)) {
+                          <div class="memory-card-check">
+                            <i class="fa-solid fa-check-circle"></i>
+                          </div>
+                        }
+                      </div>
+                    </button>
+                  </div>
+                }
+              </div>
+
+              @if (hasStudentAnswered && !memoryCelebrating) {
+                <div class="text-center mt-8">
+                  <div
+                    class="inline-block bg-emerald-500 px-8 py-4 rounded-3xl shadow-lg"
+                    [ngClass]="{
+                      'from-green-100 to-emerald-100 border-4 border-green-300':
+                        studentAnswerIsCorrect,
+                      'from-red-100 to-pink-100 border-4 border-red-300': !studentAnswerIsCorrect,
+                    }"
+                  >
+                    <div
+                      class="text-3xl font-black"
+                      [ngClass]="studentAnswerIsCorrect ? 'text-green-600' : 'text-red-600'"
+                    >
+                      {{ studentAnswerIsCorrect ? 'Well Done!' : 'Not Complete' }}
+                    </div>
+                    <div class="mt-3 grid grid-cols-2 gap-3 text-sm">
+                      <div class="bg-white/50 rounded-xl p-2">
+                        <span class="text-slate-500 font-bold block">{{
+                          'LEADERBOARD.SCORE' | translate
+                        }}</span>
+                        <span class="text-xl font-black text-emerald-600">{{
+                          memoryScore | number
+                        }}</span>
+                      </div>
+                      <div class="bg-white/50 rounded-xl p-2">
+                        <span class="text-slate-500 font-bold block">Time</span>
+                        <span class="text-xl font-black text-red-600">{{
+                          memoryFormattedTime
+                        }}</span>
+                      </div>
+                      <div class="bg-white/50 rounded-xl p-2">
+                        <span class="text-slate-500 font-bold block">Attempts</span>
+                        <span class="text-xl font-black text-orange-600">{{ memoryAttempts }}</span>
+                      </div>
+                      <div class="bg-white/50 rounded-xl p-2">
+                        <span class="text-slate-500 font-bold block">Pairs</span>
+                        <span class="text-xl font-black text-green-600">{{
+                          memoryShuffledCards.length / 2
+                        }}</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              }
+            </div>
+          }
+
+          @if (session.game_type === 'maze') {
+            <div class="p-8">
+              <div
+                class="bg-emerald-50 rounded-3xl p-6 mb-8 text-center shadow-inner border-2 border-emerald-100"
+              >
+                <h3 class="text-emerald-900 text-3xl font-black mb-2">Navigate the Maze!</h3>
+                <p class="text-emerald-600 font-bold">
+                  Click adjacent cells to move from Start to End
+                </p>
+              </div>
+              <div class="flex justify-center mb-8">
+                <div
+                  class="inline-block border-4 border-emerald-200 rounded-xl overflow-hidden bg-white shadow-lg"
+                >
+                  @for (row of MazeGrid; track $index; let r = $index) {
+                    <div class="flex">
+                      @for (cell of row; track $index; let c = $index) {
+                        <button
+                          (click)="navigateMaze(r, c)"
+                          [disabled]="hasStudentAnswered"
+                          class="w-10 h-10 border border-slate-100 font-bold text-xs flex items-center justify-center transition-all"
+                          [ngClass]="{
+                            'bg-green-500 text-white':
+                              r === MazeStart.row && c === MazeStart.col && !isMazeCellInPath(r, c),
+                            'bg-red-500 text-white':
+                              r === MazeEnd.row && c === MazeEnd.col && !isMazeCellInPath(r, c),
+                            'bg-slate-800': MazeGrid[r][c] === 1,
+                            'bg-yellow-300 text-yellow-900': isMazeCellCurrent(r, c),
+                            'bg-yellow-100 text-yellow-800':
+                              isMazeCellInPath(r, c) &&
+                              !isMazeCellCurrent(r, c) &&
+                              !(r === MazeStart.row && c === MazeStart.col) &&
+                              !(r === MazeEnd.row && c === MazeEnd.col),
+                            'bg-white hover:bg-emerald-50 cursor-pointer':
+                              MazeGrid[r][c] === 0 &&
+                              !isMazeCellInPath(r, c) &&
+                              !(r === MazeStart.row && c === MazeStart.col) &&
+                              !(r === MazeEnd.row && c === MazeEnd.col) &&
+                              isMazeCellAdjacentToCurrent(r, c) &&
+                              !hasStudentAnswered,
+                            'bg-slate-50':
+                              MazeGrid[r][c] === 0 &&
+                              !isMazeCellInPath(r, c) &&
+                              !(r === MazeStart.row && c === MazeStart.col) &&
+                              !(r === MazeEnd.row && c === MazeEnd.col) &&
+                              !isMazeCellAdjacentToCurrent(r, c),
+                          }"
+                        >
+                          @if (
+                            r === MazeStart.row && c === MazeStart.col && !isMazeCellInPath(r, c)
+                          ) {
+                            S
+                          }
+                          @if (r === MazeEnd.row && c === MazeEnd.col && !isMazeCellInPath(r, c)) {
+                            E
+                          }
+                          @if (isMazeCellInPath(r, c)) {
+                            {{ mazePathIndex(r, c) + 1 }}
+                          }
+                        </button>
+                      }
+                    </div>
+                  }
+                </div>
+              </div>
+              @if (hasStudentAnswered) {
+                <div class="text-center">
+                  <div
+                    class="text-xl font-black"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Maze Solved!' : 'Could not solve!' }}
+                  </div>
+                </div>
+              }
+            </div>
+          }
+
+          @if (session.game_type === 'word_scramble') {
+            <div class="p-8">... (existing word scramble player content) ...</div>
+          }
+
+          @if (session.game_type === 'flashcard') {
+            <div class="p-8">
+              <div
+                class="bg-sky-50 rounded-3xl p-6 mb-8 text-center shadow-lg border-4 border-sky-100"
+              >
+                <h3 class="text-rose-700 text-3xl font-black mb-2">
+                  <i class="fa-solid fa-images"></i> Flash Card Challenge!
+                </h3>
+                <p class="text-sky-600 font-bold">Read the card, type your answer, then flip!</p>
+              </div>
+
+              <div class="flex justify-center mb-8">
+                <div
+                  class="flashcard-container"
+                  [class.flipped]="flashcardFlipped"
+                  (click)="!hasStudentAnswered && flipFlashcard()"
+                  (keydown.enter)="!hasStudentAnswered && flipFlashcard()"
+                  tabindex="0"
+                  role="button"
+                  [attr.aria-label]="
+                    'Flip flashcard to ' + (flashcardFlipped ? 'see question' : 'see answer')
+                  "
+                >
+                  <div class="flashcard-inner">
+                    <div
+                      class="flashcard-front bg-sky-600 rounded-3xl p-8 text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-md shadow-2xl border-4 border-sky-300"
+                    >
+                      <div class="text-6xl mb-4 text-sky-200">
+                        <i class="fa-solid fa-circle-question"></i>
+                      </div>
+                      <p class="text-2xl font-black text-center leading-snug">
+                        {{ flashcardQuestion || 'Waiting for question...' }}
+                      </p>
+                      @if (!hasStudentAnswered) {
+                        <p class="text-sky-200 text-sm mt-4 font-bold">Click to flip & check!</p>
+                      }
+                    </div>
+                    <div
+                      class="flashcard-back bg-amber-500 rounded-3xl p-8 text-white flex flex-col items-center justify-center min-h-[200px] w-full max-w-md shadow-2xl border-4 border-amber-300"
+                    >
+                      <div class="text-6xl mb-4"><i class="fa-solid fa-lightbulb"></i></div>
+                      <p class="text-3xl font-black text-center">
+                        {{ flashcardAnswer || 'No answer set' }}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="max-w-md mx-auto mb-8">
+                @if (!hasStudentAnswered) {
+                  <div class="bg-white rounded-2xl p-4 border-2 border-sky-200 shadow-inner">
+                    <span class="block text-rose-700 font-extrabold mb-2 text-sm">Your Answer</span>
+                    <input
+                      type="text"
+                      [(ngModel)]="studentFlashcardAnswer"
+                      class="w-full bg-sky-50 border-2 border-sky-300 rounded-xl p-4 text-rose-800 font-bold text-xl text-center focus:outline-none focus:border-sky-500 transition-all"
+                      placeholder="Type your answer..."
+                    />
+                  </div>
+                }
+              </div>
+
+              <div class="text-center">
+                @if (!hasStudentAnswered) {
+                  <button
+                    (click)="submitFlashcardAnswer()"
+                    [disabled]="studentFlashcardAnswer.length === 0"
+                    class="bg-sky-500 text-white px-8 py-3 rounded-2xl font-black text-xl shadow-lg hover:bg-sky-400 disabled:opacity-50 transition-all"
+                  >
+                    <i class="fa-solid fa-paper-plane text-sky-500"></i> Submit Answer
+                  </button>
+                }
+                @if (hasStudentAnswered) {
+                  <div
+                    class="text-2xl font-black"
+                    [ngClass]="studentAnswerIsCorrect ? 'text-green-500' : 'text-red-500'"
+                  >
+                    {{ studentAnswerIsCorrect ? 'Excellent!' : 'Try Again!' }}
+                  </div>
+                  @if (!studentAnswerIsCorrect) {
+                    <p class="text-slate-500 font-bold mt-2">
+                      Your answer: <span class="text-red-500">{{ studentFlashcardAnswer }}</span>
+                    </p>
+                    <p class="text-slate-500 font-bold">
+                      Correct: <span class="text-green-600">{{ flashcardAnswer }}</span>
+                    </p>
+                  }
+                }
+              </div>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>

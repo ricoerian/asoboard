@@ -1,0 +1,67 @@
+<div class="auth-bg min-h-screen flex items-center justify-center p-6">
+  <div
+    class="bounce-in w-full max-w-2xl bg-white rounded-4xl p-12 shadow-2xl shadow-pink-300/50 border-4 border-white text-center"
+  >
+    <div class="mb-6">
+      <div class="text-9xl font-black text-pink-500 leading-none">404</div>
+    </div>
+
+    <div class="text-7xl mb-6 inline-block text-orange-400">
+      <i class="fa-solid fa-compass text-cyan-500"></i>
+    </div>
+
+    <h1 class="text-4xl font-black text-slate-800 tracking-tight mb-4">
+      {{ 'NOT_FOUND.TITLE' | translate }}
+    </h1>
+
+    <p class="text-slate-600 text-lg font-semibold mb-8 leading-relaxed">
+      {{ 'NOT_FOUND.DESC_1' | translate }}
+      <i class="fa-solid fa-rocket text-sky-500"></i>
+      <br />
+      {{ 'NOT_FOUND.DESC_2' | translate }}
+    </p>
+
+    <div class="bg-pink-50 rounded-3xl p-6 mb-8 border-2 border-white">
+      <p class="text-slate-700 font-bold text-base">
+        <i class="fa-solid fa-lightbulb text-yellow-500 mr-2"></i>
+        {{ 'NOT_FOUND.SUGGESTIONS_TITLE' | translate }}
+      </p>
+      <ul class="mt-4 space-y-2 text-left">
+        <li class="flex items-center gap-3 text-slate-600">
+          <i class="fa-solid fa-home text-sky-500 w-5"></i>
+          <span class="font-semibold">{{ 'NOT_FOUND.SUGGEST_HOME' | translate }}</span>
+        </li>
+        <li class="flex items-center gap-3 text-slate-600">
+          <i class="fa-solid fa-graduation-cap text-pink-500 w-5"></i>
+          <span class="font-semibold">{{ 'NOT_FOUND.SUGGEST_DASHBOARD' | translate }}</span>
+        </li>
+        <li class="flex items-center gap-3 text-slate-600">
+          <i class="fa-solid fa-user text-pink-500 w-5"></i>
+          <span class="font-semibold">{{ 'NOT_FOUND.SUGGEST_LOGIN' | translate }}</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        routerLink="/"
+        class="inline-flex items-center justify-center gap-2 bg-sky-500 text-white font-black py-4 px-8 rounded-2xl shadow-lg shadow-sky-200 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
+      >
+        <i class="fa-solid fa-home text-lg"></i>
+        {{ 'NOT_FOUND.BTN_HOME' | translate }}
+      </a>
+      <a
+        routerLink="/dashboard"
+        class="inline-flex items-center justify-center gap-2 bg-pink-500 text-white font-black py-4 px-8 rounded-2xl shadow-lg shadow-pink-200 hover:shadow-xl hover:scale-[1.02] active:scale-95 transition-all"
+      >
+        <i class="fa-solid fa-chalkboard-user text-lg"></i>
+        {{ 'NOT_FOUND.BTN_DASHBOARD' | translate }}
+      </a>
+    </div>
+
+    <p class="text-slate-400 text-sm font-semibold mt-8">
+      <i class="fa-solid fa-circle-info mr-1"></i>
+      {{ 'NOT_FOUND.HELP_TEXT' | translate }}
+    </p>
+  </div>
+</div>

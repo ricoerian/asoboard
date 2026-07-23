@@ -1,0 +1,94 @@
+# .gitignore for AsoBoard MVP
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+ENV/
+
+# Database
+*.sqlite
+*.db
+backend/db.sqlite3
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Browser
+.history/
+.cache/
+
+# Build artifacts
+dist/
+build/
+*.tsbuildinfo
+.angular/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Media uploads
+backend/media/
+
+# Agent documentation
+# (except README.md files explicitly un-ignored below)
+AGENTS.md
+GUARDRAILS.md
+PLANNING.md
+
+# All .agents/ content
+.agents/
+
+!backend/logs/.gitkeep
+!backend/tasks/.gitkeep
+!backend/failures/.gitkeep
+
+# ---- KEEP THESE (un-ignored) ----
+!README.md
+!frontend/README.md
+MIGRATION_COMPLETE.md
+SECURITY_BEFORE_PUBLIC.md

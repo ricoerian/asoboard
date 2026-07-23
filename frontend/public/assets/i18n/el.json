@@ -1,0 +1,557 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "Είσοδος",
+      "FREE_TRIAL": "Δωρεάν Δοκιμή"
+    },
+    "HERO": {
+      "TITLE_1": "Ο μαγικός τρόπος για ",
+      "TITLE_HIGHLIGHT": "μάθηση, ζωγραφική και παιχνίδι",
+      "TITLE_2": " μαζί!",
+      "SUBTITLE": "Το AsoBoard φέρνει το παιχνίδι σε έναν ασφαλή πίνακα.",
+      "START_LEARNING": "ΞΕΚΙΝΗΣΤΕ ΤΩΡΑ",
+      "PARENT_LOGIN": "ΕΙΣΟΔΟΣ ΓΟΝΕΑ",
+      "SOCIAL_PROOF": "Αγαπημένο από χιλιάδες!"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "ΑΣΦΑΛΕΣ",
+      "AD_FREE": "ΧΩΡΙΣ ΔΙΑΦΗΜΙΣΕΙΣ",
+      "PARENTAL": "ΓΟΝΙΚΟΣ ΕΛΕΓΧΟΣ",
+      "FAMILIES": "ΠΑΝΩ ΑΠΟ 5000 ΟΙΚΟΓΕΝΕΙΕΣ"
+    },
+    "FEATURES": {
+      "TITLE": "Η Μάθηση Πρέπει να είναι Διασκεδαστική!",
+      "SUBTITLE": "Η οπτική μάθηση βοηθά τα παιδιά.",
+      "CREATIVE_TOOLS": {
+        "TITLE": "Εργαλεία",
+        "DESC": "Ζωντανά χρώματα."
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "Για Παιδιά",
+        "DESC": "Ασφαλής διεπαφή."
+      },
+      "REAL_TIME": {
+        "TITLE": "Σε Πραγματικό Χρόνο",
+        "DESC": "Συγχρονισμός."
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Πώς Λειτουργεί",
+      "SUBTITLE": "Εγγραφείτε σήμερα!",
+      "STEP_1": {
+        "TITLE": "Προφίλ",
+        "DESC": "Λογαριασμός."
+      },
+      "STEP_2": {
+        "TITLE": "Μέντορας",
+        "DESC": "Σύνδεση."
+      },
+      "STEP_3": {
+        "TITLE": "Μάθηση",
+        "DESC": "Ζωγραφική!"
+      },
+      "BADGE": "ΜΑΓΕΙΑ!"
+    },
+    "ROADMAP": {
+      "TITLE": "Το Μέλλον",
+      "SUBTITLE": "AsoBoard.",
+      "AVAILABLE_NOW": "ΔΙΑΘΕΣΙΜΟ ΤΩΡΑ",
+      "CURRENT_MVP": "MVP",
+      "PLAYBACK": {
+        "TITLE": "Αναπαραγωγή",
+        "DESC": "Βίντεο."
+      },
+      "SKETCH": {
+        "TITLE": "Σκίτσο",
+        "DESC": "Σχεδίαση."
+      },
+      "COMING_SOON": "ΣΥΝΤΟΜΑ",
+      "COMING_FEATURES": "Νέα",
+      "ANALYTICS": {
+        "TITLE": "Ανάλυση",
+        "DESC": "Δεδομένα."
+      },
+      "GALLERY": {
+        "TITLE": "Γκαλερί",
+        "DESC": "Κοινή χρήση."
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "AI",
+        "DESC": "Βοήθεια."
+      },
+      "GAMIFICATION": {
+        "TITLE": "Παιχνίδι",
+        "DESC": "Επιβράβευση."
+      }
+    },
+    "PRICING": {
+      "TITLE": "Τιμές",
+      "SUBTITLE": "Απλά.",
+      "FOREVER": "/ πάντα",
+      "MONTH": "/ μήνα",
+      "PLAN_FREE": {
+        "TITLE": "Δωρεάν",
+        "DESC": "Δοκιμή!",
+        "F1": "Βασικά εργαλεία",
+        "F2": "1 πίνακας",
+        "F3": "Πίνακας γονέα",
+        "F4": "Ζωντανά",
+        "BUTTON": "Δωρεάν"
+      },
+      "PLAN_STAR": {
+        "BADGE": "ΔΗΜΟΦΙΛΕΣ",
+        "TITLE": "Αστέρι",
+        "DESC": "Όλα.",
+        "F1": "Όλα τα εργαλεία",
+        "F2": "Απεριόριστα",
+        "F3": "5 συνεδρίες",
+        "F4": "Πρόοδος",
+        "BUTTON": "Επιλογή"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "Οικογένεια",
+        "DESC": "Για όλους.",
+        "F1": "Όλα",
+        "F2": "3 παιδιά",
+        "F3": "Απεριόριστα",
+        "F4": "Εγγραφή",
+        "BUTTON": "Επιλογή"
+      }
+    },
+    "FAQ": {
+      "TITLE": "Συχνές Ερωτήσεις",
+      "Q1": "Ασφαλές;",
+      "A1": "Ναι.",
+      "Q2": "Συσκευές;",
+      "A2": "Όλες.",
+      "Q3": "Πρόοδος;",
+      "A3": "Ναι.",
+      "Q4": "Ακύρωση;",
+      "A4": "Πάντα."
+    },
+    "FUTURE": {
+      "BADGE": "Μέλλον",
+      "TITLE_1": "Τεχνολογία ",
+      "TITLE_HIGHLIGHT": "Εκπαίδευσης",
+      "SUBTITLE_1": "Το AsoBoard είναι ",
+      "SUBTITLE_HIGHLIGHT": "υπέροχο",
+      "SUBTITLE_2": ".",
+      "MASTERY": {
+        "TITLE": "Πρόοδος",
+        "DESC": "Εξέλιξη."
+      },
+      "RESILIENCE": {
+        "TITLE": "Αντοχή",
+        "DESC": "Παιχνίδι."
+      },
+      "SEEDING": {
+        "TITLE": "Ενδιαφέροντα",
+        "DESC": "Εστίαση."
+      }
+    },
+    "CTA": {
+      "TITLE_1": "Έτοιμοι για ",
+      "TITLE_HIGHLIGHT": "Μάθηση",
+      "TITLE_2": ";",
+      "SUBTITLE": "Εγγραφείτε σήμερα.",
+      "BUTTON": "ΞΕΚΙΝΗΣΤΕ",
+      "NO_CC": "Δεν απαιτείται κάρτα."
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "Διασκεδαστική Μάθηση!",
+      "MENTOR": "Μέντορας",
+      "STUDENT": "Μαθητής",
+      "STAFF": "Προσωπικό",
+      "PARENT": "Γονέας",
+      "MY_PROFILE": "Το Προφίλ Μου",
+      "LEADERBOARD_TITLE": "Κατάταξη",
+      "RANKING": "Θέση",
+      "LOGOUT": "Αποσύνδεση"
+    },
+    "HEADER": {
+      "TITLE": "Λίστα Μαθημάτων",
+      "GREETING_STUDENT": "Γεια σου, {{name}}! Τι θέλεις να μάθεις σήμερα;",
+      "GREETING_MENTOR": "Γεια σου, {{name}}! Ώρα να δημιουργήσεις ένα μάθημα!",
+      "GREETING_STAFF": "Γεια σου, {{name}}! Ας κάνουμε το AsoBoard καλύτερο!",
+      "GREETING_PARENT": "Γεια σου, {{name}}! Ας υποστηρίξουμε το παιδί σου!"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "Πρότυπα",
+      "CREATE_COURSE": "Δημιουργία Μαθήματος",
+      "MANAGE_ASSETS": "Διαχείριση Πόρων",
+      "BROWSE_ALL": "Περιήγηση Όλων",
+      "MY_COURSES": "Τα Μαθήματά Μου",
+      "MY_PROGRESS": "Η Πρόοδός Μου",
+      "MY_DIARY": "Το Ημερολόγιό Μου"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "Αναζήτηση μαθήματος...",
+      "FOUND_SINGULAR": "Βρέθηκε 1 μάθημα",
+      "FOUND_PLURAL": "Βρέθηκαν {{count}} μαθήματα",
+      "LOADING": "Φόρτωση...",
+      "SORT_NEWEST": "Νεότερα",
+      "SORT_OLDEST": "Παλαιότερα",
+      "SORT_AZ": "Α - Ω",
+      "SORT_ZA": "Ω - Α",
+      "SORT_MOST_SESSIONS": "Περισσότερες Συνεδρίες",
+      "SORT_LEAST_SESSIONS": "Λιγότερες Συνεδρίες"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "Καμία περιγραφή.",
+      "SESSIONS": "{{count}} Συνεδρίες",
+      "ENROLLED": "Εγγεγραμμένος",
+      "EDIT_COURSE": "Επεξεργασία",
+      "DELETE_COURSE": "Διαγραφή",
+      "ENROLL": "Εγγραφή",
+      "ENTER": "Είσοδος!"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "Δεν υπάρχουν μαθήματα!",
+      "CREATE_PROMPT_1": "Κάντε κλικ στο",
+      "CREATE_PROMPT_2": "Δημιουργία Μαθήματος",
+      "CREATE_PROMPT_3": "για να ξεκινήσετε!",
+      "NO_COURSES_FOUND": "Δεν βρέθηκαν μαθήματα!",
+      "COULDNT_FIND": "Δεν βρήκαμε κάτι για",
+      "CLEAR_SEARCH": "Εκκαθάριση"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "Δημιουργία Νέου Μαθήματος!",
+      "CREATE_CONFIRM": "Δημιουργία!",
+      "EDIT_TITLE": "Επεξεργασία Μαθήματος!",
+      "EDIT_CONFIRM": "Αποθήκευση!",
+      "INPUT_TITLE": "Τίτλος Μαθήματος",
+      "INPUT_TITLE_PLACEHOLDER": "Παράδειγμα: Διασκεδαστικά Μαθηματικά!",
+      "INPUT_DESC": "Περιγραφή",
+      "INPUT_DESC_PLACEHOLDER": "Πείτε μας για το μάθημα...",
+      "ERROR_REQUIRED": "Απαιτείται τίτλος!",
+      "ERROR_MINLENGTH": "Τουλάχιστον 3 χαρακτήρες!",
+      "DELETE_TITLE": "Είστε σίγουροι;",
+      "DELETE_CONFIRM": "Ναι, διαγραφή!",
+      "DELETE_DESC": "Διαγραφή αυτού του μαθήματος;",
+      "DELETE_CAUTION": "Προσοχή: Αυτή η ενέργεια δεν μπορεί να αναιρεθεί!"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Συνδεθείτε στη διασκεδαστική πλατφόρμα εκμάθησης!",
+      "USERNAME": "Όνομα χρήστη",
+      "USERNAME_PLACEHOLDER": "Πληκτρολογήστε το όνομα χρήστη σας",
+      "PASSWORD": "Σύνθημα",
+      "PASSWORD_PLACEHOLDER": "Πληκτρολογήστε τον κωδικό πρόσβασής σας",
+      "SUBMIT": "Συνδεθείτε και ξεκινήστε τη μάθηση!",
+      "NO_ACCOUNT": "Δεν έχετε λογαριασμό;",
+      "REGISTER_LINK": "Εγγραφείτε πρώτα!"
+    },
+    "REGISTER": {
+      "TITLE": "Δημιουργία νέου λογαριασμού",
+      "SUBTITLE": "Εγγραφείτε και αρχίστε να μαθαίνετε παιχνιδιάρικα!",
+      "USERNAME": "Διασκεδαστικό όνομα χρήστη",
+      "USERNAME_PLACEHOLDER": "Διαλέξτε ένα ωραίο όνομα!",
+      "USERNAME_ERROR": "Τουλάχιστον 3 χαρακτήρες παρακαλώ!",
+      "PASSWORD": "Μυστικός Κωδικός",
+      "PASSWORD_PLACEHOLDER": "Κρατήστε το ασφαλές!",
+      "PASSWORD_ERROR": "Τουλάχιστον 4 χαρακτήρες παρακαλώ!",
+      "ROLE_LABEL": "Ποιος Είσαι;",
+      "ROLE_STUDENT": "Φοιτητής",
+      "ROLE_PARENT": "Μητρική εταιρεία",
+      "ROLE_MENTOR": "Μέντορας",
+      "ROLE_STAFF": "Προσωπικό",
+      "SUBMIT": "Δημιουργήστε τον λογαριασμό μου!",
+      "HAS_ACCOUNT": "Έχετε ήδη λογαριασμό;",
+      "LOGIN_LINK": "Είσοδος εδώ!"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "Συνεδρίες {{count}}",
+    "NO_DESCRIPTION": "Δεν υπάρχει διαθέσιμη περιγραφή.",
+    "ENROLLED": "Εγγεγραμμένος",
+    "BACK_TO_DASHBOARD": "Επιστροφή στον Πίνακα ελέγχου",
+    "ENROLL_BUTTON": "Εγγραφείτε στο μάθημα",
+    "START_LEARNING": "Ξεκινήστε να μαθαίνετε",
+    "SESSION_LIST": "Λίστα συνεδριών",
+    "NO_SESSIONS": "Δεν υπάρχουν ακόμη διαθέσιμες συνεδρίες.",
+    "MENTOR_ONLY": "Μόνο οι μέντορες μπορούν να προσθέτουν συνεδρίες.",
+    "ADD_SESSION": "Προσθήκη συνεδρίας",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "Προσθήκη νέας συνεδρίας!",
+      "EDIT_SESSION_TITLE": "Επεξεργασία συνεδρίας!",
+      "TITLE_LABEL": "Τίτλος συνεδρίας",
+      "TITLE_PLACEHOLDER": "Παράδειγμα: Math Magic",
+      "DESC_LABEL": "Περιγραφή",
+      "DESC_PLACEHOLDER": "Τι θα μάθουμε σήμερα;",
+      "DATE_LABEL": "Προγραμματισμένη ημερομηνία",
+      "SAVE_BUTTON": "Αποθήκευση συνεδρίας!",
+      "DELETE_TITLE": "Διαγραφή συνεδρίας;",
+      "DELETE_DESC": "Είστε βέβαιοι ότι θέλετε να διαγράψετε αυτήν την περίοδο σύνδεσης; Αυτή η ενέργεια δεν μπορεί να αναιρεθεί.",
+      "CONFIRM_DELETE": "Ναι, διαγράψτε το!"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "Επιστροφή στο μάθημα",
+    "WAITING_MENTOR": "Αναμονή για μέντορα...",
+    "RECORDING": "Εγγραφή",
+    "LIVE": "ΖΩ",
+    "JOIN_CALL": "Εγγραφή ήχου/βίντεο",
+    "LEAVE_CALL": "Αποχώρηση από την κλήση",
+    "MUTE": "Βουβός",
+    "UNMUTE": "Κατάργηση σίγασης",
+    "STOP_VIDEO": "Διακοπή βίντεο",
+    "START_VIDEO": "Έναρξη βίντεο",
+    "PARTICIPANTS": "Συμμετέχοντες",
+    "CHAT": "Κουβέντα",
+    "TOOLS": "Εργαλεία",
+    "RAISE_HAND": "Σηκώστε το χέρι",
+    "LOWER_HAND": "Κάτω Χέρι",
+    "CLEAR_BOARD": "Clear Board",
+    "SAVE_BOARD": "Αποθήκευση πίνακα",
+    "UNDO": "Ξεκάνω",
+    "REDO": "Ξανακάνω"
+  },
+  "PROFILE": {
+    "TITLE": "Το προφίλ μου",
+    "ROLE": "Ρόλος: {{role}}",
+    "EDIT_PROFILE": "Επεξεργασία προφίλ",
+    "SAVE_CHANGES": "Αποθήκευση αλλαγών",
+    "CANCEL": "Ματαίωση",
+    "LOGOUT": "Αποσύνδεση"
+  },
+  "LEADERBOARD": {
+    "TITLE": "Leaderboard",
+    "SUBTITLE": "Δείτε ποιος μαθαίνει περισσότερο!",
+    "RANK": "Τάξη",
+    "NAME": "Ονομα",
+    "SCORE": "Σκορ",
+    "LEVEL": "Επίπεδο",
+    "BACK": "Back",
+    "ALL_TIME": "All Time",
+    "THIS_WEEK": "This Week",
+    "THIS_MONTH": "This Month",
+    "LOADING": "Loading leaderboard...",
+    "EMPTY_TITLE": "No Rankings Yet",
+    "EMPTY_DESC": "No students have points yet. Complete sessions and earn points to start!",
+    "YOU": "You",
+    "ACHIEVEMENTS": "achievements",
+    "POINTS": "points",
+    "ERROR": "Failed to load leaderboard",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "Ωχ! Η σελίδα δεν βρέθηκε",
+    "SUBTITLE": "Δεν μπορέσαμε να βρούμε τη σελίδα που αναζητούσατε.",
+    "BACK_HOME": "Επιστροφή στο σπίτι",
+    "SUBTITLE_2": "Don't worry, let's get you back on track!",
+    "SUGGESTION_TITLE": "Maybe you meant to visit:",
+    "SUGGESTION_HOME": "Home page to start learning",
+    "SUGGESTION_DASHBOARD": "Your dashboard to see courses",
+    "SUGGESTION_LOGIN": "Login if you haven't signed in",
+    "GO_HOME": "Go Home",
+    "MY_DASHBOARD": "My Dashboard",
+    "STILL_LOST": "Still lost? Try using the navigation menu at the top!",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "SHARED": {
+    "LOADING": "Φόρτωση...",
+    "SUCCESS": "Επιτυχία!",
+    "ERROR": "Σφάλμα!",
+    "WARNING": "Προειδοποίηση!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "Student Progress",
+    "SUBTITLE": "Track learning journey and achievements",
+    "SESSIONS": "{{count}} Sessions",
+    "CANVAS_TIME": "Total Canvas Time",
+    "CANVAS_TIME_UNIT": "{{count}} min",
+    "GAMES_COMPLETED": "Games Completed",
+    "ACCURACY_RATE": "Accuracy Rate",
+    "ERROR": "Failed to load progress data",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "Achievements",
+    "EARNED": "Earned",
+    "TOTAL_POINTS": "Total Points",
+    "LOADING": "Loading achievements...",
+    "EMPTY": "No achievements available yet.",
+    "EARNED_BADGE": "Earned",
+    "LOCKED_BADGE": "Locked",
+    "HOW_TO_EARN": "How to earn",
+    "REQUIRED": "Required: {{value}} ({{type}})",
+    "POINTS": "+{{count}} pts",
+    "UNLOCKED": "Achievement Unlocked!",
+    "POINTS_EARNED": "+{{count}} points"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

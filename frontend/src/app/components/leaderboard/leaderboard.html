@@ -1,0 +1,123 @@
+<div class="leaderboard-container">
+  <div class="leaderboard-header">
+    <button
+      class="back-btn"
+      (click)="goBack()"
+      aria-label="{{ 'LEADERBOARD.BACK_TO_DASHBOARD' | translate }}"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+      >
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      <span>{{ 'LEADERBOARD.BACK' | translate }}</span>
+    </button>
+
+    <div class="title-area">
+      <div class="title-icon"><i class="fa-solid fa-trophy text-amber-500"></i></div>
+      <h1>{{ 'LEADERBOARD.TITLE' | translate }}</h1>
+      <p class="subtitle">{{ 'LEADERBOARD.SUBTITLE' | translate }}</p>
+    </div>
+
+    <div class="period-tabs">
+      <button
+        class="period-tab"
+        [class.active]="activePeriod === 'all_time'"
+        (click)="switchPeriod('all_time')"
+      >
+        {{ 'LEADERBOARD.ALL_TIME' | translate }}
+      </button>
+      <button
+        class="period-tab"
+        [class.active]="activePeriod === 'weekly'"
+        (click)="switchPeriod('weekly')"
+      >
+        {{ 'LEADERBOARD.THIS_WEEK' | translate }}
+      </button>
+      <button
+        class="period-tab"
+        [class.active]="activePeriod === 'monthly'"
+        (click)="switchPeriod('monthly')"
+      >
+        {{ 'LEADERBOARD.THIS_MONTH' | translate }}
+      </button>
+    </div>
+  </div>
+
+  @if (loading) {
+    <div class="loading-state">
+      <div class="spinner"></div>
+      <p>{{ 'LEADERBOARD.LOADING' | translate }}</p>
+    </div>
+  } @else if (entries.length === 0) {
+    <div class="empty-state">
+      <div class="empty-icon"><i class="fa-solid fa-bullseye"></i></div>
+      <h3>{{ 'LEADERBOARD.EMPTY_TITLE' | translate }}</h3>
+      <p>{{ 'LEADERBOARD.EMPTY_DESC' | translate }}</p>
+    </div>
+  } @else {
+    <div class="leaderboard-list">
+      @for (entry of entries; track entry.user_id) {
+        <div
+          class="entry-card"
+          [class.current-user]="currentUser?.id === entry.user_id"
+          [class.podium]="entry.rank <= 3"
+        >
+          <div class="rank-area">
+            @if (entry.rank <= 3) {
+              <span class="trophy"
+                ><i class="fa-solid" [ngClass]="getRankIcon(entry.rank)"></i
+              ></span>
+            } @else {
+              <span class="rank-number">{{ entry.rank }}</span>
+            }
+          </div>
+
+          <div class="user-info">
+            <div class="avatar" [class]="entry.rank <= 3 ? 'podium-avatar' : ''">
+              {{ entry.username.charAt(0).toUpperCase() }}
+            </div>
+            <div class="user-details">
+              <span class="username">
+                {{ entry.username }}
+                @if (currentUser?.id === entry.user_id) {
+                  <span class="you-badge">{{ 'LEADERBOARD.YOU' | translate }}</span>
+                }
+              </span>
+              <span class="achievement-count">
+                <i class="fa-solid fa-medal text-amber-500"></i>
+                {{ entry.achievements_count }} {{ 'LEADERBOARD.ACHIEVEMENTS' | translate }}
+              </span>
+            </div>
+          </div>
+
+          <div class="points-section">
+            <div class="points-bar-track">
+              <div class="points-bar-fill" [style.width.%]="getPointsWidth(entry)"></div>
+            </div>
+            <span class="points-value"
+              >{{ entry.total_points | number }} {{ 'LEADERBOARD.POINTS' | translate }}</span
+            >
+          </div>
+        </div>
+      }
+    </div>
+  }
+
+  @if (currentUserRank && currentUserRank.rank > 3) {
+    <div class="sticky-rank">
+      <div class="sticky-inner">
+        <span class="sticky-rank-number">#{{ currentUserRank.rank }}</span>
+        <span class="sticky-name">{{ currentUserRank.username }}</span>
+        <span class="sticky-points"
+          >{{ currentUserRank.total_points | number }} {{ 'LEADERBOARD.POINTS' | translate }}</span
+        >
+      </div>
+    </div>
+  }
+</div>

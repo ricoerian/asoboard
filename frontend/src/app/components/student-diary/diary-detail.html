@@ -1,0 +1,214 @@
+<div class="fixed inset-0 w-screen h-screen overflow-hidden select-none bg-[#f8fafc]">
+  <div
+    class="absolute inset-0 z-0 pointer-events-none opacity-40"
+    style="
+      background-image: radial-gradient(circle, #cbd5e1 1px, transparent 1px);
+      background-size: 28px 28px;
+    "
+  ></div>
+
+  <app-canvas
+    class="absolute inset-0 z-10"
+    [studentEvents]="diaryEvents"
+    [isDrawingMode]="true"
+    [currentTool]="currentTool"
+    [color]="currentColor"
+    [thickness]="currentThickness"
+    [fontSize]="currentFontSize"
+    [fontFamily]="currentFontFamily"
+    [strokeDash]="currentStrokeDash"
+    [fillType]="currentFillType"
+    [fillGradientColor1]="currentFillGradientColor1"
+    [fillGradientColor2]="currentFillGradientColor2"
+    [fillGradientDirection]="currentFillGradientDirection"
+    [currentBrushPreset]="currentBrushPreset"
+    [cornerRadius]="currentCornerRadius"
+    [opacity]="currentOpacity"
+    [snapToGrid]="snapToGrid"
+    [shadowEnabled]="shadowEnabled"
+    [userRole]="'student'"
+    (eventCreated)="onEventCreated($event)"
+    (textInputRequested)="onTextInputRequested($event)"
+    (targetSelected)="onTargetSelected($event)"
+    (eventUpdated)="onEventUpdated($event)"
+    (zoomChanged)="onZoomChanged($event)"
+  ></app-canvas>
+
+  <div
+    class="absolute top-4 left-4 right-4 z-30 flex justify-between items-center pointer-events-none"
+  >
+    <div
+      class="flex items-center gap-3 bg-white/95 backdrop-blur-md px-4 py-3 rounded-2xl shadow-lg border border-white/50 pointer-events-auto"
+    >
+      <button
+        (click)="saveDiary()"
+        routerLink="/diaries"
+        class="w-10 h-10 bg-sky-100 hover:bg-sky-200 text-sky-700 rounded-xl flex items-center justify-center transition-transform hover:scale-105 font-bold text-lg"
+        aria-label="Go back"
+      >
+        ←
+      </button>
+      <div>
+        <h1 class="font-black text-slate-800 text-base leading-tight tracking-tight">
+          {{ diary?.title || 'Magic Sketch' }}
+        </h1>
+        <p
+          class="text-[12px] font-extrabold text-sky-500 uppercase tracking-widest leading-none mt-0.5"
+        >
+          <i class="fa-solid fa-paintbrush mr-1"></i> Sketchbook Detail
+        </p>
+      </div>
+    </div>
+
+    @if (isSaving) {
+      <div
+        class="pointer-events-auto bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg border-2 border-sky-100 flex items-center gap-2"
+      >
+        <div class="w-2 h-2 bg-sky-500 rounded-full animate-pulse"></div>
+        <span class="text-xs font-black text-sky-600 uppercase tracking-widest">Saving…</span>
+      </div>
+    }
+  </div>
+
+  <div class="absolute top-24 left-4 z-30 pointer-events-auto">
+    <app-toolbar
+      [(currentTool)]="currentTool"
+      [(color)]="currentColor"
+      [(thickness)]="currentThickness"
+      [(fontSize)]="currentFontSize"
+      [(fontFamily)]="currentFontFamily"
+      [(strokeDash)]="currentStrokeDash"
+      [(fillType)]="currentFillType"
+      [(fillGradientColor1)]="currentFillGradientColor1"
+      [(fillGradientColor2)]="currentFillGradientColor2"
+      [(fillGradientDirection)]="currentFillGradientDirection"
+      [(currentBrushPreset)]="currentBrushPreset"
+      [(cornerRadius)]="currentCornerRadius"
+      [(opacity)]="currentOpacity"
+      [(snapToGrid)]="snapToGrid"
+      [(shadowEnabled)]="shadowEnabled"
+      [isSaving]="isSaving"
+      [userRole]="'student'"
+      [zoom]="canvasZoom"
+      (clearRequested)="clearBoard()"
+      (saveRequested)="saveDiary()"
+      (exportRequested)="exportCanvas()"
+      (assetSelected)="onAssetSelected($event)"
+      (zoomInRequested)="onZoomIn()"
+      (zoomOutRequested)="onZoomOut()"
+      (resetViewRequested)="onResetView()"
+      (bringToFrontRequested)="canvas()?.bringToFront()"
+      (sendToBackRequested)="canvas()?.sendToBack()"
+      (bringForwardRequested)="canvas()?.bringForward()"
+      (sendBackwardRequested)="canvas()?.sendBackward()"
+    ></app-toolbar>
+  </div>
+
+  <app-keyboard-shortcuts-help></app-keyboard-shortcuts-help>
+
+  <div class="absolute bottom-4 right-4 z-30 pointer-events-auto">
+    <button
+      (click)="toggleComments()"
+      class="bg-white/95 backdrop-blur-md shadow-lg rounded-2xl px-4 py-3 font-extrabold text-sm transition-all hover:-translate-y-0.5 border-2"
+      [class.border-sky-400]="!showComments"
+      [class.border-cyan-400]="showComments"
+      [class.text-sky-700]="!showComments"
+      [class.text-cyan-700]="showComments"
+    >
+      <i class="fa-solid fa-comments"></i> Feedback
+      @if (comments.length > 0) {
+        <span class="bg-pink-500 text-white text-xs font-black px-2 py-0.5 rounded-full ml-2">
+          {{ comments.length }}
+        </span>
+      }
+    </button>
+  </div>
+
+  @if (showComments) {
+    <div
+      class="absolute bottom-20 right-4 z-40 w-80 max-h-96 bg-white/98 backdrop-blur-md rounded-3xl shadow-2xl border-2 border-pink-200 flex flex-col pointer-events-auto"
+    >
+      <div class="px-4 py-3 border-b-2 border-pink-100 flex justify-between items-center">
+        <h3 class="font-black text-cyan-700 text-sm">
+          <i class="fa-solid fa-comments text-cyan-400"></i> Comments
+        </h3>
+        <button (click)="toggleComments()" class="text-slate-400 hover:text-slate-600">
+          <i class="fa-solid fa-xmark text-rose-500"></i>
+        </button>
+      </div>
+
+      <div class="flex-1 overflow-y-auto px-4 py-3 space-y-3 min-h-[120px]">
+        @if (comments.length === 0) {
+          <p class="text-slate-400 text-xs font-bold text-center py-4">No feedback yet.</p>
+        }
+        @for (comment of comments; track comment.id) {
+          <div class="bg-pink-50 border border-pink-100 rounded-2xl p-3">
+            <div class="flex justify-between items-start mb-1">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-6 h-6 rounded-full bg-cyan-400 flex items-center justify-center overflow-hidden"
+                >
+                  @if (comment.author_avatar) {
+                    <img
+                      [src]="comment.author_avatar"
+                      alt="Avatar"
+                      class="w-full h-full object-cover"
+                    />
+                  } @else {
+                    <span class="text-white font-black text-[10px]">{{
+                      comment.author_username[0]?.toUpperCase()
+                    }}</span>
+                  }
+                </div>
+                <span class="text-cyan-700 font-extrabold text-xs">{{
+                  comment.author_username
+                }}</span>
+                @if (comment.author === currentUser?.id) {
+                  <span
+                    class="bg-pink-200 text-cyan-700 text-[9px] font-extrabold px-1.5 py-0.5 rounded-full"
+                    >You</span
+                  >
+                }
+              </div>
+              @if (canDeleteComment(comment.author)) {
+                <button
+                  (click)="deleteComment(comment.id)"
+                  class="text-red-400 hover:text-red-600 text-xs"
+                >
+                  <i class="fa-solid fa-trash-can"></i>
+                </button>
+              }
+            </div>
+            <p class="text-slate-600 text-xs font-semibold leading-relaxed">
+              {{ comment.content }}
+            </p>
+          </div>
+        }
+      </div>
+
+      <div class="border-t-2 border-pink-100 p-3">
+        <div class="flex gap-2">
+          <input
+            type="text"
+            [(ngModel)]="newCommentContent"
+            (keydown.enter)="addComment()"
+            placeholder="Write a comment..."
+            [disabled]="isSubmittingComment"
+            class="flex-1 bg-pink-50 border-2 border-pink-100 rounded-xl px-3 py-2 text-xs font-bold text-slate-700 placeholder-slate-400 focus:outline-none focus:border-cyan-400 transition-all disabled:opacity-50"
+          />
+          <button
+            (click)="addComment()"
+            [disabled]="!newCommentContent.trim() || isSubmittingComment"
+            class="bg-pink-500 hover:bg-cyan-400 disabled:bg-slate-300 text-white font-extrabold text-xs px-4 py-2 rounded-xl transition-all shadow-md disabled:cursor-not-allowed"
+          >
+            @if (isSubmittingComment) {
+              <i class="fa-solid fa-spinner fa-spin"></i>
+            } @else {
+              <i class="fa-solid fa-paper-plane text-sky-500"></i>
+            }
+          </button>
+        </div>
+      </div>
+    </div>
+  }
+</div>

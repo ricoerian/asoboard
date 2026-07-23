@@ -1,0 +1,80 @@
+@if (show()) {
+  <div
+    class="fixed inset-0 z-[9999] flex items-center justify-center"
+    (click)="close()"
+    (keyup.escape)="close()"
+    tabindex="0"
+  >
+    <div class="absolute inset-0 bg-black/40 backdrop-blur-sm" aria-hidden="true"></div>
+
+    <div
+      class="relative bg-white rounded-3xl shadow-2xl border-2 border-blue-100 max-w-lg w-full mx-4 max-h-[80vh] overflow-hidden flex flex-col"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Keyboard Shortcuts"
+      (keyup.escape)="$event.stopPropagation()"
+      tabindex="-1"
+    >
+      <div class="bg-blue-600 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="text-3xl text-white"><i class="fa-solid fa-keyboard"></i></span>
+          <div>
+            <h2 class="font-extrabold text-white text-lg leading-tight">
+              {{ 'KEYBOARD_SHORTCUTS.TITLE' | translate }}
+            </h2>
+            <p class="text-blue-200 text-xs font-bold">
+              Press <kbd class="bg-white/20 px-1.5 py-0.5 rounded text-white font-mono">?</kbd> to
+              toggle
+            </p>
+          </div>
+        </div>
+        <button
+          (click)="close()"
+          class="w-9 h-9 bg-white/20 hover:bg-white/30 text-white rounded-xl flex items-center justify-center transition font-bold"
+          aria-label="Close shortcuts help"
+        >
+          <i class="fa-solid fa-xmark text-rose-500"></i>
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto flex-1">
+        @for (group of groups; track group.category) {
+          <div class="mb-5">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-blue-500"><i class="fa-solid {{ group.icon }}"></i></span>
+              <h3 class="font-extrabold text-slate-700 text-sm uppercase tracking-wider">
+                {{ group.label }}
+              </h3>
+            </div>
+            <div class="space-y-1.5">
+              @for (shortcut of group.shortcuts; track shortcut.description) {
+                <div
+                  class="flex items-center justify-between py-1.5 px-3 rounded-xl hover:bg-slate-50 transition"
+                >
+                  <span class="text-slate-600 font-semibold text-sm">{{
+                    shortcut.description
+                  }}</span>
+                  <kbd
+                    class="bg-slate-100 border border-slate-200 text-slate-700 font-mono font-bold text-xs px-2.5 py-1 rounded-lg shadow-sm"
+                  >
+                    {{ formatKey(shortcut) }}
+                  </kbd>
+                </div>
+              }
+            </div>
+          </div>
+        }
+      </div>
+
+      <div class="px-6 py-3 bg-slate-50 border-t border-slate-100 text-center">
+        <p class="text-slate-400 text-xs font-bold">
+          Press
+          <kbd class="bg-slate-200 px-1.5 py-0.5 rounded font-mono">{{
+            'KEYBOARD_SHORTCUTS.ESC' | translate
+          }}</kbd>
+          to close
+        </p>
+      </div>
+    </div>
+  </div>
+}

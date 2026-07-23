@@ -1,0 +1,256 @@
+<div class="page-bg min-h-screen">
+  <nav
+    class="bg-white shadow-md shadow-slate-200/40 px-6 py-3 flex justify-between items-center sticky top-0 z-50"
+  >
+    <a class="flex items-center gap-3" routerLink="/dashboard">
+      <img src="/static/logo.png" alt="AsoBoard" class="h-16" />
+      <span
+        class="hidden sm:inline-block bg-slate-500 text-white text-xs font-extrabold px-3 py-1 rounded-full"
+      >
+        Staff Portal
+      </span>
+    </a>
+    <div class="flex items-center gap-3">
+      <a
+        routerLink="/dashboard"
+        class="bg-slate-50 hover:bg-slate-100 border-2 border-slate-200 text-slate-600 font-extrabold text-xs px-4 py-2 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
+      >
+        <i class="fa-solid fa-arrow-left text-slate-500"></i> Back to Dashboard
+      </a>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+      <div>
+        <h1 class="text-3xl font-black text-slate-800">User Management</h1>
+        <p class="text-slate-500 mt-2">Manage all user accounts, roles, and status.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
+      <!-- Controls -->
+      <div class="flex flex-col md:flex-row gap-4 mb-6">
+        <div class="flex-1 relative">
+          <i class="fa-solid fa-search absolute left-3 top-3 text-slate-400"></i>
+          <input
+            type="text"
+            [(ngModel)]="searchQuery"
+            placeholder="Search by username or email..."
+            class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all outline-none"
+          />
+        </div>
+        <div class="w-full md:w-64">
+          <select
+            [(ngModel)]="filterRole"
+            class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all outline-none bg-white"
+          >
+            <option value="all">All Roles</option>
+            <option value="student">Student</option>
+            <option value="parent">Parent</option>
+            <option value="mentor">Mentor</option>
+            <option value="staff">Staff</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead>
+            <tr class="bg-slate-50 border-y border-slate-200">
+              <th class="px-4 py-3 font-semibold text-slate-600">ID</th>
+              <th class="px-4 py-3 font-semibold text-slate-600">User</th>
+              <th class="px-4 py-3 font-semibold text-slate-600">Role</th>
+              <th class="px-4 py-3 font-semibold text-slate-600">Status</th>
+              <th class="px-4 py-3 font-semibold text-slate-600">Joined</th>
+              <th class="px-4 py-3 font-semibold text-slate-600 text-right">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @if (loading) {
+              <tr class="border-b border-slate-100">
+                <td colspan="6" class="px-4 py-8 text-center text-slate-500">
+                  <i class="fa-solid fa-spinner fa-spin mr-2"></i> Loading users...
+                </td>
+              </tr>
+            }
+            @if (!loading && filteredUsers.length === 0) {
+              <tr class="border-b border-slate-100">
+                <td colspan="6" class="px-4 py-8 text-center text-slate-500">
+                  No users found matching your criteria.
+                </td>
+              </tr>
+            }
+
+            @for (user of filteredUsers; track user) {
+              <tr class="border-b border-slate-100 hover:bg-slate-50 transition-colors">
+                <td class="px-4 py-3 text-slate-600">#{{ user.id }}</td>
+                <td class="px-4 py-3">
+                  <div class="font-medium text-slate-900">{{ user.username }}</div>
+                  <div class="text-sm text-slate-500">{{ user.email }}</div>
+                </td>
+                <td class="px-4 py-3">
+                  <span
+                    class="px-2.5 py-1 rounded-full text-xs font-medium capitalize"
+                    [ngClass]="{
+                      'bg-sky-100 text-sky-700': user.role === 'student',
+                      'bg-emerald-100 text-emerald-700': user.role === 'mentor',
+                      'bg-amber-100 text-amber-700': user.role === 'parent',
+                      'bg-slate-100 text-slate-700': user.role === 'staff',
+                    }"
+                  >
+                    {{ user.role }}
+                  </span>
+                </td>
+                <td class="px-4 py-3">
+                  @if (user.is_active) {
+                    <span class="text-emerald-600 font-medium text-sm"
+                      ><i class="fa-solid fa-check-circle mr-1"></i>Active</span
+                    >
+                  }
+                  @if (!user.is_active) {
+                    <span class="text-rose-600 font-medium text-sm"
+                      ><i class="fa-solid fa-times-circle mr-1"></i>Inactive</span
+                    >
+                  }
+                </td>
+                <td class="px-4 py-3 text-slate-600 text-sm">
+                  {{ user.date_joined | date: 'mediumDate' }}
+                </td>
+                <td class="px-4 py-3 text-right">
+                  <div class="flex items-center justify-end gap-2">
+                    <button
+                      (click)="viewAuditLogs(user)"
+                      class="p-2 text-sky-600 hover:bg-sky-50 rounded-lg transition-colors"
+                      title="View Audit Logs"
+                    >
+                      <i class="fa-solid fa-clipboard-list"></i>
+                    </button>
+                    <button
+                      (click)="toggleUserStatus(user)"
+                      class="p-2 rounded-lg transition-colors"
+                      [ngClass]="
+                        user.is_active
+                          ? 'text-rose-600 hover:bg-rose-50'
+                          : 'text-emerald-600 hover:bg-emerald-50'
+                      "
+                      [title]="user.is_active ? 'Deactivate User' : 'Activate User'"
+                    >
+                      <i class="fa-solid" [ngClass]="user.is_active ? 'fa-ban' : 'fa-check'"></i>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Audit Log Modal -->
+  @if (showAuditModal) {
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4">
+      <div
+        class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm"
+        (click)="closeAuditModal()"
+        (keydown.enter)="closeAuditModal()"
+        tabindex="0"
+      ></div>
+      <div
+        class="relative bg-white rounded-2xl shadow-xl w-full max-w-3xl max-h-[80vh] flex flex-col"
+      >
+        <div
+          class="px-6 py-4 border-b border-slate-200 flex justify-between items-center bg-slate-50 rounded-t-2xl"
+        >
+          <h2 class="text-xl font-bold text-slate-800">
+            Audit Logs for <span class="text-emerald-600">{{ selectedUser?.username }}</span>
+          </h2>
+          <button
+            (click)="closeAuditModal()"
+            class="text-slate-400 hover:text-slate-600 p-2 rounded-full transition-colors hover:bg-slate-200"
+          >
+            <i class="fa-solid fa-times"></i>
+          </button>
+        </div>
+        <div class="p-6 overflow-y-auto flex-1 bg-white rounded-b-2xl">
+          @if (auditLogs.length === 0) {
+            <div class="text-center py-8 text-slate-500">
+              <i class="fa-solid fa-clipboard text-4xl mb-3 opacity-20"></i>
+              <p>No audit logs found for this user.</p>
+            </div>
+          }
+          @if (auditLogs.length > 0) {
+            <div class="space-y-4">
+              @for (log of auditLogs; track log) {
+                <div
+                  class="flex gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50 hover:border-slate-200 transition-colors"
+                >
+                  <div class="mt-1">
+                    <div
+                      class="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-sm"
+                      [ngClass]="{
+                        'bg-emerald-500': log.action === 'create' || log.action === 'reactivate',
+                        'bg-sky-500': log.action === 'update',
+                        'bg-rose-500': log.action === 'delete' || log.action === 'deactivate',
+                      }"
+                    >
+                      <i
+                        class="fa-solid"
+                        [ngClass]="{
+                          'fa-plus': log.action === 'create',
+                          'fa-pencil': log.action === 'update',
+                          'fa-trash': log.action === 'delete',
+                          'fa-ban': log.action === 'deactivate',
+                          'fa-check': log.action === 'reactivate',
+                        }"
+                      ></i>
+                    </div>
+                  </div>
+                  <div class="flex-1">
+                    <div class="flex justify-between items-start mb-1">
+                      <div>
+                        <span class="font-semibold text-slate-900">{{
+                          log.user_username || 'System'
+                        }}</span>
+                        <span class="text-slate-500 mx-2">performed</span>
+                        <span
+                          class="font-medium px-2 py-0.5 rounded text-xs uppercase tracking-wider"
+                          [ngClass]="{
+                            'bg-emerald-100 text-emerald-800':
+                              log.action === 'create' || log.action === 'reactivate',
+                            'bg-sky-100 text-sky-800': log.action === 'update',
+                            'bg-rose-100 text-rose-800':
+                              log.action === 'delete' || log.action === 'deactivate',
+                          }"
+                          >{{ log.action }}</span
+                        >
+                      </div>
+                      <span
+                        class="text-xs text-slate-400 font-medium whitespace-nowrap ml-4 bg-white px-2 py-1 rounded-md border border-slate-100"
+                      >
+                        {{ log.timestamp | date: 'medium' }}
+                      </span>
+                    </div>
+                    <p
+                      class="text-slate-600 text-sm bg-white p-3 rounded-lg border border-slate-100 mt-2 shadow-sm"
+                    >
+                      {{ log.details || 'No additional details provided.' }}
+                    </p>
+                    @if (log.ip_address) {
+                      <p class="text-xs text-slate-400 mt-2 flex items-center">
+                        <i class="fa-solid fa-network-wired mr-1.5 opacity-50"></i>
+                        {{ log.ip_address }}
+                      </p>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

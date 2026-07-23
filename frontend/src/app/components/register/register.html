@@ -1,0 +1,133 @@
+<div class="auth-bg min-h-screen flex items-center justify-center p-6">
+  <div
+    class="bounce-in w-full max-w-md bg-white rounded-4xl p-10 shadow-2xl shadow-sky-300/50 border-4 border-white"
+  >
+    <div class="text-center mb-8">
+      <div class="text-6xl mb-3 inline-block" [ngClass]="getRoleTextColor()">
+        <i class="fa-solid fa-star text-amber-500"></i>
+      </div>
+      <h1 class="text-3xl font-black text-slate-800 tracking-tight">
+        {{ 'AUTH.REGISTER.TITLE' | translate }}
+      </h1>
+      <p class="text-slate-500 text-sm mt-1 font-semibold">
+        {{ 'AUTH.REGISTER.SUBTITLE' | translate }}
+        <i class="fa-solid fa-graduation-cap" [ngClass]="getRoleTextColor()"></i>
+      </p>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="flex flex-col gap-5">
+      <div>
+        <label for="usernameInput" class="block text-slate-700 font-extrabold mb-2 text-sm">{{
+          'AUTH.REGISTER.USERNAME' | translate
+        }}</label>
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+            <i class="fa-solid fa-user-astronaut"></i>
+          </span>
+          <input
+            id="usernameInput"
+            type="text"
+            formControlName="username"
+            [placeholder]="'AUTH.REGISTER.USERNAME_PLACEHOLDER' | translate"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm font-bold focus:outline-none focus:border-pink-400 focus:bg-white transition-all shadow-inner"
+          />
+        </div>
+        @if (
+          registerForm.get('username')?.touched &&
+          registerForm.get('username')?.errors?.['minlength']
+        ) {
+          <p class="text-red-500 text-[10px] font-black mt-1.5 ml-1 uppercase tracking-wider">
+            {{ 'AUTH.REGISTER.USERNAME_ERROR' | translate }}
+          </p>
+        }
+      </div>
+
+      <div>
+        <label for="passwordInput" class="block text-slate-700 font-extrabold mb-2 text-sm">{{
+          'AUTH.REGISTER.PASSWORD' | translate
+        }}</label>
+        <div class="relative">
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400">
+            <i class="fa-solid fa-key text-orange-500"></i>
+          </span>
+          <input
+            id="passwordInput"
+            type="password"
+            formControlName="password"
+            [placeholder]="'AUTH.REGISTER.PASSWORD_PLACEHOLDER' | translate"
+            class="w-full bg-slate-50 border-2 border-slate-200 rounded-2xl pl-12 pr-4 py-3.5 text-sm font-bold focus:outline-none focus:border-pink-400 focus:bg-white transition-all shadow-inner"
+          />
+        </div>
+        @if (
+          registerForm.get('password')?.touched &&
+          registerForm.get('password')?.errors?.['minlength']
+        ) {
+          <p class="text-red-500 text-[10px] font-black mt-1.5 ml-1 uppercase tracking-wider">
+            {{ 'AUTH.REGISTER.PASSWORD_ERROR' | translate }}
+          </p>
+        }
+      </div>
+
+      <div>
+        <span id="roleLabel" class="block text-slate-700 font-extrabold mb-2 text-sm">{{
+          'AUTH.REGISTER.ROLE_LABEL' | translate
+        }}</span>
+        <div class="grid grid-cols-2 gap-4" role="radiogroup" aria-labelledby="roleLabel">
+          <label id="studentLabel" class="cursor-pointer block h-full">
+            <input
+              type="radio"
+              value="student"
+              formControlName="role"
+              class="hidden peer"
+              aria-labelledby="roleLabel studentLabel"
+            />
+            <div
+              class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-4 h-full flex flex-col items-center justify-center text-center transition-all peer-checked:bg-teal-50 peer-checked:border-teal-400 peer-checked:text-teal-600"
+            >
+              <div class="text-2xl mb-1"><i class="fa-solid fa-graduation-cap"></i></div>
+              <span class="font-black text-xs uppercase tracking-wider">{{
+                'AUTH.REGISTER.ROLE_STUDENT' | translate
+              }}</span>
+            </div>
+          </label>
+          <label id="mentorLabel" class="cursor-pointer block h-full">
+            <input
+              type="radio"
+              value="mentor"
+              formControlName="role"
+              class="hidden peer"
+              aria-labelledby="roleLabel mentorLabel"
+            />
+            <div
+              class="bg-slate-50 border-2 border-slate-200 rounded-2xl p-4 h-full flex flex-col items-center justify-center text-center transition-all peer-checked:bg-pink-50 peer-checked:border-pink-400 peer-checked:text-pink-600"
+            >
+              <div class="text-2xl mb-1"><i class="fa-solid fa-chalkboard-user"></i></div>
+              <span class="font-black text-xs uppercase tracking-wider">{{
+                'AUTH.REGISTER.ROLE_MENTOR' | translate
+              }}</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="registerForm.invalid"
+        class="w-full text-white font-black py-4 rounded-2xl shadow-lg transition-all hover:scale-[1.02] active:scale-95 disabled:opacity-50 disabled:scale-100 mt-2"
+        [ngClass]="getRoleButtonClasses()"
+      >
+        {{ 'AUTH.REGISTER.SUBMIT' | translate }}
+        <i class="fa-solid fa-wand-magic-sparkles ml-2"></i>
+      </button>
+    </form>
+
+    <p class="text-center text-slate-500 text-sm font-semibold mt-6">
+      {{ 'AUTH.REGISTER.HAS_ACCOUNT' | translate }}
+      <a
+        routerLink="/login"
+        class="text-sky-600 hover:text-teal-500 font-extrabold transition-colors"
+        >{{ 'AUTH.REGISTER.LOGIN_LINK' | translate }} <i class="fa-solid fa-hand-wave"></i
+      ></a>
+    </p>
+  </div>
+</div>

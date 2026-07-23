@@ -1,0 +1,167 @@
+<div class="w-full min-h-screen bg-sky-50 p-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-4">
+        <a
+          routerLink="/dashboard"
+          class="flex items-center justify-center w-10 h-10 rounded-full bg-white text-slate-500 hover:bg-sky-100 hover:text-sky-600 transition-colors shadow-sm"
+        >
+          <i class="fa-solid fa-arrow-left"></i>
+        </a>
+        <div>
+          <h1 class="text-4xl font-black text-slate-800 mb-2">
+            <i class="fa-solid fa-rocket text-blue-500 mr-2"></i>Student Progress
+          </h1>
+          <p class="text-slate-500 font-bold">{{ 'STUDENT_PROGRESS.TRACK_JOURNEY' | translate }}</p>
+        </div>
+      </div>
+      <div class="bg-white px-6 py-3 rounded-2xl shadow-lg border-2 border-blue-100">
+        <span class="text-slate-700 font-black">{{ totalSessions }} Sessions</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-sky-100">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-pen-nib text-blue-600"></i>
+          </div>
+          <div>
+            <p class="text-slate-500 font-bold text-sm">
+              {{ 'STUDENT_PROGRESS.TOTAL_CANVAS_TIME' | translate }}
+            </p>
+            <p class="text-3xl font-black text-slate-800">{{ totalCanvasTime }} min</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-orange-100">
+        <div class="flex items-center gap-4 mb-4">
+          <div
+            class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-2xl"
+          >
+            <i class="fa-solid fa-gamepad text-orange-600"></i>
+          </div>
+          <div>
+            <p class="text-slate-500 font-bold text-sm">
+              {{ 'STUDENT_PROGRESS.GAMES_COMPLETED' | translate }}
+            </p>
+            <p class="text-3xl font-black text-slate-800">{{ totalGames }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-green-100">
+        <div class="flex items-center gap-4 mb-4">
+          <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-2xl">
+            <i class="fa-solid fa-star text-yellow-500"></i>
+          </div>
+          <div>
+            <p class="text-slate-500 font-bold text-sm">
+              {{ 'STUDENT_PROGRESS.ACCURACY_RATE' | translate }}
+            </p>
+            <p class="text-3xl font-black text-slate-800">{{ accuracyRate }}%</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Weekly Activity Chart (Simple CSS Bars) -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-slate-100">
+        <h2 class="text-2xl font-black text-slate-800 mb-6">
+          <i class="fa-solid fa-chart-simple text-indigo-500 mr-2"></i>Weekly Activity
+        </h2>
+        <div class="flex items-end gap-2 h-48 mt-8">
+          @for (day of weeklyActivity; track day.label) {
+            <div class="flex-1 flex flex-col items-center justify-end h-full gap-2">
+              <div
+                class="w-full bg-indigo-200 hover:bg-indigo-400 transition-colors rounded-t-xl"
+                [style.height.%]="maxActivity > 0 ? (day.value / maxActivity) * 100 : 0"
+                [title]="day.value + ' sessions'"
+              ></div>
+              <span class="text-xs font-bold text-slate-400 uppercase">{{ day.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Recent Sessions -->
+      <div class="bg-white rounded-3xl p-8 shadow-xl border-4 border-slate-100">
+        <h2 class="text-2xl font-black text-slate-800 mb-6">
+          <i class="fa-solid fa-clock-rotate-left text-pink-500 mr-2"></i>Recent Sessions
+        </h2>
+
+        @if (recentSessions.length === 0) {
+          <div class="flex flex-col items-center justify-center py-8 text-center">
+            <div
+              class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center text-slate-400 text-2xl mb-4"
+            >
+              <i class="fa-solid fa-ghost"></i>
+            </div>
+            <p class="text-slate-500 font-bold">No sessions played yet!</p>
+          </div>
+        } @else {
+          <div class="flex flex-col gap-3">
+            @for (session of recentSessions; track session.id) {
+              <div
+                class="flex items-center justify-between p-4 rounded-2xl border-2 border-slate-100 hover:border-sky-200 hover:bg-sky-50 transition-colors cursor-pointer group"
+                (click)="viewSession(session.id)"
+                (keydown.enter)="viewSession(session.id)"
+                (keydown.space)="viewSession(session.id)"
+                tabindex="0"
+              >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="w-12 h-12 rounded-xl flex items-center justify-center text-xl"
+                    [class.bg-purple-100]="session.mode === 'freedom'"
+                    [class.text-purple-600]="session.mode === 'freedom'"
+                    [class.bg-orange-100]="session.mode === 'game'"
+                    [class.text-orange-600]="session.mode === 'game'"
+                  >
+                    <i
+                      class="fa-solid"
+                      [ngClass]="session.mode === 'freedom' ? 'fa-palette' : 'fa-gamepad'"
+                    ></i>
+                  </div>
+                  <div>
+                    <h3 class="font-bold text-slate-700 group-hover:text-sky-700">
+                      {{ session.title }}
+                    </h3>
+                    <p class="text-xs font-bold text-slate-400">
+                      {{ formatDate(session.created_at) }} • {{ formatTime(session.created_at) }}
+                    </p>
+                  </div>
+                </div>
+
+                @if (session.mode === 'game' && session.is_correct !== undefined) {
+                  <div
+                    class="px-3 py-1 rounded-full text-xs font-extrabold"
+                    [class.bg-green-100]="session.is_correct === true"
+                    [class.text-green-700]="session.is_correct === true"
+                    [class.bg-red-100]="session.is_correct === false"
+                    [class.text-red-700]="session.is_correct === false"
+                  >
+                    @if (session.is_correct) {
+                      <i class="fa-solid fa-check"></i>
+                    } @else {
+                      <i class="fa-solid fa-xmark"></i>
+                    }
+                  </div>
+                }
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
+    @if (currentStudentId) {
+      <div class="mt-8">
+        <h2 class="text-2xl font-black text-slate-800 mb-6">
+          <i class="fa-solid fa-brain text-purple-500 mr-2"></i>Deep Learning Insights
+        </h2>
+        <app-student-insights [studentId]="currentStudentId"></app-student-insights>
+      </div>
+    }
+  </div>
+</div>

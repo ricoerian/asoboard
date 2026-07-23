@@ -1,0 +1,56 @@
+name: AsoBoard MCP Setup
+version: 0.0.1
+schema: v1
+mcpServers:
+  # 1. SQLite Server: Memberikan akses AI ke database backend Django.
+  # Menggunakan package pollinations yang terbukti stabil tanpa perlu compile.
+  - name: AsoBoard SQLite DB
+    command: npx
+    args:
+      - -y
+      - "@pollinations/mcp-server-sqlite"
+      - "/Users/ricoeri/Documents/asoboard/backend/db.sqlite3"
+    env: {}
+
+  # 2. Filesystem Server: Memastikan AI memiliki akses penuh (baca/tulis)
+  # ke seluruh file di workspace AsoBoard.
+  - name: AsoBoard Workspace
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-filesystem"
+      - "/Users/ricoeri/Documents/asoboard"
+    env: {}
+
+  # 3. Memory Server: Memberikan AI "memori" berupa knowledge-graph.
+  - name: Memory
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-memory"
+    env: {}
+
+  # 4. Sequential Thinking: Membantu untuk complex-reasoning.
+  - name: Sequential Thinking
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-sequential-thinking"
+    env: {}
+
+  # 5. Fetch Server: Memungkinkan AI untuk membaca dokumentasi web secara langsung.
+  # Menggunakan package fetch ringan yang cepat.
+  - name: Web Fetcher
+    command: npx
+    args:
+      - -y
+      - "@mokei/mcp-fetch"
+    env: {}
+
+  # 8. Time Server: AI mengetahui waktu lokal saat menamai file atau menjadwalkan task.
+  - name: Time Server
+    command: npx
+    args:
+      - -y
+      - "@mcpcentral/mcp-time"
+    env: {}

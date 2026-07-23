@@ -1,0 +1,560 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "Masuk",
+      "FREE_TRIAL": "Uji Coba Gratis"
+    },
+    "HERO": {
+      "TITLE_1": "Cara ajaib untuk melakukannya",
+      "TITLE_HIGHLIGHT": "belajar, menggambar, dan Asobi",
+      "TITLE_2": "bersama!",
+      "SUBTITLE": "Ciptakan ruang inspiratif tempat imajinasi anak Anda menjadi nyata! AsoBoard menghadirkan semangat \"Asobi\" ke dalam papan tulis yang menyenangkan, aman, dan kolaboratif yang dirancang khusus untuk generasi muda yang penuh rasa ingin tahu dan pendidik yang berdedikasi.",
+      "START_LEARNING": "MULAI BELAJAR SEKARANG",
+      "PARENT_LOGIN": "LOGIN ORANG TUA",
+      "SOCIAL_PROOF": "Dicintai oleh ribuan siswa & mentor!"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "SESUAI COPPA",
+      "AD_FREE": "100% ZONA BEBAS IKLAN",
+      "PARENTAL": "KONTROL ORANG TUA",
+      "FAMILIES": "BERGABUNG DENGAN 5.000+ KELUARGA BAHAGIA"
+    },
+    "FEATURES": {
+      "TITLE": "Belajar Seharusnya Menyenangkan!",
+      "SUBTITLE": "Kami percaya bahwa pembelajaran visual interaktif membantu anak-anak memahami konsep lebih cepat sekaligus membuat mereka tetap terlibat dan senang.",
+      "CREATIVE_TOOLS": {
+        "TITLE": "Alat Kreatif",
+        "DESC": "Warna dan bentuk cerah yang membuat setiap pelajaran terasa seperti proyek seni."
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "Ramah Anak",
+        "DESC": "Antarmuka yang aman dan sangat intuitif yang dapat digunakan siapa saja tanpa instruksi."
+      },
+      "REAL_TIME": {
+        "TITLE": "Sinkronisasi Waktu Nyata",
+        "DESC": "Mentor dan siswa bekerja sama secara instan di papan yang sama, di mana saja."
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Bagaimana Keajaiban Bekerja",
+      "SUBTITLE": "Bergabunglah dengan keluarga AsoBoard dalam tiga langkah sederhana dan menyenangkan!",
+      "STEP_1": {
+        "TITLE": "Siapkan Profil",
+        "DESC": "Orang tua membuat akun yang aman dan diawasi serta menyesuaikan tujuan pembelajaran anak mereka."
+      },
+      "STEP_2": {
+        "TITLE": "Bergabunglah dalam Sesi",
+        "DESC": "Terhubung dengan mentor terverifikasi secara real-time atau jelajahi kotak pasir kreatif tunggal kami."
+      },
+      "STEP_3": {
+        "TITLE": "Menggambar & Belajar",
+        "DESC": "Gunakan alat interaktif yang dinamis untuk memvisualisasikan konsep, bermain game, dan menguasai keterampilan baru!"
+      },
+      "BADGE": "MEMBUAT KEAJAIBAN!"
+    },
+    "ROADMAP": {
+      "TITLE": "Dibangun untuk Hari Ini, Berkembang untuk Masa Depan",
+      "SUBTITLE": "Rasakan inti interaktif kami yang kuat saat ini, sembari kami membangun Ekosistem Teknologi Pendidikan yang cerdas di masa depan.",
+      "AVAILABLE_NOW": "TERSEDIA SEKARANG",
+      "CURRENT_MVP": "Fitur MVP Saat Ini",
+      "PLAYBACK": {
+        "TITLE": "Pemutaran Presentasi Berbasis Acara",
+        "DESC": "Daripada menggunakan MP4 yang berat, kami merekam dan menyinkronkan acara kanvas langsung dengan audio. Ini sangat lancar dan sangat hemat bandwidth."
+      },
+      "SKETCH": {
+        "TITLE": "Interaktif \"Sketsa Anda\" (あなたの落書き / Coretan Kamu)",
+        "DESC": "Siswa dapat menghentikan sementara pemutaran kapan saja, menggambar untuk memecahkan masalah, dan menyimpan sketsa spesifik mereka ke database. Mereka dapat meninjau kembali atau mengeditnya nanti tanpa mengganggu pelajaran aslinya."
+      },
+      "COMING_SOON": "SEGERA HADIR",
+      "COMING_FEATURES": "Fitur Segera Hadir",
+      "ANALYTICS": {
+        "TITLE": "Sistem Analisis Perilaku",
+        "DESC": "Melacak metadata (jeda, guratan) untuk menghasilkan laporan Gaya Belajar yang mendalam."
+      },
+      "GALLERY": {
+        "TITLE": "Galeri \"Sketsa Bangga\".",
+        "DESC": "Render proses menggambar menjadi MP4/GIF timelapse singkat untuk dibagikan di media sosial."
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "Asisten Cerdas AI",
+        "DESC": "AI kontekstual memberi petunjuk jika siswa terjebak di kanvas, sehingga mengurangi rasa frustrasinya secara instan."
+      },
+      "GAMIFICATION": {
+        "TITLE": "Gamifikasi Emosional",
+        "DESC": "Tumbuhkan hewan peliharaan/tanaman virtual atau seperti Tamagochi melalui pelacakan yang konsisten dan keterlibatan yang berani dengan dewan."
+      }
+    },
+    "PRICING": {
+      "TITLE": "Harga Sederhana dan Ramah Keluarga",
+      "SUBTITLE": "Pilih paket yang sempurna untuk memicu imajinasi anak Anda tanpa mengeluarkan banyak uang.",
+      "FOREVER": "/ selamanya",
+      "MONTH": "/ bulan",
+      "PLAN_FREE": {
+        "TITLE": "Penjelajah Gratis",
+        "DESC": "Sempurna untuk mencoba kami!",
+        "F1": "Alat menggambar dasar",
+        "F2": "1 kanvas tunggal",
+        "F3": "Dasbor orang tua",
+        "F4": "Bimbingan langsung",
+        "BUTTON": "Mulai Gratis"
+      },
+      "PLAN_STAR": {
+        "BADGE": "PALING POPULER",
+        "TITLE": "Siswa Bintang",
+        "DESC": "Buka kreativitas penuh.",
+        "F1": "Semua alat & bentuk",
+        "F2": "Sesi solo tanpa batas",
+        "F3": "5 bimbingan langsung/bln",
+        "F4": "Pelacakan kemajuan",
+        "BUTTON": "Pilih Paket Bintang"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "Keluarga Jenius",
+        "DESC": "Untuk seluruh rumah tangga.",
+        "F1": "Segala sesuatu di Bintang",
+        "F2": "Hingga 3 profil anak",
+        "F3": "Pendampingan langsung tanpa batas",
+        "F4": "Rekaman sesi",
+        "BUTTON": "Pilih Paket Keluarga"
+      }
+    },
+    "FAQ": {
+      "TITLE": "Pertanyaan yang Ditanyakan Orang Tua",
+      "Q1": "Apakah platformnya aman?",
+      "A1": "Sangat. Kami sepenuhnya mematuhi COPPA. Semua interaksi dalam sesi langsung direkam dan dipantau secara ketat, dan mentor kami menjalani pemeriksaan latar belakang yang ketat.",
+      "Q2": "Perangkat mana yang bekerja paling baik?",
+      "A2": "AsoBoard berfungsi di browser web modern apa pun! Namun, untuk pengalaman papan tulis yang paling menyenangkan, kami sangat merekomendasikan iPad atau tablet layar sentuh.",
+      "Q3": "Bisakah saya memantau perkembangan anak saya?",
+      "A3": "Ya! Dasbor Orang Tua khusus kami memungkinkan Anda meninjau karya kanvas yang disimpan, melacak kehadiran sesi langsung, dan membaca catatan umpan balik dari mentor.",
+      "Q4": "Bisakah saya membatalkannya kapan saja?",
+      "A4": "Tentu saja. Anda dapat membatalkan, menurunkan versi, atau meningkatkan paket keluarga Anda kapan saja melalui dasbor orang tua tanpa biaya pembatalan tersembunyi."
+    },
+    "FUTURE": {
+      "BADGE": "Prospek Masa Depan",
+      "TITLE_1": "Berbasis Data",
+      "TITLE_HIGHLIGHT": "Ekosistem Teknologi Pendidikan",
+      "SUBTITLE_1": "Kami percaya setiap anak jenius dengan caranya masing-masing. Visi jangka panjang kami adalah membangun platform yang tidak hanya mengajar, tapi juga",
+      "SUBTITLE_HIGHLIGHT": "mengerti",
+      "SUBTITLE_2": ". Dengan menangkap nuansa perilaku, kami membantu Anda membuka potensi kognitif unik anak Anda dan merayakan setiap penguasaan kecil.",
+      "MASTERY": {
+        "TITLE": "Penguasaan Kognitif",
+        "DESC": "Melacak tonggak perilaku untuk memberikan gambaran yang lebih jelas tentang pertumbuhan mental anak Anda."
+      },
+      "RESILIENCE": {
+        "TITLE": "Ketahanan Emosional",
+        "DESC": "Gamifikasi bawaan yang menghargai keberanian, rasa ingin tahu, dan usaha yang konsisten."
+      },
+      "SEEDING": {
+        "TITLE": "Penyemaian Keterampilan",
+        "DESC": "Mengidentifikasi minat sejak dini untuk membantu Anda menanamkan keterampilan yang akan berkembang menjadi minat seumur hidup."
+      }
+    },
+    "CTA": {
+      "TITLE_1": "Siap untuk membiarkan anak Anda",
+      "TITLE_HIGHLIGHT": "imajinasi",
+      "TITLE_2": "berkeliaran?",
+      "SUBTITLE": "Bergabunglah dengan ribuan orang tua lainnya yang telah menggunakan AsoBoard untuk menjadikan pembelajaran sebagai petualangan yang luar biasa.",
+      "BUTTON": "MULAI GRATIS",
+      "NO_CC": "Tidak diperlukan kartu kredit untuk paket Free Explorer."
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "Belajar Menyenangkan!",
+      "MENTOR": "Mentor",
+      "STUDENT": "Murid",
+      "STAFF": "Staf",
+      "PARENT": "Induk",
+      "MY_PROFILE": "Profil Saya",
+      "LEADERBOARD_TITLE": "Papan peringkat",
+      "RANKING": "Peringkat",
+      "LOGOUT": "Keluar"
+    },
+    "HEADER": {
+      "TITLE": "Daftar Kursus",
+      "GREETING_STUDENT": "Hai, {{nama}}! Apa yang ingin Anda pelajari hari ini?",
+      "GREETING_MENTOR": "Hai, {{nama}}! Saatnya membuat kursus yang luar biasa!",
+      "GREETING_STAFF": "Hai, {{nama}}! Mari jadikan AsoBoard menjadi tempat yang lebih baik!",
+      "GREETING_PARENT": "Hai, {{nama}}! Ayo dukung perjalanan belajar anak Anda!",
+      "TITLE_PARENT": "Anak Saya"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "Templat",
+      "CREATE_COURSE": "Buat Kursus Baru",
+      "MANAGE_ASSETS": "Kelola Aset",
+      "BROWSE_ALL": "Telusuri Semua Kursus",
+      "MY_COURSES": "Kursus Saya",
+      "MY_PROGRESS": "Kemajuan Saya",
+      "MY_DIARY": "Buku Harianku",
+      "VIEW_PROGRESS": "Lihat Progress",
+      "VIEW_DIARY": "Lihat Buku Harian"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "Temukan kursus...",
+      "FOUND_SINGULAR": "1 kursus ditemukan",
+      "FOUND_PLURAL": "{{count}} kursus ditemukan",
+      "LOADING": "Memuat...",
+      "SORT_NEWEST": "Terbaru Pertama",
+      "SORT_OLDEST": "Tertua Pertama",
+      "SORT_AZ": "A - Z",
+      "SORT_ZA": "Z-A",
+      "SORT_MOST_SESSIONS": "Sesi Terbanyak",
+      "SORT_LEAST_SESSIONS": "Sesi Paling Sedikit"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "Tidak ada deskripsi.",
+      "SESSIONS": "{{count}} Sesi",
+      "ENROLLED": "Terdaftar",
+      "EDIT_COURSE": "Sunting Kursus",
+      "DELETE_COURSE": "Hapus Kursus",
+      "ENROLL": "Mendaftar",
+      "ENTER": "Memasuki!"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "Belum ada kursus!",
+      "CREATE_PROMPT_1": "Klik",
+      "CREATE_PROMPT_2": "Buat Kursus Baru",
+      "CREATE_PROMPT_3": "untuk memulai!",
+      "NO_COURSES_FOUND": "Tidak ada kursus yang ditemukan!",
+      "COULDNT_FIND": "Kami tidak dapat menemukan apa pun untuk itu",
+      "CLEAR_SEARCH": "Hapus Pencarian"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "Buat Kursus Baru!",
+      "CREATE_CONFIRM": "Buat Kursus!",
+      "EDIT_TITLE": "Sunting Kursus!",
+      "EDIT_CONFIRM": "Simpan Perubahan!",
+      "INPUT_TITLE": "Judul Kursus",
+      "INPUT_TITLE_PLACEHOLDER": "Contoh: Matematika yang Menyenangkan!",
+      "INPUT_DESC": "Deskripsi (opsional)",
+      "INPUT_DESC_PLACEHOLDER": "Beritahu kami tentang kursus...",
+      "ERROR_REQUIRED": "Judul diperlukan!",
+      "ERROR_MINLENGTH": "Tolong minimal 3 karakter!",
+      "DELETE_TITLE": "Apa kamu yakin?",
+      "DELETE_CONFIRM": "Ya, Hapus!",
+      "DELETE_DESC": "Hapus kursus ini dan semua yang ada di dalamnya?",
+      "DELETE_CAUTION": "Perhatian: Tindakan ini tidak dapat dibatalkan!"
+    },
+    "STATS": {
+      "TOTAL_CHILDREN": "Total Anak",
+      "TOTAL_XP": "Total Gabungan XP",
+      "AVG_STREAK": "Rata-rata Streak"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Masuk ke platform pembelajaran yang menyenangkan!",
+      "USERNAME": "Nama belakang",
+      "USERNAME_PLACEHOLDER": "Ketikkan nama pengguna Anda",
+      "PASSWORD": "Kata sandi",
+      "PASSWORD_PLACEHOLDER": "Ketik kata sandi Anda",
+      "SUBMIT": "Masuk & Mulai Belajar!",
+      "NO_ACCOUNT": "Belum punya akun?",
+      "REGISTER_LINK": "Daftar dulu!"
+    },
+    "REGISTER": {
+      "TITLE": "Buat Akun Baru",
+      "SUBTITLE": "Bergabunglah dan mulailah belajar dengan menyenangkan!",
+      "USERNAME": "Nama Pengguna yang Menyenangkan",
+      "USERNAME_PLACEHOLDER": "Pilih nama yang keren!",
+      "USERNAME_ERROR": "Tolong minimal 3 karakter!",
+      "PASSWORD": "Kata Sandi Rahasia",
+      "PASSWORD_PLACEHOLDER": "Jaga agar tetap aman!",
+      "PASSWORD_ERROR": "Tolong, setidaknya 4 karakter!",
+      "ROLE_LABEL": "Siapa kamu?",
+      "ROLE_STUDENT": "Murid",
+      "ROLE_PARENT": "Induk",
+      "ROLE_MENTOR": "Mentor",
+      "ROLE_STAFF": "Staf",
+      "SUBMIT": "Buat Akun Saya!",
+      "HAS_ACCOUNT": "Sudah punya akun?",
+      "LOGIN_LINK": "Masuk di sini!"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "Sesi {{count}}",
+    "NO_DESCRIPTION": "Tidak ada deskripsi yang tersedia.",
+    "ENROLLED": "Terdaftar",
+    "BACK_TO_DASHBOARD": "Kembali ke Dasbor",
+    "ENROLL_BUTTON": "Mendaftar di Kursus",
+    "START_LEARNING": "Mulai Belajar",
+    "SESSION_LIST": "Daftar Sesi",
+    "NO_SESSIONS": "Belum ada sesi yang tersedia.",
+    "MENTOR_ONLY": "Hanya mentor yang dapat menambahkan sesi.",
+    "ADD_SESSION": "Tambahkan Sesi",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "Tambahkan Sesi Baru!",
+      "EDIT_SESSION_TITLE": "Sunting Sesi!",
+      "TITLE_LABEL": "Judul Sesi",
+      "TITLE_PLACEHOLDER": "Contoh: Sihir Matematika",
+      "DESC_LABEL": "Keterangan",
+      "DESC_PLACEHOLDER": "Apa yang akan kita pelajari hari ini?",
+      "DATE_LABEL": "Tanggal yang Dijadwalkan",
+      "SAVE_BUTTON": "Simpan Sesi!",
+      "DELETE_TITLE": "Hapus Sesi?",
+      "DELETE_DESC": "Apakah Anda yakin ingin menghapus sesi ini? Tindakan ini tidak dapat dibatalkan.",
+      "CONFIRM_DELETE": "Ya, Hapus!"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "Kembali ke Kursus",
+    "WAITING_MENTOR": "Menunggu mentor...",
+    "RECORDING": "Rekaman",
+    "LIVE": "HIDUP",
+    "JOIN_CALL": "Bergabunglah dengan Audio/Video",
+    "LEAVE_CALL": "Tinggalkan Panggilan",
+    "MUTE": "Bisu",
+    "UNMUTE": "Membunyikan",
+    "STOP_VIDEO": "Hentikan Video",
+    "START_VIDEO": "Mulai Video",
+    "PARTICIPANTS": "Peserta",
+    "CHAT": "Mengobrol",
+    "TOOLS": "Peralatan",
+    "RAISE_HAND": "Angkat Tangan",
+    "LOWER_HAND": "Tangan Bawah",
+    "CLEAR_BOARD": "Hapus Papan",
+    "SAVE_BOARD": "Simpan Papan",
+    "UNDO": "Membuka",
+    "REDO": "Mengulangi"
+  },
+  "PROFILE": {
+    "TITLE": "Profil Saya",
+    "ROLE": "Peran: {{role}}",
+    "EDIT_PROFILE": "Sunting Profil",
+    "SAVE_CHANGES": "Simpan Perubahan",
+    "CANCEL": "Membatalkan",
+    "LOGOUT": "Keluar"
+  },
+  "LEADERBOARD": {
+    "TITLE": "Papan Peringkat",
+    "SUBTITLE": "Lihat siapa yang paling aktif dan berprestasi!",
+    "BACK": "Kembali",
+    "ALL_TIME": "Semua Waktu",
+    "THIS_WEEK": "Minggu Ini",
+    "THIS_MONTH": "Bulan Ini",
+    "LOADING": "Memuat papan peringkat...",
+    "EMPTY_TITLE": "Belum Ada Peringkat",
+    "EMPTY_DESC": "Belum ada siswa yang memiliki poin. Selesaikan sesi dan dapatkan poin untuk memulai!",
+    "YOU": "Kamu",
+    "ACHIEVEMENTS": "prestasi",
+    "POINTS": "poin",
+    "ERROR": "Gagal memuat papan peringkat",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "Ups! Tersesat di Luar Angkasa",
+    "SUBTITLE": "Halaman yang kamu cari sepertinya telah melayang ke kosmos!",
+    "SUBTITLE_2": "Jangan khawatir, mari kita bawa kamu kembali!",
+    "SUGGESTION_TITLE": "Mungkin kamu ingin mengunjungi:",
+    "SUGGESTION_HOME": "Halaman beranda untuk mulai belajar",
+    "SUGGESTION_DASHBOARD": "Dashboard untuk melihat kursus",
+    "SUGGESTION_LOGIN": "Login jika belum masuk",
+    "GO_HOME": "Ke Beranda",
+    "MY_DASHBOARD": "Dashboard Saya",
+    "STILL_LOST": "Masih tersesat? Coba gunakan menu navigasi di atas!",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "Progres Siswa",
+    "SUBTITLE": "Lacak perjalanan belajar dan pencapaian",
+    "SESSIONS": "{{count}} Sesi",
+    "CANVAS_TIME": "Total Waktu Kanvas",
+    "CANVAS_TIME_UNIT": "{{count}} mnt",
+    "GAMES_COMPLETED": "Game Selesai",
+    "ACCURACY_RATE": "Tingkat Akurasi",
+    "ERROR": "Gagal memuat data progres",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "Pencapaian",
+    "EARNED": "Diraih",
+    "TOTAL_POINTS": "Total Poin",
+    "LOADING": "Memuat pencapaian...",
+    "EMPTY": "Belum ada pencapaian tersedia.",
+    "EARNED_BADGE": "Diraih",
+    "LOCKED_BADGE": "Terkunci",
+    "HOW_TO_EARN": "Cara mendapatkan",
+    "REQUIRED": "Diperlukan: {{value}} ({{type}})",
+    "POINTS": "+{{count}} poin",
+    "UNLOCKED": "Pencapaian Terbuka!",
+    "POINTS_EARNED": "+{{count}} poin"
+  },
+  "SHARED": {
+    "LOADING": "Memuat...",
+    "SUCCESS": "Berhasil!",
+    "ERROR": "Kesalahan!",
+    "WARNING": "Peringatan!"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

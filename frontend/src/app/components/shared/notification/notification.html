@@ -1,0 +1,27 @@
+<div class="fixed top-6 right-6 z-[200] flex flex-col gap-3 pointer-events-none w-full max-w-sm">
+  @for (n of notifications$ | async; track n.id) {
+    <div
+      class="pointer-events-auto flex items-center gap-3 p-4 rounded-2xl shadow-xl border-2 transform transition-all duration-300 animate-slide-in-right"
+      [ngClass]="getNotificationClass(n)"
+    >
+      <div class="text-xl">
+        @if (n.type === 'success') {
+          <i class="fa-solid fa-circle-check text-green-500"></i>
+        }
+        @if (n.type === 'error') {
+          <i class="fa-solid fa-circle-exclamation text-red-500"></i>
+        }
+        @if (n.type === 'info') {
+          <i class="fa-solid fa-circle-info text-blue-500"></i>
+        }
+        @if (n.type === 'warning') {
+          <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+        }
+      </div>
+      <p class="font-bold text-slate-800 text-sm flex-1">{{ n.message }}</p>
+      <button (click)="remove(n.id)" class="text-slate-400 hover:text-slate-600 font-bold">
+        <i class="fa-solid fa-xmark text-rose-500"></i>
+      </button>
+    </div>
+  }
+</div>

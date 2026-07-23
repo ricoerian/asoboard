@@ -1,0 +1,54 @@
+<div
+  class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[100] p-6 animate-fade-in"
+  (click)="$event.target === $event.currentTarget && modalClose.emit()"
+  (keyup.escape)="modalClose.emit()"
+  tabindex="0"
+>
+  <div
+    class="bg-white rounded-[2.5rem] p-8 w-full max-w-md shadow-2xl border-4 transform transition-all duration-300 animate-pop-in"
+    [ngClass]="borderColorClass"
+  >
+    <div class="flex justify-between items-start mb-6">
+      <div class="flex flex-col gap-1">
+        @if (icon) {
+          <div class="text-4xl mb-1" [ngClass]="iconColorClass">
+            <i [class]="'fa-solid ' + icon"></i>
+          </div>
+        }
+        <h2 class="text-2xl font-black text-slate-800 leading-tight">{{ title }}</h2>
+      </div>
+      <button
+        (click)="modalClose.emit()"
+        class="text-slate-300 hover:text-slate-500 transition-colors bg-slate-50 hover:bg-slate-100 w-10 h-10 rounded-full flex items-center justify-center shadow-sm"
+      >
+        <i class="fa-solid fa-xmark text-xl font-bold"></i>
+      </button>
+    </div>
+
+    <div class="modal-content mb-8">
+      <ng-content></ng-content>
+    </div>
+
+    <div class="flex gap-3 mt-auto">
+      @if (showCancel) {
+        <button
+          (click)="modalClose.emit()"
+          class="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-600 font-extrabold text-sm py-3.5 rounded-2xl transition-all duration-200 border-2 border-slate-200 hover:scale-105 active:scale-95"
+        >
+          {{ cancelText }}
+        </button>
+      }
+      <button
+        [disabled]="confirmDisabled"
+        (click)="confirm.emit()"
+        class="flex-2 text-white font-black text-sm py-3.5 px-8 rounded-2xl shadow-lg transition-all duration-200 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed disabled:scale-100"
+        [ngClass]="confirmButtonClass"
+      >
+        {{ confirmText }}
+        @if (confirmIcon) {
+          <i [class]="'fa-solid ' + confirmIcon + ' ml-2'"></i>
+        }
+      </button>
+    </div>
+  </div>
+</div>

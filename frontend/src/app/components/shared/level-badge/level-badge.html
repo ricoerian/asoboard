@@ -1,0 +1,20 @@
+<div class="level-card">
+  <div class="level-icon">
+    <i class="fa-solid fa-star level-star"></i>
+  </div>
+  <div class="level-info">
+    <div class="level-header">
+      <span class="level-label">{{ 'LEADERBOARD.LEVEL' | translate }}</span>
+      <span class="level-number">{{ levelData?.level || 1 }}</span>
+    </div>
+    <div class="xp-bar-container">
+      <div class="xp-bar-track">
+        <div class="xp-bar-fill" [style.width.%]="levelData?.progress_percent || 0"></div>
+      </div>
+      <span class="xp-text"
+        >{{ levelData?.current_xp || 0 }}/{{ levelData?.xp_for_next_level || 100 }} XP</span
+      >
+    </div>
+    <span class="total-points">Total: {{ levelData?.total_points || 0 }} points</span>
+  </div>
+</div>

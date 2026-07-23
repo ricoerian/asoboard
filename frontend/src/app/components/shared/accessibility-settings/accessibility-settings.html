@@ -1,0 +1,151 @@
+<div class="bg-white rounded-3xl p-8 shadow-xl border-b-4 border-green-400 mb-8">
+  <h3 class="text-slate-800 font-extrabold text-xl mb-6">
+    <i class="fa-solid fa-universal-access text-green-500"></i> Accessibility Settings
+  </h3>
+  <p class="text-slate-500 text-sm font-bold mb-6">
+    Customize your viewing experience. We save your preferences automatically.
+  </p>
+
+  <div class="mb-5">
+    <div
+      class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border-2 border-slate-200"
+    >
+      <div>
+        <span class="text-slate-700 font-extrabold text-sm block"
+          ><i class="fa-solid fa-circle-half-stroke"></i> High Contrast Mode</span
+        >
+        <span class="text-slate-400 text-xs font-bold"
+          >Black background, white text, yellow links</span
+        >
+      </div>
+      <div class="flex gap-2">
+        <button
+          type="button"
+          (click)="setTheme('light')"
+          [class.bg-green-500]="currentTheme() === 'light'"
+          [class.text-white]="currentTheme() === 'light'"
+          [class.bg-slate-200]="currentTheme() !== 'light'"
+          [class.text-slate-600]="currentTheme() !== 'light'"
+          class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition-colors"
+        >
+          Off
+        </button>
+        <button
+          type="button"
+          (click)="setTheme('high-contrast')"
+          [class.bg-green-500]="currentTheme() === 'high-contrast'"
+          [class.text-white]="currentTheme() === 'high-contrast'"
+          [class.bg-slate-200]="currentTheme() !== 'high-contrast'"
+          [class.text-slate-600]="currentTheme() !== 'high-contrast'"
+          class="px-3 py-1.5 rounded-xl text-xs font-extrabold transition-colors"
+        >
+          On
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <span class="block text-slate-700 font-extrabold text-sm mb-3"
+      ><i class="fa-solid fa-eye text-slate-500"></i> Colorblind-Friendly Palette</span
+    >
+    <div class="grid grid-cols-2 gap-2">
+      @for (opt of colorblindOptions; track opt.value) {
+        <button
+          type="button"
+          (click)="setColorblind(opt.value)"
+          [class.bg-green-500]="currentColorblind() === opt.value"
+          [class.text-white]="currentColorblind() === opt.value"
+          [class.border-green-500]="currentColorblind() === opt.value"
+          class="p-3 rounded-xl border-2 text-left transition-colors"
+          [class.border-slate-200]="currentColorblind() !== opt.value"
+          [class.bg-white]="currentColorblind() !== opt.value"
+        >
+          <span class="text-xs font-extrabold block">{{ opt.label }}</span>
+          <span class="text-[10px] text-slate-400 font-bold">{{ opt.desc }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <div
+      class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border-2 border-slate-200"
+    >
+      <div>
+        <span class="text-slate-700 font-extrabold text-sm block"
+          ><i class="fa-solid fa-font"></i> Dyslexia-Friendly Font</span
+        >
+        <span class="text-slate-400 text-xs font-bold"
+          >OpenDyslexic — weighted bottoms, wider spacing</span
+        >
+      </div>
+      <button
+        type="button"
+        (click)="toggleDyslexicFont()"
+        [class.bg-green-500]="currentDyslexicFont()"
+        [class.bg-slate-300]="!currentDyslexicFont()"
+        class="relative w-14 h-7 rounded-full transition-colors duration-200"
+        role="switch"
+        [attr.aria-checked]="currentDyslexicFont()"
+      >
+        <span
+          [class.translate-x-7]="currentDyslexicFont()"
+          [class.translate-x-1]="!currentDyslexicFont()"
+          class="absolute top-0.5 left-0 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-200"
+        ></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <span class="block text-slate-700 font-extrabold text-sm mb-3"
+      ><i class="fa-solid fa-text-height"></i> Font Size</span
+    >
+    <div class="grid grid-cols-3 gap-2">
+      @for (opt of fontSizeOptions; track opt.value) {
+        <button
+          type="button"
+          (click)="setFontSize(opt.value)"
+          [class.bg-green-500]="currentFontSize() === opt.value"
+          [class.text-white]="currentFontSize() === opt.value"
+          [class.border-green-500]="currentFontSize() === opt.value"
+          class="p-3 rounded-xl border-2 text-center transition-colors"
+          [class.border-slate-200]="currentFontSize() !== opt.value"
+          [class.bg-white]="currentFontSize() !== opt.value"
+        >
+          <span class="text-xs font-extrabold block">{{ opt.label }}</span>
+          <span class="text-[10px] text-slate-400 font-bold">{{ opt.desc }}</span>
+        </button>
+      }
+    </div>
+  </div>
+
+  <div>
+    <div
+      class="flex items-center justify-between p-4 bg-slate-50 rounded-2xl border-2 border-slate-200"
+    >
+      <div>
+        <span class="text-slate-700 font-extrabold text-sm block"
+          ><i class="fa-solid fa-pause"></i> Reduced Motion</span
+        >
+        <span class="text-slate-400 text-xs font-bold">Minimize animations and transitions</span>
+      </div>
+      <button
+        type="button"
+        (click)="toggleReducedMotion()"
+        [class.bg-green-500]="currentReducedMotion()"
+        [class.bg-slate-300]="!currentReducedMotion()"
+        class="relative w-14 h-7 rounded-full transition-colors duration-200"
+        role="switch"
+        [attr.aria-checked]="currentReducedMotion()"
+      >
+        <span
+          [class.translate-x-7]="currentReducedMotion()"
+          [class.translate-x-1]="!currentReducedMotion()"
+          class="absolute top-0.5 left-0 w-6 h-6 bg-white rounded-full shadow-md transition-transform duration-200"
+        ></span>
+      </button>
+    </div>
+  </div>
+</div>

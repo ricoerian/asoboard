@@ -1,0 +1,622 @@
+<div class="toolbar-container">
+  <div class="toolbar-wrap">
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.NAVIGATE' | translate }}</span>
+      @for (tool of navigationTools; track tool.id) {
+        <button
+          [class.active]="currentTool === tool.id"
+          (click)="selectTool(tool.id)"
+          [title]="tool.name"
+          class="tool-btn"
+        >
+          <i class="tool-icon mb-1" [ngClass]="tool.icon"></i>
+          <span class="tool-label">{{ tool.name }}</span>
+        </button>
+      }
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.DRAWING' | translate }}</span>
+      @for (tool of basicTools; track tool.id) {
+        <button
+          [class.active]="currentTool === tool.id"
+          (click)="selectTool(tool.id)"
+          [title]="tool.name"
+          class="tool-btn"
+        >
+          <i class="tool-icon mb-1" [ngClass]="tool.icon"></i>
+          <span class="tool-label">{{ tool.name }}</span>
+        </button>
+      }
+
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="isShapeToolActive() || showShapesPopup"
+          (click)="toggleShapesPopup()"
+          title="Shapes"
+        >
+          <i class="tool-icon mb-1 fas fa-shapes"></i>
+          <span class="tool-label">{{ 'TOOLBAR.SHAPES' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.MEDIA' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="isAssetToolActive() || showAssetsPopup"
+          (click)="toggleAssetsPopup()"
+          title="Media Assets"
+        >
+          <i class="tool-icon mb-1 fas fa-photo-video text-pink-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.MEDIA' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="color-section">
+      <span class="section-label">{{ 'TOOLBAR.COLOR' | translate }}</span>
+      <div class="preset-colors">
+        @for (c of presetColors; track c) {
+          <button
+            class="preset-swatch"
+            [style.background]="c"
+            [class.swatch-active]="color === c"
+            (click)="selectColor(c)"
+            [title]="c"
+          ></button>
+        }
+      </div>
+      <label class="custom-color-wrap mt-1" title="Custom color">
+        <i class="tool-icon fa-solid fa-palette text-blue-500"></i>
+        <input
+          id="colorPicker"
+          type="color"
+          [ngModel]="color"
+          (ngModelChange)="selectColor($event)"
+          class="hidden-color-input"
+        />
+      </label>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.STROKE' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showDashPanel"
+          (click)="toggleDashPanel()"
+          title="Dash Pattern"
+        >
+          <i class="tool-icon mb-1 fas fa-ellipsis-h"></i>
+          <span class="tool-label">{{ 'TOOLBAR.DASH' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.FILL' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showFillPanel"
+          (click)="toggleFillPanel()"
+          title="Fill Type"
+        >
+          <i class="tool-icon mb-1 fas fa-fill-drip"></i>
+          <span class="tool-label">{{ 'TOOLBAR.FILL' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.BRUSH' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showBrushPanel"
+          (click)="toggleBrushPanel()"
+          title="Brush Preset"
+        >
+          <i class="tool-icon mb-1 fas fa-brush"></i>
+          <span class="tool-label">{{ 'TOOLBAR.BRUSH' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.EFFECTS' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showOpacityPanel"
+          (click)="toggleOpacityPanel()"
+          title="Opacity"
+        >
+          <i class="tool-icon mb-1 fas fa-adjust text-slate-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.OPACITY' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+      <button
+        class="tool-btn"
+        [class.active]="shadowEnabled"
+        (click)="toggleShadow()"
+        title="Drop Shadow"
+      >
+        <i class="tool-icon mb-1 fas fa-clone text-slate-500"></i>
+        <span class="tool-label">{{ 'TOOLBAR.SHADOW' | translate }}</span>
+      </button>
+      <button
+        class="tool-btn"
+        [class.active]="snapToGrid"
+        (click)="toggleSnapToGrid()"
+        title="Snap to Grid"
+      >
+        <i class="tool-icon mb-1 fas fa-border-all text-slate-500"></i>
+        <span class="tool-label">{{ 'TOOLBAR.SNAP' | translate }}</span>
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.LAYER' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showLayerPopup"
+          (click)="toggleLayerPopup()"
+          title="Layer Order"
+        >
+          <i class="tool-icon mb-1 fas fa-layer-group text-indigo-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.LAYERS' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="tool-group">
+      <span class="section-label">{{ 'TOOLBAR.EXPORT' | translate }}</span>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showExportPopup"
+          (click)="toggleExportPopup()"
+          [disabled]="!userRole"
+          title="Export Canvas"
+        >
+          <i class="tool-icon mb-1 fas fa-download text-emerald-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.EXPORT' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="font-section">
+      <div class="popup-wrapper">
+        <button
+          class="settings-toggle"
+          [class.active]="showFontSettings"
+          (click)="toggleFontSettings()"
+        >
+          <i class="tool-icon fa-solid fa-font text-blue-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.TEXT' | translate }}</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  @if (showShapesPopup) {
+    <div class="popup-panel">
+      <span class="panel-title">{{ 'TOOLBAR.SHAPES_AND_LINES' | translate }}</span>
+      <div class="popup-grid">
+        @for (tool of shapeTools; track tool.id) {
+          <button
+            [class.active]="currentTool === tool.id"
+            (click)="selectTool(tool.id); toggleShapesPopup()"
+            [title]="tool.name"
+            class="tool-btn"
+            style="width: 60px"
+          >
+            <i class="tool-icon mb-1" [ngClass]="tool.icon"></i>
+            <span class="tool-label">{{ tool.name }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  }
+  @if (showAssetsPopup) {
+    <div class="popup-panel">
+      <span class="panel-title">{{ 'TOOLBAR.ADD_MEDIA' | translate }}</span>
+      <div class="popup-grid">
+        @for (tool of assetTools; track tool.id) {
+          <button
+            [class.active]="currentTool === tool.id"
+            (click)="selectTool(tool.id); toggleAssetsPopup()"
+            [title]="tool.name"
+            class="tool-btn asset-tool"
+            style="width: 60px"
+          >
+            <i class="tool-icon mb-1" [ngClass]="tool.icon"></i>
+            <span class="tool-label">{{ tool.name }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  }
+  @if (showDashPanel) {
+    <div class="panel-dropdown dash-panel">
+      <span class="panel-title">{{ 'TOOLBAR.STROKE_DASH_PATTERN' | translate }}</span>
+      <div class="dash-grid">
+        @for (preset of dashPresets; track preset.name) {
+          <button
+            class="dash-preset-btn"
+            [class.active]="isDashActive(preset.value)"
+            (click)="selectDashPattern(preset.value)"
+            [title]="preset.name"
+          >
+            <div
+              class="dash-preview-line"
+              [style.border-top-style]="preset.value.length === 0 ? 'solid' : 'dashed'"
+              [style.border-top-width.px]="3"
+              [style.border-top-color]="color"
+              [style.border-top]="preset.value.length === 0 ? '3px solid ' + color : ''"
+              [style.background-image]="
+                preset.value.length > 0
+                  ? 'repeating-linear-gradient(to right, ' +
+                    color +
+                    ' 0, ' +
+                    color +
+                    ' ' +
+                    preset.value[0] +
+                    'px, transparent ' +
+                    preset.value[0] +
+                    'px, transparent ' +
+                    (preset.value[0] + (preset.value[1] || 5)) +
+                    'px)'
+                  : ''
+              "
+              [style.height.px]="3"
+            ></div>
+            <span class="dash-preset-label">{{ preset.name }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  }
+  @if (showFillPanel) {
+    <div class="panel-dropdown fill-panel">
+      <span class="panel-title">{{ 'TOOLBAR.FILL_TYPE' | translate }}</span>
+      <div class="fill-type-grid">
+        <button
+          class="fill-type-btn"
+          [class.active]="fillType === 'solid'"
+          (click)="setFillType('solid')"
+        >
+          <div class="fill-icon solid-icon" [style.background]="color"></div>
+          <span>{{ 'TOOLBAR.SOLID' | translate }}</span>
+        </button>
+        <button
+          class="fill-type-btn"
+          [class.active]="fillType === 'linear'"
+          (click)="setFillType('linear')"
+        >
+          <div
+            class="fill-icon linear-icon"
+            [style.background]="
+              'linear-gradient(to right, ' + fillGradientColor1 + ', ' + fillGradientColor2 + ')'
+            "
+          ></div>
+          <span>{{ 'TOOLBAR.LINEAR' | translate }}</span>
+        </button>
+        <button
+          class="fill-type-btn"
+          [class.active]="fillType === 'radial'"
+          (click)="setFillType('radial')"
+        >
+          <div
+            class="fill-icon radial-icon"
+            [style.background]="
+              'radial-gradient(circle, ' + fillGradientColor1 + ', ' + fillGradientColor2 + ')'
+            "
+          ></div>
+          <span>{{ 'TOOLBAR.RADIAL' | translate }}</span>
+        </button>
+        <button
+          class="fill-type-btn"
+          [class.active]="fillType === 'none'"
+          (click)="setFillType('none')"
+        >
+          <div class="fill-icon none-icon"></div>
+          <span>{{ 'TOOLBAR.NONE' | translate }}</span>
+        </button>
+      </div>
+
+      @if (fillType === 'linear' || fillType === 'radial') {
+        <div class="gradient-colors">
+          <label class="gradient-color-wrap">
+            <span class="gradient-color-label">{{ 'TOOLBAR.FROM' | translate }}</span>
+            <input
+              type="color"
+              [ngModel]="fillGradientColor1"
+              (ngModelChange)="setGradientColor1($event)"
+              class="gradient-color-input"
+            />
+          </label>
+          <label class="gradient-color-wrap">
+            <span class="gradient-color-label">{{ 'TOOLBAR.TO' | translate }}</span>
+            <input
+              type="color"
+              [ngModel]="fillGradientColor2"
+              (ngModelChange)="setGradientColor2($event)"
+              class="gradient-color-input"
+            />
+          </label>
+        </div>
+
+        @if (fillType === 'linear') {
+          <span class="panel-subtitle">{{ 'TOOLBAR.DIRECTION' | translate }}</span>
+          <div class="direction-grid">
+            @for (dir of gradientDirections; track dir.id) {
+              <button
+                class="direction-btn"
+                [class.active]="fillGradientDirection === dir.id"
+                (click)="setGradientDirection(dir.id)"
+                [title]="dir.label"
+              >
+                <span class="direction-icon">{{ dir.icon }}</span>
+              </button>
+            }
+          </div>
+        }
+      }
+    </div>
+  }
+  @if (showBrushPanel) {
+    <div class="panel-dropdown brush-panel">
+      <span class="panel-title">{{ 'TOOLBAR.BRUSH_PRESETS' | translate }}</span>
+      <p class="panel-subtitle">{{ 'TOOLBAR.APPLIES_PEN_ONLY' | translate }}</p>
+      <div class="brush-grid">
+        @for (preset of brushPresetList; track preset.id) {
+          <button
+            class="brush-preset-btn"
+            [class.active]="isBrushActive(preset.id)"
+            (click)="selectBrushPreset(preset.id)"
+            [title]="preset.description"
+          >
+            <i class="brush-icon" [ngClass]="preset.icon"></i>
+            <span class="brush-preset-name">{{ preset.name }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  }
+  @if (showOpacityPanel) {
+    <div class="panel-dropdown opacity-panel">
+      <span class="panel-title">{{ 'TOOLBAR.OPACITY' | translate }}</span>
+      <div class="flex items-center gap-2 mt-2">
+        <input
+          type="range"
+          min="0.1"
+          max="1"
+          step="0.1"
+          [ngModel]="opacity"
+          (ngModelChange)="setOpacity($event)"
+          class="w-full tool-slider"
+        />
+        <span class="text-xs font-bold text-slate-600 w-8 text-right">{{ opacityPercent }}%</span>
+      </div>
+    </div>
+  }
+  @if (showLayerPopup) {
+    <div class="popup-panel">
+      <span class="panel-title">{{ 'TOOLBAR.LAYER_ORDER' | translate }}</span>
+      <div class="popup-grid">
+        <button (click)="onBringToFront(); toggleLayerPopup()" class="tool-btn" style="width: 60px">
+          <i
+            class="tool-icon mb-1 fas fa-arrow-up-wide-short"
+            style="transform: rotate(180deg)"
+          ></i>
+          <span class="tool-label">{{ 'TOOLBAR.FRONT' | translate }}</span>
+        </button>
+        <button (click)="onBringForward(); toggleLayerPopup()" class="tool-btn" style="width: 60px">
+          <i class="tool-icon mb-1 fas fa-chevron-up"></i>
+          <span class="tool-label">{{ 'TOOLBAR.FWD' | translate }}</span>
+        </button>
+        <button (click)="onSendBackward(); toggleLayerPopup()" class="tool-btn" style="width: 60px">
+          <i class="tool-icon mb-1 fas fa-chevron-down"></i>
+          <span class="tool-label">{{ 'TOOLBAR.BWD' | translate }}</span>
+        </button>
+        <button (click)="onSendToBack(); toggleLayerPopup()" class="tool-btn" style="width: 60px">
+          <i class="tool-icon mb-1 fas fa-arrow-down-wide-short"></i>
+          <span class="tool-label">{{ 'TOOLBAR.BACK' | translate }}</span>
+        </button>
+      </div>
+    </div>
+  }
+  @if (showExportPopup) {
+    <div class="popup-panel">
+      <span class="panel-title">{{ 'TOOLBAR.EXPORT_AS' | translate }}</span>
+      <div class="popup-grid">
+        <button (click)="onExportClick(); toggleExportPopup()" class="tool-btn" style="width: 60px">
+          <i class="tool-icon mb-1 fas fa-camera text-slate-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.PNG' | translate }}</span>
+        </button>
+        <button
+          (click)="onExportPdfClick(); toggleExportPopup()"
+          class="tool-btn"
+          style="width: 60px"
+        >
+          <i class="tool-icon mb-1 fas fa-file-pdf text-red-500"></i>
+          <span class="tool-label">{{ 'TOOLBAR.PDF' | translate }}</span>
+        </button>
+      </div>
+    </div>
+  }
+  @if (showFontSettings) {
+    <div class="font-panel">
+      <label class="mini-label" for="fontSizeInput">{{ 'TOOLBAR.FONT_SIZE' | translate }}</label>
+      <input
+        id="fontSizeInput"
+        type="number"
+        min="8"
+        max="72"
+        [ngModel]="fontSize"
+        (ngModelChange)="fontSizeChange.emit(+$event)"
+        class="mini-input"
+      />
+      <label class="mini-label" for="fontFamilySelect">{{ 'TOOLBAR.FONT' | translate }}</label>
+      <select
+        id="fontFamilySelect"
+        [ngModel]="fontFamily"
+        (ngModelChange)="fontFamilyChange.emit($event)"
+        class="mini-select"
+      >
+        <option value="Arial">{{ 'TOOLBAR.ARIAL' | translate }}</option>
+        <option value="Times New Roman">{{ 'TOOLBAR.TIMES_NEW_ROMAN' | translate }}</option>
+        <option value="Courier New">{{ 'TOOLBAR.COURIER_NEW' | translate }}</option>
+        <option value="Comic Sans MS">{{ 'TOOLBAR.COMIC_SANS_MS' | translate }}</option>
+      </select>
+    </div>
+  }
+
+  @if (showAssetPicker) {
+    <div class="asset-picker-overlay">
+      <div class="asset-picker-panel">
+        <div class="asset-picker-header">
+          <span class="picker-title">Pick a {{ currentTool }}</span>
+          <button (click)="showAssetPicker = false" class="close-picker">×</button>
+        </div>
+        <div class="asset-grid">
+          @if (!selectedAsset) {
+            @for (asset of filteredAssets; track asset.id) {
+              <button class="asset-item" (click)="onAssetPick(asset)">
+                @if (asset.asset_type === 'image') {
+                  <img [src]="asset.file" [alt]="asset.title" class="asset-preview" />
+                } @else if (asset.asset_type === 'audio') {
+                  <i class="fas fa-volume-up text-sky-500 text-2xl"></i>
+                } @else if (asset.asset_type === 'animation') {
+                  <i class="fas fa-film text-pink-500 text-2xl"></i>
+                }
+                <span class="asset-name">{{ asset.title }}</span>
+              </button>
+            }
+            @if (filteredAssets.length === 0) {
+              <div class="no-assets">No {{ currentTool }} assets found.</div>
+            }
+          } @else {
+            <div class="customizer-panel">
+              <div class="customizer-header">
+                <button (click)="selectedAsset = null" class="back-btn">
+                  <i class="fas fa-arrow-left text-sky-500"></i>
+                </button>
+                <span class="customizer-title">Customize {{ selectedAsset.title }}</span>
+              </div>
+
+              @if (selectedAsset.asset_type === 'animation') {
+                <div class="settings-list">
+                  @if (showGravityParams) {
+                    <div class="setting-item">
+                      <label for="gravitySlider">Gravity ({{ tempConfig.g }})</label>
+                      <input
+                        id="gravitySlider"
+                        type="range"
+                        min="0.1"
+                        max="2"
+                        step="0.1"
+                        [(ngModel)]="tempConfig.g"
+                        class="tool-slider"
+                      />
+                    </div>
+                    <div class="setting-item">
+                      <label for="bounceSlider">Bounce ({{ tempConfig.restitution }})</label>
+                      <input
+                        id="bounceSlider"
+                        type="range"
+                        min="-0.95"
+                        max="-0.1"
+                        step="0.05"
+                        [(ngModel)]="tempConfig.restitution"
+                        class="tool-slider"
+                      />
+                    </div>
+                  }
+
+                  @if (showHarmonicParams) {
+                    <div class="setting-item">
+                      <label for="frequencySlider">Frequency ({{ tempConfig.frequency }})</label>
+                      <input
+                        id="frequencySlider"
+                        type="range"
+                        min="50"
+                        max="500"
+                        step="10"
+                        [(ngModel)]="tempConfig.frequency"
+                        class="tool-slider"
+                      />
+                    </div>
+                    <div class="setting-item">
+                      <label for="dampingSlider">Damping ({{ tempConfig.damping }})</label>
+                      <input
+                        id="dampingSlider"
+                        type="range"
+                        min="500"
+                        max="5000"
+                        step="100"
+                        [(ngModel)]="tempConfig.damping"
+                        class="tool-slider"
+                      />
+                    </div>
+                  }
+
+                  @if (showSpeedParams) {
+                    <div class="setting-item">
+                      <label for="speedSlider">Action Speed ({{ tempConfig.speed }})</label>
+                      <input
+                        id="speedSlider"
+                        type="range"
+                        min="5"
+                        max="100"
+                        step="5"
+                        [(ngModel)]="tempConfig.speed"
+                        class="tool-slider"
+                      />
+                    </div>
+                  }
+                </div>
+              }
+
+              <button (click)="applyCustomizedAsset()" class="apply-btn">
+                <i class="fa-solid fa-sparkles"></i> Apply Action
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  }
+</div>

@@ -1,0 +1,54 @@
+name: AsoBoard MCP Setup
+version: 0.0.1
+schema: v1
+mcpServers:
+  - name: AsoBoard SQLite DB
+    command: npx
+    args:
+      - -y
+      - "@pollinations/mcp-server-sqlite"
+      - "/Users/ricoeri/Documents/asoboard/backend/db.sqlite3"
+    env: {}
+
+  - name: AsoBoard Workspace
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-filesystem"
+      - "/Users/ricoeri/Documents/asoboard"
+    env: {}
+
+  - name: Memory
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-memory"
+    env: {}
+
+  - name: Sequential Thinking
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-sequential-thinking"
+    env: {}
+
+  - name: Web Fetcher
+    command: npx
+    args:
+      - -y
+      - "@mokei/mcp-fetch"
+    env: {}
+
+  - name: Time Server
+    command: npx
+    args:
+      - -y
+      - "@mcpcentral/mcp-time"
+    env: {}
+
+  - name: Everything MCP
+    command: npx
+    args:
+      - -y
+      - "@modelcontextprotocol/server-everything"
+    env: {}

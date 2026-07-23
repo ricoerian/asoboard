@@ -1,0 +1,557 @@
+{
+  "LANDING": {
+    "NAV": {
+      "LOGIN": "Zaloguj się",
+      "FREE_TRIAL": "Darmowa Próba"
+    },
+    "HERO": {
+      "TITLE_1": "Magiczny sposób na wspólne ",
+      "TITLE_HIGHLIGHT": "uczenie się, rysowanie i zabawę",
+      "TITLE_2": "!",
+      "SUBTITLE": "AsoBoard przenosi ducha zabawy na bezpieczną tablicę.",
+      "START_LEARNING": "ZACZNIJ NAUKĘ",
+      "PARENT_LOGIN": "LOGOWANIE RODZICA",
+      "SOCIAL_PROOF": "Uwielbiane przez tysiące uczniów!"
+    },
+    "TRUST_BADGES": {
+      "COPPA": "ZGODNE Z COPPA",
+      "AD_FREE": "100% BEZ REKLAM",
+      "PARENTAL": "KONTROLA RODZICIELSKA",
+      "FAMILIES": "PONAD 5000 RODZIN"
+    },
+    "FEATURES": {
+      "TITLE": "Nauka Powinna Być Zadowalająca!",
+      "SUBTITLE": "Wizualne uczenie się pomaga dzieciom szybciej pojąć pojęcia.",
+      "CREATIVE_TOOLS": {
+        "TITLE": "Narzędzia",
+        "DESC": "Żywe kolory i kształty."
+      },
+      "CHILD_FRIENDLY": {
+        "TITLE": "Przyjazne Dzieciom",
+        "DESC": "Bezpieczny, intuicyjny interfejs."
+      },
+      "REAL_TIME": {
+        "TITLE": "Synchronizacja",
+        "DESC": "Natychmiastowa praca zespołowa."
+      }
+    },
+    "HOW_IT_WORKS": {
+      "TITLE": "Jak to Działa",
+      "SUBTITLE": "Dołącz do nas w 3 prostych krokach!",
+      "STEP_1": {
+        "TITLE": "Profil",
+        "DESC": "Utwórz bezpieczne konto."
+      },
+      "STEP_2": {
+        "TITLE": "Dołącz",
+        "DESC": "Połącz się z mentorami."
+      },
+      "STEP_3": {
+        "TITLE": "Rysuj",
+        "DESC": "Wizualizuj i ucz się!"
+      },
+      "BADGE": "TWORZYMY MAGIĘ!"
+    },
+    "ROADMAP": {
+      "TITLE": "Zbudowane dla Dziś",
+      "SUBTITLE": "Doświadcz interaktywnego rdzenia.",
+      "AVAILABLE_NOW": "DOSTĘPNE TERAZ",
+      "CURRENT_MVP": "Obecne Funkcje",
+      "PLAYBACK": {
+        "TITLE": "Odtwarzanie Sesji",
+        "DESC": "Zapisujemy zdarzenia zamiast wideo."
+      },
+      "SKETCH": {
+        "TITLE": "Twój Szkic",
+        "DESC": "Pauza i rysowanie."
+      },
+      "COMING_SOON": "WKRÓTCE",
+      "COMING_FEATURES": "Nadchodzące Funkcje",
+      "ANALYTICS": {
+        "TITLE": "Analityka",
+        "DESC": "Śledzenie metadanych."
+      },
+      "GALLERY": {
+        "TITLE": "Galeria",
+        "DESC": "Dzielenie się pracami."
+      },
+      "AI_ASSISTANT": {
+        "TITLE": "Asystent AI",
+        "DESC": "Inteligentne wskazówki."
+      },
+      "GAMIFICATION": {
+        "TITLE": "Grywalizacja",
+        "DESC": "Rozwój wirtualnego zwierzaka."
+      }
+    },
+    "PRICING": {
+      "TITLE": "Proste Ceny",
+      "SUBTITLE": "Wybierz idealny plan.",
+      "FOREVER": "/ na zawsze",
+      "MONTH": "/ miesiąc",
+      "PLAN_FREE": {
+        "TITLE": "Darmowy",
+        "DESC": "Do wypróbowania!",
+        "F1": "Narzędzia podstawowe",
+        "F2": "1 tablica",
+        "F3": "Panel rodzica",
+        "F4": "Mentoring na żywo",
+        "BUTTON": "Zacznij za Darmo"
+      },
+      "PLAN_STAR": {
+        "BADGE": "POPULARNY",
+        "TITLE": "Gwiazda",
+        "DESC": "Kreatywność.",
+        "F1": "Wszystko z darmowego",
+        "F2": "Nielimitowane tablice",
+        "F3": "5 sesji/m-c",
+        "F4": "Postępy",
+        "BUTTON": "Wybierz"
+      },
+      "PLAN_FAMILY": {
+        "TITLE": "Rodzina",
+        "DESC": "Dla wszystkich.",
+        "F1": "Wszystko ze Gwiazdy",
+        "F2": "3 dzieci",
+        "F3": "Nielimitowane sesje",
+        "F4": "Nagrania",
+        "BUTTON": "Wybierz"
+      }
+    },
+    "FAQ": {
+      "TITLE": "Pytania",
+      "Q1": "Bezpieczeństwo?",
+      "A1": "Tak, 100%.",
+      "Q2": "Urządzenia?",
+      "A2": "Każda przeglądarka, polecamy iPad.",
+      "Q3": "Postępy?",
+      "A3": "Tak, poprzez panel rodzica.",
+      "Q4": "Anulowanie?",
+      "A4": "W każdym momencie."
+    },
+    "FUTURE": {
+      "BADGE": "Przyszłość",
+      "TITLE_1": "Ekosystem ",
+      "TITLE_HIGHLIGHT": "Technologii Edukacyjnej",
+      "SUBTITLE_1": "Wierzymy w potencjał. Pomagamy ",
+      "SUBTITLE_HIGHLIGHT": "zrozumieć",
+      "SUBTITLE_2": " każde dziecko.",
+      "MASTERY": {
+        "TITLE": "Rozwój",
+        "DESC": "Śledzenie postępów."
+      },
+      "RESILIENCE": {
+        "TITLE": "Odporność",
+        "DESC": "Grywalizacja."
+      },
+      "SEEDING": {
+        "TITLE": "Rozwój Umiejętności",
+        "DESC": "Wczesne odkrywanie."
+      }
+    },
+    "CTA": {
+      "TITLE_1": "Gotowy na ",
+      "TITLE_HIGHLIGHT": "wyobraźnię",
+      "TITLE_2": "?",
+      "SUBTITLE": "Dołącz do tysięcy rodziców.",
+      "BUTTON": "ZACZNIJ ZA DARMO",
+      "NO_CC": "Brak karty."
+    }
+  },
+  "DASHBOARD": {
+    "NAV": {
+      "FUN_LEARNING": "Fajna Nauka!",
+      "MENTOR": "Mentor",
+      "STUDENT": "Uczeń",
+      "STAFF": "Personel",
+      "PARENT": "Rodzic",
+      "MY_PROFILE": "Mój Profil",
+      "LEADERBOARD_TITLE": "Tabela Wyników",
+      "RANKING": "Ranking",
+      "LOGOUT": "Wyloguj się"
+    },
+    "HEADER": {
+      "TITLE": "Lista Kursów",
+      "GREETING_STUDENT": "Cześć, {{name}}! Czego chcesz się dzisiaj nauczyć?",
+      "GREETING_MENTOR": "Cześć, {{name}}! Czas stworzyć świetny kurs!",
+      "GREETING_STAFF": "Cześć, {{name}}! Uczyńmy AsoBoard lepszym!",
+      "GREETING_PARENT": "Cześć, {{name}}! Wspierajmy naukę Twojego dziecka!"
+    },
+    "ACTIONS": {
+      "TEMPLATES": "Szablony",
+      "CREATE_COURSE": "Utwórz Kurs",
+      "MANAGE_ASSETS": "Zarządzaj Zasobami",
+      "BROWSE_ALL": "Przeglądaj Wszystko",
+      "MY_COURSES": "Moje Kursy",
+      "MY_PROGRESS": "Moje Postępy",
+      "MY_DIARY": "Mój Pamiętnik"
+    },
+    "SEARCH": {
+      "PLACEHOLDER": "Szukaj kursu...",
+      "FOUND_SINGULAR": "Znaleziono 1 kurs",
+      "FOUND_PLURAL": "Znaleziono {{count}} kursów",
+      "LOADING": "Ładowanie...",
+      "SORT_NEWEST": "Najnowsze",
+      "SORT_OLDEST": "Najstarsze",
+      "SORT_AZ": "A - Z",
+      "SORT_ZA": "Z - A",
+      "SORT_MOST_SESSIONS": "Najwięcej Sesji",
+      "SORT_LEAST_SESSIONS": "Najmniej Sesji"
+    },
+    "COURSE_CARD": {
+      "NO_DESCRIPTION": "Brak opisu.",
+      "SESSIONS": "{{count}} Sesji",
+      "ENROLLED": "Zapisany",
+      "EDIT_COURSE": "Edytuj Kurs",
+      "DELETE_COURSE": "Usuń Kurs",
+      "ENROLL": "Zapisz się",
+      "ENTER": "Wejdź!"
+    },
+    "EMPTY_STATE": {
+      "NO_COURSES": "Jeszcze nie masz kursów!",
+      "CREATE_PROMPT_1": "Kliknij",
+      "CREATE_PROMPT_2": "Utwórz Kurs",
+      "CREATE_PROMPT_3": "aby zacząć!",
+      "NO_COURSES_FOUND": "Nie znaleziono kursów!",
+      "COULDNT_FIND": "Nie znaleźliśmy nic dla",
+      "CLEAR_SEARCH": "Wyczyść"
+    },
+    "MODALS": {
+      "CREATE_TITLE": "Utwórz Nowy Kurs!",
+      "CREATE_CONFIRM": "Utwórz!",
+      "EDIT_TITLE": "Edytuj Kurs!",
+      "EDIT_CONFIRM": "Zapisz!",
+      "INPUT_TITLE": "Tytuł Kursu",
+      "INPUT_TITLE_PLACEHOLDER": "Przykład: Fajna Matematyka!",
+      "INPUT_DESC": "Opis",
+      "INPUT_DESC_PLACEHOLDER": "Opowiedz nam o kursie...",
+      "ERROR_REQUIRED": "Tytuł jest wymagany!",
+      "ERROR_MINLENGTH": "Przynajmniej 3 znaki!",
+      "DELETE_TITLE": "Jesteś pewien?",
+      "DELETE_CONFIRM": "Tak, usuń!",
+      "DELETE_DESC": "Usunąć ten kurs i wszystko w nim?",
+      "DELETE_CAUTION": "Uwaga: Tej akcji nie można cofnąć!"
+    }
+  },
+  "AUTH": {
+    "LOGIN": {
+      "TITLE": "Zaloguj się do zabawnej platformy edukacyjnej!",
+      "USERNAME": "Nazwa użytkownika",
+      "USERNAME_PLACEHOLDER": "Wpisz swoją nazwę użytkownika",
+      "PASSWORD": "Hasło",
+      "PASSWORD_PLACEHOLDER": "Wpisz swoje hasło",
+      "SUBMIT": "Zaloguj się i rozpocznij naukę!",
+      "NO_ACCOUNT": "Nie masz konta?",
+      "REGISTER_LINK": "Zarejestruj się najpierw!"
+    },
+    "REGISTER": {
+      "TITLE": "Utwórz nowe konto",
+      "SUBTITLE": "Dołącz i rozpocznij naukę przez zabawę!",
+      "USERNAME": "Zabawna nazwa użytkownika",
+      "USERNAME_PLACEHOLDER": "Wybierz fajne imię!",
+      "USERNAME_ERROR": "Proszę o co najmniej 3 znaki!",
+      "PASSWORD": "Tajne hasło",
+      "PASSWORD_PLACEHOLDER": "Zadbaj o bezpieczeństwo!",
+      "PASSWORD_ERROR": "Proszę o co najmniej 4 znaki!",
+      "ROLE_LABEL": "Kim jesteś?",
+      "ROLE_STUDENT": "Student",
+      "ROLE_PARENT": "Roślina mateczna",
+      "ROLE_MENTOR": "Mentor",
+      "ROLE_STAFF": "Personel",
+      "SUBMIT": "Utwórz moje konto!",
+      "HAS_ACCOUNT": "Masz już konto?",
+      "LOGIN_LINK": "Zaloguj się tutaj!"
+    }
+  },
+  "COURSE_DETAIL": {
+    "SESSIONS_COUNT": "Sesje {{count}}",
+    "NO_DESCRIPTION": "Brak opisu.",
+    "ENROLLED": "Przyjęty",
+    "BACK_TO_DASHBOARD": "Powrót do Panelu",
+    "ENROLL_BUTTON": "Zapisz się na kurs",
+    "START_LEARNING": "Zacznij się uczyć",
+    "SESSION_LIST": "Lista sesji",
+    "NO_SESSIONS": "Brak dostępnych sesji.",
+    "MENTOR_ONLY": "Sesje mogą dodawać tylko mentorzy.",
+    "ADD_SESSION": "Dodaj sesję",
+    "MODALS": {
+      "ADD_SESSION_TITLE": "Dodaj nową sesję!",
+      "EDIT_SESSION_TITLE": "Edytuj sesję!",
+      "TITLE_LABEL": "Tytuł sesji",
+      "TITLE_PLACEHOLDER": "Przykład: magia matematyczna",
+      "DESC_LABEL": "Opis",
+      "DESC_PLACEHOLDER": "Czego się dzisiaj dowiemy?",
+      "DATE_LABEL": "Zaplanowana data",
+      "SAVE_BUTTON": "Zapisz sesję!",
+      "DELETE_TITLE": "Usunąć sesję?",
+      "DELETE_DESC": "Czy na pewno chcesz usunąć tę sesję? Tej akcji nie można cofnąć.",
+      "CONFIRM_DELETE": "Tak, usuń to!"
+    }
+  },
+  "SESSION": {
+    "BACK_TO_COURSE": "Powrót do kursu",
+    "WAITING_MENTOR": "Czekam na mentora...",
+    "RECORDING": "Nagranie",
+    "LIVE": "NA ŻYWO",
+    "JOIN_CALL": "Dołącz do audio/wideo",
+    "LEAVE_CALL": "Opuść połączenie",
+    "MUTE": "Niemy",
+    "UNMUTE": "Wyłącz wyciszenie",
+    "STOP_VIDEO": "Zatrzymaj wideo",
+    "START_VIDEO": "Uruchom wideo",
+    "PARTICIPANTS": "Uczestnicy",
+    "CHAT": "Pogawędzić",
+    "TOOLS": "Narzędzia",
+    "RAISE_HAND": "Podnieś rękę",
+    "LOWER_HAND": "Dolna ręka",
+    "CLEAR_BOARD": "Wyczyść tablicę",
+    "SAVE_BOARD": "Zapisz tablicę",
+    "UNDO": "Anulować",
+    "REDO": "Przerobić"
+  },
+  "PROFILE": {
+    "TITLE": "Mój profil",
+    "ROLE": "Rola: {{role}}",
+    "EDIT_PROFILE": "Edytuj profil",
+    "SAVE_CHANGES": "Zapisz zmiany",
+    "CANCEL": "Anulować",
+    "LOGOUT": "Wyloguj się"
+  },
+  "LEADERBOARD": {
+    "TITLE": "Tabela liderów",
+    "SUBTITLE": "Zobacz, kto uczy się najwięcej!",
+    "RANK": "Stopień",
+    "NAME": "Nazwa",
+    "SCORE": "Wynik",
+    "LEVEL": "Poziom",
+    "BACK": "Back",
+    "ALL_TIME": "All Time",
+    "THIS_WEEK": "This Week",
+    "THIS_MONTH": "This Month",
+    "LOADING": "Loading leaderboard...",
+    "EMPTY_TITLE": "No Rankings Yet",
+    "EMPTY_DESC": "No students have points yet. Complete sessions and earn points to start!",
+    "YOU": "You",
+    "ACHIEVEMENTS": "achievements",
+    "POINTS": "points",
+    "ERROR": "Failed to load leaderboard",
+    "BACK_TO_DASHBOARD": "Back to Dashboard"
+  },
+  "NOT_FOUND": {
+    "TITLE": "Ups! Nie znaleziono strony",
+    "SUBTITLE": "Nie znaleźliśmy strony, której szukasz.",
+    "BACK_HOME": "Wróć do domu",
+    "SUBTITLE_2": "Don't worry, let's get you back on track!",
+    "SUGGESTION_TITLE": "Maybe you meant to visit:",
+    "SUGGESTION_HOME": "Home page to start learning",
+    "SUGGESTION_DASHBOARD": "Your dashboard to see courses",
+    "SUGGESTION_LOGIN": "Login if you haven't signed in",
+    "GO_HOME": "Go Home",
+    "MY_DASHBOARD": "My Dashboard",
+    "STILL_LOST": "Still lost? Try using the navigation menu at the top!",
+    "DESC_1": "The page you're looking for seems to have floated away into the cosmos!",
+    "DESC_2": "Don't worry, let's get you back on track!",
+    "SUGGESTIONS_TITLE": "Maybe you meant to visit:",
+    "SUGGEST_HOME": "Home page to start learning",
+    "SUGGEST_DASHBOARD": "Your dashboard to see courses",
+    "SUGGEST_LOGIN": "Login if you haven't signed in",
+    "BTN_HOME": "Go Home",
+    "BTN_DASHBOARD": "My Dashboard",
+    "HELP_TEXT": "Still lost? Try using the navigation menu at the top!"
+  },
+  "SHARED": {
+    "LOADING": "Załadunek...",
+    "SUCCESS": "Sukces!",
+    "ERROR": "Błąd!",
+    "WARNING": "Ostrzeżenie!"
+  },
+  "STUDENT_PROGRESS": {
+    "TITLE": "Student Progress",
+    "SUBTITLE": "Track learning journey and achievements",
+    "SESSIONS": "{{count}} Sessions",
+    "CANVAS_TIME": "Total Canvas Time",
+    "CANVAS_TIME_UNIT": "{{count}} min",
+    "GAMES_COMPLETED": "Games Completed",
+    "ACCURACY_RATE": "Accuracy Rate",
+    "ERROR": "Failed to load progress data",
+    "STUDENT_PROGRESS": "Student Progress",
+    "TRACK_LEARNING_JOURNEY_AND_ACH": "Track learning journey and achievements",
+    "SESSIONS_1": "{{ totalSessions }} Sessions",
+    "TOTAL_CANVAS_TIME": "Total Canvas Time",
+    "MIN": "{{ totalCanvasTime }} min",
+    "TRACK_JOURNEY": "Track learning journey and achievements"
+  },
+  "ACHIEVEMENTS": {
+    "TITLE": "Achievements",
+    "EARNED": "Earned",
+    "TOTAL_POINTS": "Total Points",
+    "LOADING": "Loading achievements...",
+    "EMPTY": "No achievements available yet.",
+    "EARNED_BADGE": "Earned",
+    "LOCKED_BADGE": "Locked",
+    "HOW_TO_EARN": "How to earn",
+    "REQUIRED": "Required: {{value}} ({{type}})",
+    "POINTS": "+{{count}} pts",
+    "UNLOCKED": "Achievement Unlocked!",
+    "POINTS_EARNED": "+{{count}} points"
+  },
+  "NOTIFICATION": {
+    "FOR_N_OF_NOTIFICATIONS_ASYNC_T": "@for (n of notifications$ | async; track n.id) {",
+    "IF_N_TYPE_SUCCESS": "@if (n.type === 'success') {",
+    "IF_N_TYPE_ERROR": "}\n        @if (n.type === 'error') {",
+    "IF_N_TYPE_INFO": "}\n        @if (n.type === 'info') {",
+    "IF_N_TYPE_WARNING": "}\n        @if (n.type === 'warning') {"
+  },
+  "TOOLBAR": {
+    "NAVIGATE": "Navigate",
+    "FOR_TOOL_OF_NAVIGATIONTOOLS_TR": "@for (tool of navigationTools; track tool.id) {",
+    "DRAWING": "Drawing",
+    "FOR_TOOL_OF_BASICTOOLS_TRACK_T": "@for (tool of basicTools; track tool.id) {",
+    "SHAPES": "Shapes",
+    "MEDIA": "Media",
+    "COLOR": "Color",
+    "FOR_C_OF_PRESETCOLORS_TRACK_C": "@for (c of presetColors; track c) {",
+    "STROKE": "Stroke",
+    "DASH": "Dash",
+    "FILL": "Fill",
+    "BRUSH": "Brush",
+    "LAYER": "Layer",
+    "LAYERS": "Layers",
+    "EXPORT": "Export",
+    "IF_SHOWSHAPESPOPUP": "@if (showShapesPopup) {",
+    "SHAPES_LINES": "Shapes & Lines",
+    "FOR_TOOL_OF_SHAPETOOLS_TRACK_T": "@for (tool of shapeTools; track tool.id) {",
+    "IF_SHOWASSETSPOPUP": "}\n  @if (showAssetsPopup) {",
+    "ADD_MEDIA": "Add Media",
+    "FOR_TOOL_OF_ASSETTOOLS_TRACK_T": "@for (tool of assetTools; track tool.id) {",
+    "IF_SHOWDASHPANEL": "}\n  @if (showDashPanel) {",
+    "STROKE_DASH_PATTERN": "Stroke Dash Pattern",
+    "FOR_PRESET_OF_DASHPRESETS_TRAC": "@for (preset of dashPresets; track preset.name) {",
+    "0_REPEATING_LINEAR_GRADIENT_TO": "0\n                  ? 'repeating-linear-gradient(to right, ' +\n                    color +\n                    ' 0, ' +\n                    color +\n                    ' ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    preset.value[0] +\n                    'px, transparent ' +\n                    (preset.value[0] + (preset.value[1] || 5)) +\n                    'px)'\n                  : ''\n              \"\n              [style.height.px]=\"3\"\n            >",
+    "IF_SHOWFILLPANEL": "}\n  @if (showFillPanel) {",
+    "FILL_TYPE": "Fill Type",
+    "SOLID": "Solid",
+    "LINEAR": "Linear",
+    "RADIAL": "Radial",
+    "NONE": "None",
+    "IF_FILLTYPE_LINEAR_FILLTYPE_RA": "@if (fillType === 'linear' || fillType === 'radial') {",
+    "FROM": "From",
+    "TO": "To",
+    "IF_FILLTYPE_LINEAR": "@if (fillType === 'linear') {",
+    "DIRECTION": "Direction",
+    "FOR_DIR_OF_GRADIENTDIRECTIONS": "@for (dir of gradientDirections; track dir.id) {",
+    "IF_SHOWBRUSHPANEL": "}\n  @if (showBrushPanel) {",
+    "BRUSH_PRESETS": "Brush Presets",
+    "APPLIES_TO_PEN_TOOL_ONLY": "Applies to pen tool only",
+    "FOR_PRESET_OF_BRUSHPRESETLIST": "@for (preset of brushPresetList; track preset.id) {",
+    "IF_SHOWLAYERPOPUP": "}\n  @if (showLayerPopup) {",
+    "LAYER_ORDER": "Layer Order",
+    "FRONT": "Front",
+    "FWD": "Fwd",
+    "BWD": "Bwd",
+    "BACK": "Back",
+    "IF_SHOWEXPORTPOPUP": "}\n  @if (showExportPopup) {",
+    "EXPORT_AS": "Export As...",
+    "PNG": "PNG",
+    "PDF": "PDF",
+    "IF_SHOWASSETPICKER": "}\n\n  @if (showAssetPicker) {",
+    "PICK_A": "Pick a {{ currentTool }}",
+    "IF_SELECTEDASSET_FOR_ASSET_OF": "@if (!selectedAsset) {\n            @for (asset of filteredAssets; track asset.id) {",
+    "IF_ASSET_ASSET_TYPE_IMAGE": "@if (asset.asset_type === 'image') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_AUDIO": "} @else if (asset.asset_type === 'audio') {",
+    "ELSE_IF_ASSET_ASSET_TYPE_ANIMA": "} @else if (asset.asset_type === 'animation') {",
+    "IF_FILTEREDASSETS_LENGTH_0": "}\n            @if (filteredAssets.length === 0) {",
+    "NO_ASSETS_FOUND": "No {{ currentTool }} assets found.",
+    "ELSE": "}\n          } @else {",
+    "CUSTOMIZE": "Customize {{ selectedAsset.title }}",
+    "IF_SELECTEDASSET_ASSET_TYPE_AN": "@if (selectedAsset.asset_type === 'animation') {",
+    "IF_SHOWGRAVITYPARAMS": "@if (showGravityParams) {",
+    "GRAVITY": "Gravity ({{ tempConfig.g }})",
+    "BOUNCE": "Bounce ({{ tempConfig.restitution }})",
+    "IF_SHOWHARMONICPARAMS": "}\n\n                  @if (showHarmonicParams) {",
+    "FREQUENCY": "Frequency ({{ tempConfig.frequency }})",
+    "DAMPING": "Damping ({{ tempConfig.damping }})",
+    "IF_SHOWSPEEDPARAMS": "}\n\n                  @if (showSpeedParams) {",
+    "ACTION_SPEED": "Action Speed ({{ tempConfig.speed }})",
+    "APPLY_ACTION": "Apply Action",
+    "MEDIA_ASSETS": "Media Assets",
+    "CUSTOM_COLOR": "Custom color",
+    "DASH_PATTERN": "Dash Pattern",
+    "BRUSH_PRESET": "Brush Preset",
+    "EXPORT_CANVAS": "Export Canvas",
+    "TEXT": "Text",
+    "SHAPES_AND_LINES": "Shapes & Lines",
+    "APPLIES_PEN_ONLY": "Applies to pen tool only",
+    "FONT_SIZE": "Font size",
+    "FONT": "Font",
+    "ARIAL": "Arial",
+    "TIMES_NEW_ROMAN": "Times New Roman",
+    "COURIER_NEW": "Courier New",
+    "COMIC_SANS_MS": "Comic Sans MS"
+  },
+  "MENTOR_BROADCAST": {
+    "IF_USERROLE_MENTOR": "@if (userRole() === 'mentor') {",
+    "SEND_BROADCAST": "Send Broadcast",
+    "FOR_BROADCAST_OF_BROADCASTS_TR": "}\n  @for (broadcast of broadcasts(); track $index) {",
+    "MESSAGE_TO_ALL_STUDENTS": "Message to all students..."
+  },
+  "HAND_RAISE": {
+    "IF_USERROLE_STUDENT": "@if (userRole() === 'student') {",
+    "IF_USERROLE_MENTOR": "}\n  @if (userRole() === 'mentor') {",
+    "IF_GETRAISEDCOUNT_0": "@if (getRaisedCount() > 0) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0": "@if (showList() && getRaisedCount() > 0) {",
+    "STUDENTS_WITH_HANDS_RAISED": "Students with Hands Raised",
+    "FOR_RAISE_OF_GETRAISEDHANDSLIS": "@for (raise of getRaisedHandsList(); track raise.userId) {",
+    "IF_SHOWLIST_GETRAISEDCOUNT_0_1": "}\n    @if (showList() && getRaisedCount() === 0) {",
+    "NO_HANDS_RAISED_YET": "No hands raised yet",
+    "NO_HANDS_YET": "No hands raised yet"
+  },
+  "KEYBOARD_SHORTCUTS_HELP": {
+    "KEYBOARD_SHORTCUTS": "Keyboard Shortcuts",
+    "PRESS": "Press",
+    "TO_TOGGLE": "to\n              toggle",
+    "FOR_GROUP_OF_GROUPS_TRACK_GROU": "@for (group of groups; track group.category) {",
+    "FOR_SHORTCUT_OF_GROUP_SHORTCUT": "@for (shortcut of group.shortcuts; track shortcut.description) {",
+    "SHORTCUT_DESCRIPTION": "{{\n                    shortcut.description\n                  }}",
+    "ESC": "Esc",
+    "TO_CLOSE": "to close",
+    "CLOSE_SHORTCUTS_HELP": "Close shortcuts help"
+  },
+  "STREAK_BADGE": {
+    "HARI_BERTURUT_TURUT": "Hari Berturut-turut",
+    "TERBAIK": "Terbaik: {{ streak?.longest_streak || 0 }}",
+    "IF_LEVELEDUP": "@if (leveledUp) {",
+    "HARI": "{{ streak?.current_streak }} Hari!",
+    "DAYS_STREAK": "Days Streak"
+  },
+  "USER_PRESENCE": {
+    "IF_GETONLINECOUNT_0": "@if (getOnlineCount() > 0) {",
+    "IF_USERS_LENGTH_0": "@if (users().length > 0) {",
+    "GETONLINECOUNT": "{{\n        getOnlineCount()\n      }}",
+    "IF_SHOWLIST": "@if (showList()) {",
+    "ONLINE": "Online ({{ getOnlineCount() }})",
+    "FOR_USER_OF_USERS_TRACK_USER_U": "@for (user of users(); track user.userId) {",
+    "IF_USER_ISONLINE": "{{ getInitial(user.username) }}\n                @if (user.isOnline) {",
+    "IF_USER_ROLE_STUDENT": "{{ user.isOnline ? 'Online' : 'Offline' }}\n                  @if (user.role === 'student') {",
+    "STUDENT": "Student",
+    "IF_USERROLE_MENTOR_USER_ROLE_S": "@if (userRole === 'mentor' && user.role === 'student') {"
+  },
+  "PLAYBACK_CONTROLS": {
+    "SPEED": "Speed",
+    "FOR_SPEED_OF_SPEEDOPTIONS_TRAC": "@for (speed of speedOptions; track speed) {",
+    "PLAYBACK_POSITION": "Playback position",
+    "REWIND_10S": "Rewind 10s",
+    "REWIND_10_SECONDS": "Rewind 10 seconds",
+    "FORWARD_10S": "Forward 10s",
+    "FORWARD_10_SECONDS": "Forward 10 seconds"
+  },
+  "MODAL": {
+    "IF_ICON": "@if (icon) {",
+    "IF_SHOWCANCEL": "@if (showCancel) {",
+    "IF_CONFIRMICON": "{{ confirmText }}\n        @if (confirmIcon) {"
+  },
+  "KEYBOARD_SHORTCUTS": {
+    "TITLE": "Keyboard Shortcuts",
+    "ESC": "Esc"
+  }
+}

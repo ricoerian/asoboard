@@ -1,0 +1,939 @@
+<div class="page-bg min-h-screen">
+  <nav
+    class="bg-white shadow-md shadow-teal-200/40 px-6 py-3 flex justify-between items-center sticky top-0 z-50"
+  >
+    <a class="flex items-center gap-3" routerLink="/dashboard">
+      <img src="/static/logo.png" alt="AsoBoard" class="h-16" />
+      <span
+        class="hidden sm:inline-block bg-teal-500 text-white text-xs font-extrabold px-3 py-1 rounded-full"
+      >
+        {{ 'DASHBOARD.NAV.FUN_LEARNING' | translate }}
+      </span>
+    </a>
+
+    @if (currentUser) {
+      <div class="flex items-center gap-3">
+        <div class="hidden sm:block text-right">
+          <div class="text-slate-800 font-extrabold text-sm flex items-center gap-1">
+            {{ currentUser.username }}
+            @if (currentUser.role === 'mentor' && currentUser.is_verified) {
+              <i class="fa-solid fa-circle-check text-blue-500" title="Verified Mentor"></i>
+            }
+          </div>
+          <div class="text-xs mt-0.5">
+            @if (currentUser.role === 'mentor') {
+              <span
+                class="bg-pink-100 text-pink-700 border-2 border-pink-200 font-extrabold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wide"
+              >
+                <i class="fa-solid fa-person-chalkboard"></i>
+                {{ 'DASHBOARD.NAV.MENTOR' | translate }}
+              </span>
+            }
+            @if (currentUser.role === 'student') {
+              <span
+                class="bg-sky-100 text-sky-700 border-2 border-sky-200 font-extrabold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wide"
+              >
+                <i class="fa-solid fa-backpack"></i> {{ 'DASHBOARD.NAV.STUDENT' | translate }}
+              </span>
+            }
+            @if (currentUser.role === 'staff') {
+              <span
+                class="bg-orange-100 text-orange-700 border-2 border-orange-200 font-extrabold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wide"
+              >
+                <i class="fa-solid fa-user-shield"></i> {{ 'DASHBOARD.NAV.STAFF' | translate }}
+              </span>
+            }
+            @if (currentUser.role === 'parent') {
+              <span
+                class="bg-orange-100 text-orange-700 border-2 border-orange-200 font-extrabold px-2 py-0.5 rounded-full text-[10px] uppercase tracking-wide"
+              >
+                <i class="fa-solid fa-user-tie"></i> {{ 'DASHBOARD.NAV.PARENT' | translate }}
+              </span>
+            }
+          </div>
+        </div>
+        <a
+          routerLink="/profile"
+          [title]="'DASHBOARD.NAV.MY_PROFILE' | translate"
+          class="relative w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 overflow-hidden"
+        >
+          @if (currentUser.avatar) {
+            <img [src]="currentUser.avatar" alt="Avatar" class="w-full h-full object-cover" />
+          } @else {
+            <span class="text-white font-black text-sm">{{
+              currentUser.username[0]?.toUpperCase()
+            }}</span>
+          }
+        </a>
+        <a
+          routerLink="/leaderboard"
+          [title]="'DASHBOARD.NAV.LEADERBOARD_TITLE' | translate"
+          class="bg-amber-400 hover:bg-amber-300 text-slate-800 font-black px-4 py-2 rounded-2xl shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 text-sm"
+        >
+          <i class="fa-solid fa-trophy text-lg"></i> {{ 'DASHBOARD.NAV.RANKING' | translate }}
+        </a>
+        <app-language-switcher></app-language-switcher>
+        <app-notification-center></app-notification-center>
+        <button
+          (click)="logout()"
+          class="bg-red-50 hover:bg-red-100 border-2 border-red-200 text-red-500 font-extrabold text-xs px-4 py-2 rounded-2xl transition-all duration-200 hover:-translate-y-0.5"
+        >
+          {{ 'DASHBOARD.NAV.LOGOUT' | translate }}
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+      </div>
+    }
+  </nav>
+
+  @if (currentUser?.role === 'student' && streak) {
+    <div class="max-w-6xl mx-auto px-6 pt-4">
+      <app-streak-badge [streak]="streak" [leveledUp]="streakLeveledUp"></app-streak-badge>
+    </div>
+  }
+
+  @if (levelData) {
+    <div class="max-w-6xl mx-auto px-6 pt-2">
+      <app-level-badge [levelData]="levelData"></app-level-badge>
+    </div>
+  }
+
+  <div class="max-w-6xl mx-auto px-6 py-10">
+    <div class="flex flex-wrap justify-between items-start gap-4 mb-8">
+      <div>
+        <h1 class="text-4xl font-black text-slate-800 drop-shadow-sm">
+          @if (currentUser?.role === 'parent') {
+            {{ 'DASHBOARD.HEADER.TITLE_PARENT' | translate }}
+            <i class="fa-solid fa-children text-orange-500"></i>
+          } @else {
+            {{ 'DASHBOARD.HEADER.TITLE' | translate }} <i class="fa-solid fa-book text-sky-500"></i>
+          }
+        </h1>
+        @if (currentUser?.role === 'student') {
+          <p class="text-slate-600 mt-1 font-bold text-base">
+            {{
+              'DASHBOARD.HEADER.GREETING_STUDENT'
+                | translate: { name: currentUser?.username || '...' }
+            }}
+            <i class="fa-solid fa-rainbow text-pink-400"></i>
+          </p>
+        }
+        @if (currentUser?.role === 'mentor') {
+          <p class="text-slate-600 mt-1 font-bold text-base">
+            {{
+              'DASHBOARD.HEADER.GREETING_MENTOR'
+                | translate: { name: currentUser?.username || '...' }
+            }}
+            @if (currentUser?.is_verified) {
+              <i class="fa-solid fa-circle-check text-blue-500 mr-1" title="Verified Mentor"></i>
+            }
+            <i class="fa-solid fa-rainbow text-pink-400"></i>
+          </p>
+        }
+        @if (currentUser?.role === 'staff') {
+          <p class="text-slate-600 mt-1 font-bold text-base">
+            {{
+              'DASHBOARD.HEADER.GREETING_STAFF'
+                | translate: { name: currentUser?.username || '...' }
+            }}
+            <i class="fa-solid fa-rainbow text-pink-400"></i>
+          </p>
+        }
+        @if (currentUser?.role === 'parent') {
+          <p class="text-slate-600 mt-1 font-bold text-base">
+            {{
+              'DASHBOARD.HEADER.GREETING_PARENT'
+                | translate: { name: currentUser?.username || '...' }
+            }}
+            <i class="fa-solid fa-rainbow text-pink-400"></i>
+          </p>
+        }
+      </div>
+      @if (currentUser?.role === 'mentor') {
+        <div class="flex gap-3 flex-wrap">
+          <a
+            routerLink="/templates"
+            class="bg-sky-500 hover:bg-sky-600 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-sky-400/40 hover:shadow-sky-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-copy"></i> {{ 'DASHBOARD.ACTIONS.TEMPLATES' | translate }}
+          </a>
+          <button
+            (click)="openCreateModal()"
+            class="bg-teal-500 hover:bg-teal-600 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-teal-400/40 hover:shadow-teal-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-plus"></i> {{ 'DASHBOARD.ACTIONS.CREATE_COURSE' | translate }}
+          </button>
+          <a
+            routerLink="/manage-classes"
+            class="bg-amber-500 hover:bg-amber-400 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-amber-500/40 hover:shadow-amber-500/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-users-rectangle"></i> Manage Classes
+          </a>
+        </div>
+      }
+      @if (currentUser?.role === 'staff') {
+        <div class="flex gap-3 flex-wrap">
+          <a
+            routerLink="/assets"
+            class="bg-sky-400 hover:bg-sky-300 text-slate-800 font-black px-6 py-3 rounded-2xl shadow-lg shadow-sky-400/40 hover:shadow-sky-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-photo-film"></i>
+            {{ 'DASHBOARD.ACTIONS.MANAGE_ASSETS' | translate }}
+          </a>
+          <a
+            routerLink="/manage-links"
+            class="bg-cyan-500 hover:bg-cyan-400 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-cyan-500/40 hover:shadow-cyan-500/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-link"></i> Manage Family Links
+          </a>
+          <a
+            routerLink="/manage-users"
+            class="bg-emerald-500 hover:bg-emerald-400 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-emerald-500/40 hover:shadow-emerald-500/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-users"></i> Manage Users
+          </a>
+          <button
+            (click)="exportCsv('users')"
+            class="bg-purple-500 hover:bg-purple-400 text-white font-black px-6 py-3 rounded-2xl shadow-lg shadow-purple-500/40 hover:shadow-purple-500/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-download"></i> Export Analytics
+          </button>
+        </div>
+      }
+      @if (currentUser?.role === 'student') {
+        <div class="flex gap-3 flex-wrap">
+          @if (showMyCourses) {
+            <button
+              (click)="toggleMyCourses()"
+              class="bg-sky-400 hover:bg-sky-300 text-slate-800 font-black px-6 py-3 rounded-2xl shadow-lg shadow-sky-400/40 hover:shadow-sky-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+            >
+              <i class="fa-solid fa-globe"></i> {{ 'DASHBOARD.ACTIONS.BROWSE_ALL' | translate }}
+            </button>
+          } @else {
+            <button
+              (click)="toggleMyCourses()"
+              class="bg-green-400 hover:bg-green-300 text-slate-800 font-black px-6 py-3 rounded-2xl shadow-lg shadow-green-400/40 hover:shadow-green-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+            >
+              <i class="fa-solid fa-star text-amber-500"></i>
+              {{ 'DASHBOARD.ACTIONS.MY_COURSES' | translate }}
+            </button>
+          }
+          <a
+            routerLink="/progress"
+            class="bg-green-400 hover:bg-green-300 text-slate-800 font-black px-6 py-3 rounded-2xl shadow-lg shadow-green-400/40 hover:shadow-green-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-chart-line"></i> {{ 'DASHBOARD.ACTIONS.MY_PROGRESS' | translate }}
+          </a>
+          <a
+            routerLink="/diaries"
+            class="bg-sky-400 hover:bg-sky-300 text-slate-800 font-black px-6 py-3 rounded-2xl shadow-lg shadow-sky-400/40 hover:shadow-sky-400/60 hover:-translate-y-1 transition-all duration-200 text-sm"
+          >
+            <i class="fa-solid fa-book-open"></i> {{ 'DASHBOARD.ACTIONS.MY_DIARY' | translate }}
+          </a>
+        </div>
+      }
+    </div>
+
+    @if (!isLoading && currentUser?.role === 'staff' && systemAnalytics) {
+      <!-- Main Metric Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-sky-400">
+          <p class="text-slate-500 text-sm font-bold">Total Students</p>
+          <p class="text-3xl font-black text-slate-800">{{ systemAnalytics.total_students }}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-pink-400">
+          <p class="text-slate-500 text-sm font-bold">Total Mentors</p>
+          <p class="text-3xl font-black text-slate-800">{{ systemAnalytics.total_mentors }}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-green-400">
+          <p class="text-slate-500 text-sm font-bold">Total Games Played</p>
+          <p class="text-3xl font-black text-slate-800">{{ systemAnalytics.total_games }}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-orange-400">
+          <p class="text-slate-500 text-sm font-bold">Active Users (30d)</p>
+          <p class="text-3xl font-black text-slate-800">{{ systemAnalytics.active_users_30d }}</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <!-- 7-Day Trend Chart -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl">
+          <h3 class="text-slate-800 font-extrabold text-lg mb-4">
+            <i class="fa-solid fa-chart-bar text-sky-500 mr-2"></i> User Activity Trend (7 Days)
+          </h3>
+          <div class="flex items-end h-40 gap-2 border-b-2 border-slate-100 pb-2">
+            @for (point of systemAnalytics.dau_trend; track point.date; let i = $index) {
+              <div class="flex-1 flex flex-col items-center group relative">
+                <!-- Tooltip -->
+                <div
+                  class="absolute -top-10 opacity-0 group-hover:opacity-100 bg-slate-800 text-white text-[10px] font-bold px-2 py-1 rounded transition-opacity whitespace-nowrap z-10 pointer-events-none"
+                >
+                  {{ point.count }} Users
+                </div>
+                <!-- Bar -->
+                <div
+                  class="w-full bg-sky-300 rounded-t-md transition-all group-hover:bg-sky-400"
+                  [style.height.px]="
+                    (point.count / (systemAnalytics.active_users_30d || 1)) * 150 + 10
+                  "
+                ></div>
+                <span class="text-[9px] text-slate-400 mt-2 font-bold">{{
+                  point.date | slice: 5 : 10
+                }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <!-- Top Courses Leaderboard -->
+        <div class="bg-white rounded-3xl p-6 shadow-xl">
+          <h3 class="text-slate-800 font-extrabold text-lg mb-4">
+            <i class="fa-solid fa-ranking-star text-amber-400 mr-2"></i> Most Popular Courses
+          </h3>
+          <div class="space-y-3">
+            @for (course of systemAnalytics.popular_courses; track course.title; let i = $index) {
+              <div
+                class="flex items-center justify-between bg-slate-50 p-3 rounded-2xl border-l-4"
+                [class.border-yellow-400]="i === 0"
+                [class.border-slate-300]="i > 0"
+              >
+                <div class="flex items-center gap-3">
+                  <span
+                    class="font-black"
+                    [class.text-amber-500]="i === 0"
+                    [class.text-slate-400]="i > 0"
+                  >
+                    #{{ i + 1 }}
+                  </span>
+                  <div>
+                    <p class="text-sm font-extrabold text-slate-800">{{ course.title }}</p>
+                    <p class="text-[10px] font-bold text-slate-500">by {{ course.mentor }}</p>
+                  </div>
+                </div>
+                <span
+                  class="bg-green-100 text-green-700 font-extrabold px-3 py-1 rounded-full text-xs"
+                >
+                  <i class="fa-solid fa-users"></i> {{ course.students }}
+                </span>
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+    }
+
+    @if (!isLoading && currentUser?.role === 'mentor' && mentorAnalytics) {
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-6">
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-sky-400">
+          <p class="text-slate-500 text-sm font-bold">My Courses</p>
+          <p class="text-3xl font-black text-slate-800">{{ mentorAnalytics.total_courses }}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-pink-400">
+          <p class="text-slate-500 text-sm font-bold">Students Enrolled</p>
+          <p class="text-3xl font-black text-slate-800">
+            {{ mentorAnalytics.total_students_enrolled }}
+          </p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-amber-400">
+          <p class="text-slate-500 text-sm font-bold">Total Sessions</p>
+          <p class="text-3xl font-black text-slate-800">{{ mentorAnalytics.total_sessions }}</p>
+        </div>
+        <div class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-green-400">
+          <p class="text-slate-500 text-sm font-bold">Avg. Engagement</p>
+          <p class="text-3xl font-black text-slate-800">
+            {{ mentorAnalytics.student_engagement }}<span class="text-lg text-slate-400">%</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-3xl p-6 shadow-xl mb-8">
+        <h3 class="text-slate-800 font-extrabold text-lg mb-4">
+          <i class="fa-solid fa-clock-rotate-left text-pink-400 mr-2"></i> Recent Sessions Activity
+        </h3>
+        @if (mentorAnalytics.recent_activity.length > 0) {
+          <div class="space-y-3">
+            @for (session of mentorAnalytics.recent_activity; track session.title) {
+              <div class="flex items-center justify-between bg-slate-50 p-4 rounded-2xl">
+                <div>
+                  <p class="font-extrabold text-slate-800 text-sm">{{ session.title }}</p>
+                  <p class="text-[11px] font-bold text-slate-500 mt-1">
+                    Course: {{ session.course }}
+                  </p>
+                </div>
+                <div class="text-right">
+                  <span
+                    class="bg-cyan-100 text-cyan-700 text-[10px] font-black px-2 py-1 rounded-lg uppercase"
+                  >
+                    {{ session.mode }}
+                  </span>
+                  <p class="text-[10px] font-bold text-slate-400 mt-2">
+                    {{ session.created_at | date: 'mediumDate' }}
+                  </p>
+                </div>
+              </div>
+            }
+          </div>
+        } @else {
+          <p class="text-slate-400 font-bold text-sm text-center py-6">No recent sessions found.</p>
+        }
+      </div>
+    }
+
+    @if (!isLoading && currentUser?.role !== 'parent') {
+      <div class="flex flex-wrap gap-3 mb-6 items-center">
+        <div class="relative flex-1 min-w-[240px] max-w-md">
+          <i
+            class="fa-solid fa-magnifying-glass absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+          ></i>
+          <input
+            type="text"
+            [value]="searchQuery"
+            (input)="onSearchChange($any($event.target).value)"
+            [placeholder]="'DASHBOARD.SEARCH.PLACEHOLDER' | translate"
+            class="w-full bg-white border-2 border-sky-200 rounded-2xl pl-11 pr-10 py-3 text-slate-700 placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-pink-400 focus:bg-pink-50/30 transition-all shadow-sm"
+          />
+          @if (searchQuery) {
+            <button
+              (click)="clearSearch()"
+              class="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 bg-slate-200 hover:bg-slate-300 rounded-full flex items-center justify-center transition-colors"
+            >
+              <i class="fa-solid fa-xmark text-slate-500 text-xs"></i>
+            </button>
+          }
+        </div>
+
+        <div class="relative">
+          <select
+            [value]="sortOption"
+            (change)="onSortChange($any($event.target).value)"
+            class="appearance-none bg-white border-2 border-green-200 rounded-2xl pl-4 pr-10 py-3 text-slate-700 text-sm font-bold focus:outline-none focus:border-green-400 transition-all shadow-sm cursor-pointer"
+          >
+            <option value="-created_at">{{ 'DASHBOARD.SEARCH.SORT_NEWEST' | translate }}</option>
+            <option value="created_at">{{ 'DASHBOARD.SEARCH.SORT_OLDEST' | translate }}</option>
+            <option value="title">{{ 'DASHBOARD.SEARCH.SORT_AZ' | translate }}</option>
+            <option value="-title">{{ 'DASHBOARD.SEARCH.SORT_ZA' | translate }}</option>
+            <option value="-session_count">
+              {{ 'DASHBOARD.SEARCH.SORT_MOST_SESSIONS' | translate }}
+            </option>
+            <option value="session_count">
+              {{ 'DASHBOARD.SEARCH.SORT_LEAST_SESSIONS' | translate }}
+            </option>
+          </select>
+          <i
+            class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 text-xs pointer-events-none"
+          ></i>
+        </div>
+
+        <div class="bg-sky-100 border-2 border-sky-200 rounded-full px-4 py-2">
+          <span class="text-sky-700 font-extrabold text-sm">
+            <i class="fa-solid fa-list"></i>
+            {{
+              (filteredCourses.length === 1
+                ? 'DASHBOARD.SEARCH.FOUND_SINGULAR'
+                : 'DASHBOARD.SEARCH.FOUND_PLURAL'
+              ) | translate: { count: filteredCourses.length }
+            }}
+          </span>
+        </div>
+      </div>
+    }
+
+    @if (isLoading) {
+      <div class="flex flex-col items-center justify-center py-20 gap-4">
+        <div class="spinner border-sky-200 border-top-sky-500 relative"></div>
+        <p class="text-slate-600 font-bold text-lg">
+          {{ 'DASHBOARD.SEARCH.LOADING' | translate }}
+          <i class="fa-solid fa-spinner fa-spin text-sky-500"></i>
+        </p>
+      </div>
+    }
+
+    @if (!isLoading && currentUser?.role !== 'parent') {
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        @for (course of filteredCourses; track course.id; let i = $index) {
+          <div
+            class="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border-b-4"
+            [class.border-sky-400]="i % 5 === 0"
+            [class.border-pink-400]="i % 5 === 1"
+            [class.border-green-400]="i % 5 === 3"
+            [class.border-orange-400]="i % 5 === 4"
+            [class.border-yellow-400]="i % 5 === 2"
+          >
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div
+                  class="w-4 h-4 rounded-full"
+                  [class.bg-sky-400]="i % 5 === 0"
+                  [class.bg-pink-400]="i % 5 === 1"
+                  [class.bg-green-400]="i % 5 === 3"
+                  [class.bg-orange-400]="i % 5 === 4"
+                  [class.bg-yellow-400]="i % 5 === 2"
+                ></div>
+                <div
+                  class="w-3 h-3 rounded-full opacity-50"
+                  [class.bg-sky-300]="i % 5 === 0"
+                  [class.bg-pink-300]="i % 5 === 1"
+                  [class.bg-green-300]="i % 5 === 3"
+                  [class.bg-orange-300]="i % 5 === 4"
+                  [class.bg-yellow-300]="i % 5 === 2"
+                ></div>
+              </div>
+              <h2 class="text-slate-800 font-extrabold text-xl leading-tight mb-2 line-clamp-2">
+                {{ course.title }}
+              </h2>
+              <p class="text-slate-500 text-sm leading-relaxed font-semibold line-clamp-3">
+                {{ course.description || ('DASHBOARD.COURSE_CARD.NO_DESCRIPTION' | translate) }}
+              </p>
+            </div>
+            <div class="flex justify-between items-center mt-5 pt-4 border-t-2 border-slate-100">
+              <div class="flex items-center gap-2">
+                <span class="text-slate-400 text-xs font-bold flex items-center gap-1">
+                  <i class="fa-solid fa-video"></i>
+                  {{
+                    'DASHBOARD.COURSE_CARD.SESSIONS'
+                      | translate: { count: course.sessions?.length || 0 }
+                  }}
+                </span>
+                @if (currentUser?.role === 'mentor' && course.mentor_id === currentUser?.id) {
+                  <span class="text-slate-400 text-xs font-bold flex items-center gap-1">
+                    <i class="fa-solid fa-users text-sky-500"></i>
+                    {{ course.enrollment_count || 0 }}
+                  </span>
+                }
+                @if (currentUser?.role === 'student' && isEnrolled(course.id)) {
+                  <span
+                    class="bg-green-100 text-green-700 border border-green-300 text-[10px] font-extrabold px-2 py-0.5 rounded-full"
+                  >
+                    <i class="fa-solid fa-check"></i>
+                    {{ 'DASHBOARD.COURSE_CARD.ENROLLED' | translate }}
+                  </span>
+                }
+              </div>
+              <div class="flex gap-2 items-center">
+                @if (currentUser?.id === course.mentor_id) {
+                  <button
+                    (click)="openEditModal(course)"
+                    [title]="'DASHBOARD.COURSE_CARD.EDIT_COURSE' | translate"
+                    class="text-sky-500 hover:text-sky-700 bg-sky-50 hover:bg-sky-100 w-8 h-8 rounded-full flex items-center justify-center transition-all"
+                  >
+                    <i class="fa-solid fa-pen text-xs"></i>
+                  </button>
+                  <button
+                    (click)="deleteCourse(course.id)"
+                    [title]="'DASHBOARD.COURSE_CARD.DELETE_COURSE' | translate"
+                    class="text-red-500 hover:text-red-700 bg-red-50 hover:bg-red-100 w-8 h-8 rounded-full flex items-center justify-center transition-all"
+                  >
+                    <i class="fa-solid fa-trash text-xs"></i>
+                  </button>
+                }
+                @if (currentUser?.role === 'student' && !isEnrolled(course.id)) {
+                  <button
+                    (click)="enrollInCourse(course.id)"
+                    [disabled]="isEnrolling.has(course.id)"
+                    class="font-extrabold text-xs px-4 py-2 rounded-xl shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                    [class.bg-green-500]="!isEnrolling.has(course.id)"
+                    [class.text-white]="!isEnrolling.has(course.id)"
+                    [class.bg-slate-300]="isEnrolling.has(course.id)"
+                    [class.text-slate-500]="isEnrolling.has(course.id)"
+                  >
+                    @if (isEnrolling.has(course.id)) {
+                      <i class="fa-solid fa-spinner fa-spin"></i>
+                    } @else {
+                      <i class="fa-solid fa-plus text-emerald-500"></i>
+                      {{ 'DASHBOARD.COURSE_CARD.ENROLL' | translate }}
+                    }
+                  </button>
+                }
+                @if (currentUser?.role === 'student' && isEnrolled(course.id)) {
+                  <a
+                    [routerLink]="['/course', course.id]"
+                    class="font-extrabold text-xs px-5 py-2 rounded-xl text-white shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                    [class.bg-sky-500]="i % 5 === 0"
+                    [class.bg-pink-500]="i % 5 === 1"
+                    [class.bg-green-500]="i % 5 === 3"
+                    [class.bg-orange-500]="i % 5 === 4"
+                  >
+                    {{ 'DASHBOARD.COURSE_CARD.ENTER' | translate }}
+                    <i class="fa-solid fa-arrow-right text-white"></i>
+                  </a>
+                }
+                @if (currentUser?.role === 'mentor' || currentUser?.role === 'staff') {
+                  <a
+                    [routerLink]="['/course', course.id]"
+                    class="font-extrabold text-xs px-5 py-2 rounded-xl text-white shadow-md hover:-translate-y-0.5 transition-all duration-200"
+                    [class.bg-sky-500]="i % 5 === 0"
+                    [class.bg-pink-500]="i % 5 === 1"
+                    [class.bg-green-500]="i % 5 === 3"
+                    [class.bg-orange-500]="i % 5 === 4"
+                    [class.bg-yellow-500]="i % 5 === 2"
+                  >
+                    {{ 'DASHBOARD.COURSE_CARD.ENTER' | translate }}
+                    <i class="fa-solid fa-arrow-right text-white"></i>
+                  </a>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+
+    @if (!isLoading && currentUser?.role === 'parent') {
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div
+          class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-orange-400 flex items-center gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-2xl"
+          >
+            <i class="fa-solid fa-children"></i>
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-bold">
+              {{ 'DASHBOARD.STATS.TOTAL_CHILDREN' | translate }}
+            </p>
+            <p class="text-3xl font-black text-slate-800">{{ children.length }}</p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-green-400 flex items-center gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-green-100 text-green-500 rounded-full flex items-center justify-center text-2xl"
+          >
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-bold">
+              {{ 'DASHBOARD.STATS.TOTAL_XP' | translate }}
+            </p>
+            <p class="text-3xl font-black text-slate-800">{{ totalChildrenXP }}</p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-3xl p-6 shadow-xl border-b-4 border-pink-400 flex items-center gap-4"
+        >
+          <div
+            class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center text-2xl"
+          >
+            <i class="fa-solid fa-fire"></i>
+          </div>
+          <div>
+            <p class="text-slate-500 text-sm font-bold">
+              {{ 'DASHBOARD.STATS.AVG_STREAK' | translate }}
+            </p>
+            <p class="text-3xl font-black text-slate-800">{{ averageChildrenStreak }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        @for (child of children; track child.id; let i = $index) {
+          <div
+            class="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between border-b-4"
+            [class.border-sky-400]="i % 5 === 0"
+            [class.border-pink-400]="i % 5 === 1"
+            [class.border-green-400]="i % 5 === 3"
+            [class.border-orange-400]="i % 5 === 4"
+            [class.border-yellow-400]="i % 5 === 2"
+          >
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div
+                  class="w-12 h-12 rounded-full text-white flex items-center justify-center font-black text-xl shadow-inner overflow-hidden"
+                  [class.bg-sky-400]="i % 5 === 0 && !child.avatar"
+                  [class.bg-pink-400]="i % 5 === 1 && !child.avatar"
+                  [class.bg-green-400]="i % 5 === 3 && !child.avatar"
+                  [class.bg-orange-400]="i % 5 === 4 && !child.avatar"
+                  [class.bg-yellow-400]="i % 5 === 2 && !child.avatar"
+                >
+                  @if (child.avatar) {
+                    <img [src]="child.avatar" alt="Avatar" class="w-full h-full object-cover" />
+                  } @else {
+                    {{ child.username[0]?.toUpperCase() }}
+                  }
+                </div>
+                <div>
+                  <h2 class="text-slate-800 font-extrabold text-xl leading-tight">
+                    {{ child.username }}
+                  </h2>
+                  <p class="text-slate-500 text-xs font-bold mt-1">
+                    <i class="fa-solid fa-star text-amber-500"></i> Lvl
+                    {{ child.level_info?.level || 1 }} ({{ child.total_points }} pts)
+                  </p>
+                </div>
+              </div>
+
+              <!-- XP Progress Bar -->
+              <div class="mt-4 bg-slate-100 rounded-full h-2 w-full overflow-hidden">
+                <div
+                  class="h-full rounded-full"
+                  [style.width.%]="child.total_points % 100"
+                  [class.bg-sky-400]="i % 5 === 0"
+                  [class.bg-pink-400]="i % 5 === 1"
+                  [class.bg-green-400]="i % 5 === 3"
+                  [class.bg-orange-400]="i % 5 === 4"
+                  [class.bg-yellow-400]="i % 5 === 2"
+                ></div>
+              </div>
+              <p class="text-[10px] text-right mt-1 text-slate-400 font-bold">
+                {{ child.total_points % 100 }} / 100 XP to next level
+              </p>
+
+              <div class="flex items-center gap-3 mt-4">
+                <div
+                  class="bg-orange-50 border border-orange-200 rounded-xl px-3 py-2 flex-1 text-center"
+                >
+                  <p class="text-orange-500 text-[10px] font-black uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-fire"></i> Streak
+                  </p>
+                  <p class="text-slate-700 font-extrabold text-lg">
+                    {{ child.streak_info?.current_streak || 0 }}
+                  </p>
+                </div>
+                <div
+                  class="bg-sky-50 border border-sky-200 rounded-xl px-3 py-2 flex-1 text-center"
+                >
+                  <p class="text-sky-500 text-[10px] font-black uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-book-open"></i> Diaries
+                  </p>
+                  <p class="text-slate-700 font-extrabold text-lg">
+                    {{ child.activity_stats?.diaries_created || 0 }}
+                  </p>
+                </div>
+                <div
+                  class="bg-green-50 border border-green-200 rounded-xl px-3 py-2 flex-1 text-center"
+                >
+                  <p class="text-green-500 text-[10px] font-black uppercase tracking-wider mb-1">
+                    <i class="fa-solid fa-gamepad"></i> Games
+                  </p>
+                  <p class="text-slate-700 font-extrabold text-lg">
+                    {{ child.activity_stats?.games_played || 0 }}
+                  </p>
+                </div>
+              </div>
+
+              <!-- Recent Games -->
+              @if (child.recent_games && child.recent_games.length > 0) {
+                <div class="mt-5">
+                  <p class="text-[10px] font-black text-slate-400 uppercase tracking-wider mb-2">
+                    Recent Games
+                  </p>
+                  <div class="space-y-2">
+                    @for (game of child.recent_games; track $index) {
+                      <div
+                        class="flex justify-between items-center bg-slate-50 px-3 py-2 rounded-lg"
+                      >
+                        <span class="text-xs font-extrabold text-slate-700 capitalize">
+                          <i class="fa-solid fa-dice text-pink-400 mr-1"></i> {{ game.game_type }}
+                        </span>
+                        <span class="text-xs font-black text-emerald-500">{{ game.score }}%</span>
+                      </div>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+            <div class="flex flex-col gap-2 w-full mt-5 pt-4 border-t-2 border-slate-100">
+              <button
+                (click)="viewChildProgress(child.id)"
+                class="font-extrabold text-xs px-5 py-2 rounded-xl text-white shadow-md hover:-translate-y-0.5 transition-all duration-200 w-full"
+                [class.bg-green-500]="true"
+              >
+                {{ 'DASHBOARD.ACTIONS.VIEW_PROGRESS' | translate }}
+                <i class="fa-solid fa-chart-line text-white ml-1"></i>
+              </button>
+              <a
+                [routerLink]="['/diaries']"
+                [queryParams]="{ student_id: child.id }"
+                class="block text-center font-extrabold text-xs px-5 py-2 rounded-xl text-white shadow-md hover:-translate-y-0.5 transition-all duration-200 w-full"
+                [class.bg-sky-500]="true"
+              >
+                {{ 'DASHBOARD.ACTIONS.VIEW_DIARY' | translate }}
+                <i class="fa-solid fa-book-open text-white ml-1"></i>
+              </a>
+            </div>
+          </div>
+        }
+        @if (children.length === 0) {
+          <div
+            class="col-span-full bg-white/90 backdrop-blur rounded-3xl p-16 text-center shadow-xl"
+          >
+            <div class="text-7xl mb-4 text-orange-300">
+              <i class="fa-solid fa-child-reaching"></i>
+            </div>
+            <p class="text-slate-600 text-xl font-extrabold">No children linked to your account.</p>
+            <p class="text-slate-400 text-sm font-semibold mt-2">
+              Please ask staff to link your child's account to yours.
+            </p>
+          </div>
+        }
+      </div>
+    }
+
+    @if (
+      !isLoading && filteredCourses.length === 0 && !searchQuery && currentUser?.role !== 'parent'
+    ) {
+      <div class="bg-white/90 backdrop-blur rounded-3xl p-16 text-center shadow-xl">
+        <div class="text-7xl mb-4 text-sky-300"><i class="fa-solid fa-box-open"></i></div>
+        <p class="text-slate-600 text-xl font-extrabold">
+          {{ 'DASHBOARD.EMPTY_STATE.NO_COURSES' | translate }}
+        </p>
+        @if (currentUser?.role === 'mentor') {
+          <p class="text-slate-400 text-sm font-semibold mt-2">
+            {{ 'DASHBOARD.EMPTY_STATE.CREATE_PROMPT_1' | translate }}
+            <span class="text-green-500 font-extrabold"
+              ><i class="fa-solid fa-plus text-emerald-500"></i>
+              {{ 'DASHBOARD.EMPTY_STATE.CREATE_PROMPT_2' | translate }}</span
+            >
+            {{ 'DASHBOARD.EMPTY_STATE.CREATE_PROMPT_3' | translate }}
+          </p>
+        }
+      </div>
+    }
+
+    @if (
+      !isLoading && filteredCourses.length === 0 && searchQuery && currentUser?.role !== 'parent'
+    ) {
+      <div class="bg-white/90 backdrop-blur rounded-3xl p-16 text-center shadow-xl">
+        <div class="text-7xl mb-4 text-orange-300">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <p class="text-slate-600 text-xl font-extrabold">
+          {{ 'DASHBOARD.EMPTY_STATE.NO_COURSES_FOUND' | translate }}
+        </p>
+        <p class="text-slate-400 text-sm font-semibold mt-2">
+          {{ 'DASHBOARD.EMPTY_STATE.COULDNT_FIND' | translate }} "<span class="text-pink-500">{{
+            searchQuery
+          }}</span
+          >"
+        </p>
+        <button
+          (click)="clearSearch()"
+          class="mt-5 bg-sky-400 hover:bg-sky-300 text-slate-800 font-black px-6 py-3 rounded-2xl shadow-lg shadow-sky-400/40 hover:shadow-sky-400/60 hover:-translate-y-1 transition-all duration-200 text-sm inline-block"
+        >
+          <i class="fa-solid fa-rotate-left text-sky-500"></i>
+          {{ 'DASHBOARD.EMPTY_STATE.CLEAR_SEARCH' | translate }}
+        </button>
+      </div>
+    }
+  </div>
+
+  @if (showCreateModal) {
+    <app-modal
+      [title]="'DASHBOARD.MODALS.CREATE_TITLE' | translate"
+      icon="fa-pencil"
+      color="pink"
+      [confirmText]="'DASHBOARD.MODALS.CREATE_CONFIRM' | translate"
+      confirmIcon="fa-wand-magic-sparkles"
+      [confirmDisabled]="courseForm.invalid"
+      (modalClose)="closeCreateModal()"
+      (confirm)="submitCreateCourse()"
+    >
+      <form [formGroup]="courseForm">
+        <div class="mb-5">
+          <label for="courseTitleInput" class="block text-sky-700 text-sm font-extrabold mb-2">
+            <i class="fa-solid fa-clipboard-list"></i>
+            {{ 'DASHBOARD.MODALS.INPUT_TITLE' | translate }}
+          </label>
+          <input
+            id="courseTitleInput"
+            type="text"
+            formControlName="title"
+            [placeholder]="'DASHBOARD.MODALS.INPUT_TITLE_PLACEHOLDER' | translate"
+            class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl px-5 py-3.5 text-slate-700 placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-pink-400 focus:bg-pink-50 transition-all shadow-inner"
+          />
+          @if (courseForm.get('title')?.touched && courseForm.get('title')?.errors?.['required']) {
+            <p class="text-red-500 text-[10px] font-black mt-1.5 ml-1 uppercase tracking-wider">
+              {{ 'DASHBOARD.MODALS.ERROR_REQUIRED' | translate }}
+            </p>
+          }
+          @if (courseForm.get('title')?.touched && courseForm.get('title')?.errors?.['minlength']) {
+            <p class="text-red-500 text-[10px] font-black mt-1.5 ml-1 uppercase tracking-wider">
+              {{ 'DASHBOARD.MODALS.ERROR_MINLENGTH' | translate }}
+            </p>
+          }
+        </div>
+
+        <div class="mb-2">
+          <label for="courseDescInput" class="block text-sky-700 text-sm font-extrabold mb-2">
+            <i class="fa-solid fa-file-pen"></i> {{ 'DASHBOARD.MODALS.INPUT_DESC' | translate }}
+          </label>
+          <textarea
+            id="courseDescInput"
+            formControlName="description"
+            rows="3"
+            [placeholder]="'DASHBOARD.MODALS.INPUT_DESC_PLACEHOLDER' | translate"
+            class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl px-5 py-3.5 text-slate-700 placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-pink-400 focus:bg-pink-50 transition-all resize-none shadow-inner"
+          ></textarea>
+        </div>
+      </form>
+    </app-modal>
+  }
+
+  @if (showEditModal && editingCourse) {
+    <app-modal
+      [title]="'DASHBOARD.MODALS.EDIT_TITLE' | translate"
+      icon="fa-pen-to-square"
+      color="sky"
+      [confirmText]="'DASHBOARD.MODALS.EDIT_CONFIRM' | translate"
+      confirmIcon="fa-check"
+      [confirmDisabled]="courseForm.invalid"
+      (modalClose)="closeEditModal()"
+      (confirm)="submitEditCourse()"
+    >
+      <form [formGroup]="courseForm">
+        <div class="mb-5">
+          <label for="editTitleInput" class="block text-sky-700 text-sm font-extrabold mb-2">
+            <i class="fa-solid fa-clipboard-list"></i>
+            {{ 'DASHBOARD.MODALS.INPUT_TITLE' | translate }}
+          </label>
+          <input
+            id="editTitleInput"
+            type="text"
+            formControlName="title"
+            class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl px-5 py-3.5 text-slate-700 placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-sky-400 focus:bg-sky-50 transition-all shadow-inner"
+          />
+          @if (courseForm.get('title')?.touched && courseForm.get('title')?.errors?.['required']) {
+            <p class="text-red-500 text-[10px] font-black mt-1.5 ml-1 uppercase tracking-wider">
+              {{ 'DASHBOARD.MODALS.ERROR_REQUIRED' | translate }}
+            </p>
+          }
+        </div>
+
+        <div class="mb-2">
+          <label for="editDescInput" class="block text-sky-700 text-sm font-extrabold mb-2">
+            <i class="fa-solid fa-file-pen"></i> {{ 'DASHBOARD.MODALS.INPUT_DESC' | translate }}
+          </label>
+          <textarea
+            id="editDescInput"
+            formControlName="description"
+            rows="3"
+            class="w-full bg-sky-50 border-2 border-sky-200 rounded-2xl px-5 py-3.5 text-slate-700 placeholder-slate-400 text-sm font-bold focus:outline-none focus:border-sky-400 focus:bg-sky-50 transition-all resize-none shadow-inner"
+          ></textarea>
+        </div>
+      </form>
+    </app-modal>
+  }
+
+  @if (showDeleteConfirm) {
+    <app-modal
+      [title]="'DASHBOARD.MODALS.DELETE_TITLE' | translate"
+      icon="fa-trash-can"
+      color="orange"
+      [confirmText]="'DASHBOARD.MODALS.DELETE_CONFIRM' | translate"
+      confirmIcon="fa-trash"
+      (modalClose)="closeDeleteConfirm()"
+      (confirm)="confirmDeleteCourse()"
+    >
+      <div class="text-center">
+        <p class="text-slate-600 font-bold mb-2">
+          {{ 'DASHBOARD.MODALS.DELETE_DESC' | translate }}
+        </p>
+        <p class="text-orange-500 text-xs font-black uppercase tracking-widest leading-relaxed">
+          {{ 'DASHBOARD.MODALS.DELETE_CAUTION' | translate }}
+          <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+        </p>
+      </div>
+    </app-modal>
+  }
+</div>

@@ -1,0 +1,63 @@
+<div class="relative">
+  @if (userRole() === 'student') {
+    <button
+      (click)="toggleHand()"
+      class="relative bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center border-2 transition-all hover:scale-110"
+      [class.border-yellow-400]="!isRaised()"
+      [class.bg-white]="!isRaised()"
+      [class.border-yellow-600]="isRaised()"
+      [class.bg-yellow-100]="isRaised()"
+    >
+      <i
+        class="fas fa-hand text-xl"
+        [class.text-yellow-500]="!isRaised()"
+        [class.text-yellow-700]="isRaised()"
+      ></i>
+    </button>
+  }
+  @if (userRole() === 'mentor') {
+    <button
+      (click)="toggleList()"
+      class="relative bg-white shadow-lg rounded-full w-12 h-12 flex items-center justify-center border-2 border-yellow-400 hover:bg-yellow-50 transition-all"
+    >
+      <i class="fas fa-hand text-xl text-yellow-600"></i>
+      @if (getRaisedCount() > 0) {
+        <span
+          class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold"
+          >{{ getRaisedCount() }}</span
+        >
+      }
+    </button>
+    @if (showList() && getRaisedCount() > 0) {
+      <div
+        class="absolute bottom-14 right-0 bg-white rounded-xl shadow-2xl border-2 border-yellow-400 p-3 overflow-y-auto z-50"
+        style="width: min(256px, calc(100vw-2rem)); max-height: min(320px, calc(100vh-200px))"
+      >
+        <div class="font-bold text-sm text-gray-700 mb-2">
+          <i class="fas fa-hand-wave text-yellow-600"></i> Students with Hands Raised
+        </div>
+        @for (raise of getRaisedHandsList(); track raise.userId) {
+          <div class="flex items-center gap-2 p-2 hover:bg-yellow-50 rounded-lg">
+            <div
+              class="w-8 h-8 bg-yellow-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0"
+            >
+              {{ getInitial(raise.username) }}
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-sm font-bold text-gray-800 truncate">{{ raise.username }}</div>
+              <div class="text-xs text-gray-500">{{ raise.timestamp | date: 'shortTime' }}</div>
+            </div>
+          </div>
+        }
+      </div>
+    }
+    @if (showList() && getRaisedCount() === 0) {
+      <div
+        class="absolute bottom-14 right-0 bg-white rounded-xl shadow-lg border-2 border-gray-200 p-4 w-48 text-center z-50"
+      >
+        <i class="fas fa-hand-dots text-3xl text-gray-400 mb-2"></i>
+        <div class="text-sm text-gray-500">{{ 'HAND_RAISE.NO_HANDS_YET' | translate }}</div>
+      </div>
+    }
+  }
+</div>

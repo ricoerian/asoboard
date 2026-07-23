@@ -1,0 +1,49 @@
+@if (isVisible) {
+  <div
+    class="session-timeout-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="timeout-title"
+  >
+    <div class="session-timeout-modal">
+      <div class="modal-header">
+        <i class="fa-solid fa-triangle-exclamation text-amber-500"></i>
+        <h2 id="timeout-title">Session Expiring Soon</h2>
+      </div>
+
+      <div class="modal-body">
+        <p class="warning-message">Your session will expire in:</p>
+
+        <div class="countdown-timer">
+          @if (sessionState.countdownSeconds > 0) {
+            <span class="countdown-number" [class.urgent]="sessionState.countdownSeconds <= 10">
+              {{ sessionState.countdownSeconds }}
+            </span>
+            <span class="countdown-label">seconds</span>
+          }
+          @if (sessionState.countdownSeconds === 0) {
+            <span class="countdown-expired">EXPIRED</span>
+          }
+        </div>
+
+        <p class="info-message">Please choose an action to continue or end your session.</p>
+      </div>
+
+      <div class="modal-actions">
+        <button
+          class="btn btn-primary"
+          (click)="onStayLoggedIn()"
+          [disabled]="sessionState.countdownSeconds === 0"
+        >
+          <i class="fa-solid fa-clock-rotate-left"></i>
+          Stay Logged In
+        </button>
+
+        <button class="btn btn-secondary" (click)="onLogout()">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          {{ 'PROFILE.LOGOUT' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+}

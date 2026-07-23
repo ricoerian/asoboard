@@ -1,0 +1,16 @@
+.fa-shake {
+  animation: bell-shake 0.3s ease-in-out;
+}
+
+@keyframes bell-shake {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-8deg);
+  }
+}
