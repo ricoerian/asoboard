@@ -174,6 +174,18 @@
         <i class="tool-icon mb-1 fas fa-border-all text-slate-500"></i>
         <span class="tool-label">{{ 'TOOLBAR.SNAP' | translate }}</span>
       </button>
+      <div class="popup-wrapper">
+        <button
+          class="tool-btn"
+          [class.active]="showAnimationPopup"
+          (click)="toggleAnimationPopup()"
+          title="Animations"
+        >
+          <i class="tool-icon mb-1 fas fa-magic text-purple-500"></i>
+          <span class="tool-label">Animation</span>
+          <span class="chevron" style="right: 2px">▶</span>
+        </button>
+      </div>
     </div>
 
     <div class="divider"></div>
@@ -429,6 +441,24 @@
           class="w-full tool-slider"
         />
         <span class="text-xs font-bold text-slate-600 w-8 text-right">{{ opacityPercent }}%</span>
+      </div>
+    </div>
+  }
+  @if (showAnimationPopup) {
+    <div class="popup-panel">
+      <span class="panel-title">Animations</span>
+      <div class="popup-grid">
+        @for (anim of animationBehaviors; track anim.id) {
+          <button
+            (click)="applyAnimation(anim.id)"
+            class="tool-btn"
+            [title]="anim.name"
+            style="width: 60px"
+          >
+            <span style="font-size: 24px">{{ anim.icon }}</span>
+            <span class="text-xs mt-1">{{ anim.name }}</span>
+          </button>
+        }
       </div>
     </div>
   }

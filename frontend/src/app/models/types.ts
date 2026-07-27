@@ -24,7 +24,14 @@ export interface AnimationConfig {
     | 'slide-in'
     | 'drop-bounce'
     | 'orbit-center'
-    | 'pop';
+    | 'pop'
+    | 'orbit'
+    | 'bounce'
+    | 'pulse'
+    | 'spin'
+    | 'scale'
+    | 'fade'
+    | 'none';
   g?: number;
   restitution?: number;
   frequency?: number;
@@ -32,6 +39,9 @@ export interface AnimationConfig {
   amplitude?: number;
   speed?: number;
   pivot?: { x: number; y: number };
+  duration?: number;
+  radius?: number;
+  repeat?: boolean;
 }
 
 export interface User {

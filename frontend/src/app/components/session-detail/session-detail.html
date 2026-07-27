@@ -316,6 +316,7 @@
           (sendToBackRequested)="canvas()?.sendToBack()"
           (bringForwardRequested)="canvas()?.bringForward()"
           (sendBackwardRequested)="canvas()?.sendBackward()"
+          (animationRequested)="onAnimationRequested($event)"
         ></app-toolbar>
       </div>
     }

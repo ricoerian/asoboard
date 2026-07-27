@@ -72,6 +72,7 @@ export class ToolbarComponent implements OnInit {
   @Output() opacityChange = new EventEmitter<number>();
   @Output() snapToGridChange = new EventEmitter<boolean>();
   @Output() shadowEnabledChange = new EventEmitter<boolean>();
+  @Output() animationRequested = new EventEmitter<AnimationConfig>();
 
   private apiService = inject(Api);
   assets: Asset[] = [];
@@ -93,17 +94,19 @@ export class ToolbarComponent implements OnInit {
   showLayerPopup = false;
   showExportPopup = false;
   showOpacityPanel = false;
+  showAnimationPopup = false;
 
   closeOtherPopups(current: string) {
     if (current !== 'shapes') this.showShapesPopup = false;
     if (current !== 'assets') this.showAssetsPopup = false;
     if (current !== 'layer') this.showLayerPopup = false;
     if (current !== 'export') this.showExportPopup = false;
-    if (current !== 'dash') this.showDashPanel = false;
-    if (current !== 'fill') this.showFillPanel = false;
-    if (current !== 'brush') this.showBrushPanel = false;
-    if (current !== 'font') this.showFontSettings = false;
+    if (current !== 'tools') this.showToolsPopup = false;
+    if (current !== 'style') this.showStylePopup = false;
+    if (current !== 'canvas') this.showCanvasPopup = false;
     if (current !== 'opacity') this.showOpacityPanel = false;
+    if (current !== 'animation') this.showAnimationPopup = false;
+    if (current !== 'font') this.showFontSettings = false;
   }
 
   toggleShapesPopup() {
@@ -409,6 +412,37 @@ export class ToolbarComponent implements OnInit {
   toggleShadow() {
     this.shadowEnabled = !this.shadowEnabled;
     this.shadowEnabledChange.emit(this.shadowEnabled);
+  }
+
+  toggleAnimationPopup() {
+    this.showAnimationPopup = !this.showAnimationPopup;
+    if (this.showAnimationPopup) this.closeOtherPopups('animation');
+  }
+
+  animationBehaviors = [
+    { id: 'orbit' as const, name: 'Orbit', icon: '🔄' },
+    { id: 'bounce' as const, name: 'Bounce', icon: '⬆️' },
+    { id: 'pulse' as const, name: 'Pulse', icon: '💓' },
+    { id: 'float' as const, name: 'Float', icon: '☁️' },
+    { id: 'spin' as const, name: 'Spin', icon: '🌀' },
+    { id: 'shake' as const, name: 'Shake', icon: '📳' },
+    { id: 'fade' as const, name: 'Fade', icon: '✨' },
+    { id: 'scale' as const, name: 'Scale', icon: '📏' },
+    { id: 'none' as const, name: 'None', icon: '⛔' },
+  ];
+
+  applyAnimation(
+    behavior: 'orbit' | 'bounce' | 'pulse' | 'float' | 'spin' | 'shake' | 'fade' | 'scale' | 'none',
+  ) {
+    this.animationRequested.emit({
+      behavior,
+      duration: 2,
+      speed: 1,
+      radius: 50,
+      amplitude: 30,
+      repeat: true,
+    });
+    this.showAnimationPopup = false;
   }
 
   selectBrushPreset(preset: BrushPreset) {

@@ -20,6 +20,7 @@ import {
   CanvasTool,
   Asset,
   BrushPreset,
+  AnimationConfig,
 } from '../../models/types';
 import { NotificationService } from '../../services/notification.service';
 import { KeyboardShortcutsService } from '../../services/keyboard-shortcuts.service';
@@ -883,6 +884,10 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
 
   onResetView() {
     this.canvas()?.resetView();
+  }
+
+  onAnimationRequested(config: AnimationConfig) {
+    this.canvas()?.applyAnimationToSelected(config);
   }
 
   exportCanvas() {

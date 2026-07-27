@@ -20,12 +20,13 @@ import { FormsModule } from '@angular/forms';
 import Konva from 'konva';
 import jsPDF from 'jspdf';
 import { Subscription } from 'rxjs';
-import { CanvasEvent, CanvasTool, BrushPreset } from '../../../models/types';
+import { CanvasEvent, CanvasTool, BrushPreset, AnimationConfig } from '../../../models/types';
 import {
   CanvasCollaborationService,
   RemoteCanvasEvent,
   CursorPosition as RemoteCursorPosition,
 } from '../../../services/canvas/canvas-collaboration.service';
+import { AnimationService } from '../../../services/animation.service';
 
 type RemoteLineEvent = RemoteCanvasEvent & { points: number[] };
 type RemoteShapeEvent = RemoteCanvasEvent & { shapeType: string };
@@ -176,6 +177,7 @@ export class CanvasComponent implements AfterViewInit, OnDestroy, OnChanges {
   private remoteCursorsMap = new Map<number, Konva.Group>();
   private cursorTimeouts = new Map<number, any>();
   private collaborationService = inject(CanvasCollaborationService);
+  private animationService = inject(AnimationService);
   private cursorSubscription: Subscription | null = null;
   private eventSubscription: Subscription | null = null;
   private connectionSubscription: Subscription | null = null;
@@ -277,6 +279,9 @@ export class CanvasComponent implements AfterViewInit, OnDestroy, OnChanges {
     if (this.stage) {
       this.stage.destroy();
     }
+
+    // Stop all animations
+    this.animationService.stopAllAnimations();
 
     if (this.cursorSubscription) {
       this.cursorSubscription.unsubscribe();
@@ -3062,5 +3067,28 @@ export class CanvasComponent implements AfterViewInit, OnDestroy, OnChanges {
     } catch (e) {
       console.error('Error applying canvas state', e);
     }
+  }
+
+  /**
+   * Apply animation to selected shape
+   */
+  applyAnimationToSelected(config: AnimationConfig): void {
+    const selectedNode = this.transformer?.nodes()[0];
+    if (!selectedNode) {
+      console.warn('No shape selected for animation');
+      return;
+    }
+
+    this.animationService.applyAnimation(selectedNode, config);
+  }
+
+  /**
+   * Stop animation on selected shape
+   */
+  stopAnimationOnSelected(): void {
+    const selectedNode = this.transformer?.nodes()[0];
+    if (!selectedNode) return;
+
+    this.animationService.stopAnimation(selectedNode.id());
   }
 }
