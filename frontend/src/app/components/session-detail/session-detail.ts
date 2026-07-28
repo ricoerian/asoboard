@@ -115,6 +115,9 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
   mediaRecorder: InstanceType<typeof MediaRecorder> | null = null;
   audioChunks: BlobPart[] = [];
   recordingStartTime = 0;
+  recordingDuration = '00:00';
+  recordingEventCount = 0;
+  private recordingTimerInterval?: number;
 
   private recordingAudioContext?: AudioContext;
   private recordingDestination?: MediaStreamAudioDestinationNode;
@@ -484,6 +487,28 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
     this.cdr.markForCheck();
   }
 
+  private updateRecordingTimer() {
+    const elapsed = Math.floor((Date.now() - this.recordingStartTime) / 1000);
+    const minutes = Math.floor(elapsed / 60);
+    const seconds = elapsed % 60;
+    this.recordingDuration = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    this.recordingEventCount = this.mentorEvents.length;
+    this.cdr.markForCheck();
+  }
+
+  private startRecordingTimer() {
+    this.recordingDuration = '00:00';
+    this.recordingEventCount = 0;
+    this.recordingTimerInterval = window.setInterval(() => this.updateRecordingTimer(), 1000);
+  }
+
+  private stopRecordingTimer() {
+    if (this.recordingTimerInterval) {
+      clearInterval(this.recordingTimerInterval);
+      this.recordingTimerInterval = undefined;
+    }
+  }
+
   getAudioUrl(): string {
     if (!this.session?.audio_file) return '';
     if (this.session.audio_file.startsWith('http')) return this.session.audio_file;
@@ -682,6 +707,7 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
       this.audioChunks = [];
       this.mentorEvents = [];
       this.recordingStartTime = Date.now();
+      this.startRecordingTimer();
 
       if (this.mediaRecorder) {
         this.mediaRecorder.ondataavailable = (e: BlobEvent) => {
@@ -720,6 +746,7 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
       if (this.playbackControls()?.nativeElement) {
         this.playbackControls()!.nativeElement.pause();
       }
+      this.stopRecordingTimer();
       this.isMentorRecording = false;
       this.isCanvasOnlyRecording = false;
       this.isDrawingMode = false;
@@ -727,6 +754,7 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
     } else if (this.mediaRecorder && this.mediaRecorder.state !== 'inactive') {
       this.mediaRecorder.stop();
       this.mediaRecorder.stream.getTracks().forEach((track) => track.stop());
+      this.stopRecordingTimer();
       this.isMentorRecording = false;
       this.isDrawingMode = false;
       if (this.recordingAudioContext) {

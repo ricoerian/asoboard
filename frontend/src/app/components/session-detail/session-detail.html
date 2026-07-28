@@ -269,11 +269,15 @@
     @if (isMentorRecording) {
       <div class="absolute top-16 left-1/2 -translate-x-1/2 z-40 pointer-events-none">
         <div
-          class="bg-red-500/95 backdrop-blur-sm text-white px-5 py-2 rounded-full flex items-center gap-2 shadow-xl border-2 border-red-300"
+          class="bg-red-500/95 backdrop-blur-sm text-white px-5 py-2.5 rounded-full flex items-center gap-3 shadow-xl border-2 border-red-300"
           style="box-shadow: 0 0 24px rgba(239, 68, 68, 0.5)"
         >
           <span class="w-2.5 h-2.5 bg-white rounded-full animate-pulse inline-block"></span>
           <span class="font-black tracking-widest text-xs uppercase">Recording</span>
+          <div class="flex items-center gap-3 text-sm font-bold">
+            <span>{{ recordingDuration }}</span>
+            <span class="text-xs opacity-90">{{ recordingEventCount }} events</span>
+          </div>
         </div>
       </div>
     }
