@@ -440,6 +440,36 @@ export class SessionDetail implements OnInit, AfterViewInit, OnDestroy {
       { key: '=', description: 'Zoom in', category: 'view', action: () => this.onZoomIn() },
       { key: '-', description: 'Zoom out', category: 'view', action: () => this.onZoomOut() },
       { key: '0', description: 'Reset view', category: 'view', action: () => this.onResetView() },
+      {
+        key: ']',
+        ctrl: true,
+        description: 'Bring Forward',
+        category: 'layer',
+        action: () => this.canvas()?.bringForward(),
+      },
+      {
+        key: '[',
+        ctrl: true,
+        description: 'Send Backward',
+        category: 'layer',
+        action: () => this.canvas()?.sendBackward(),
+      },
+      {
+        key: ']',
+        ctrl: true,
+        shift: true,
+        description: 'Bring to Front',
+        category: 'layer',
+        action: () => this.canvas()?.bringToFront(),
+      },
+      {
+        key: '[',
+        ctrl: true,
+        shift: true,
+        description: 'Send to Back',
+        category: 'layer',
+        action: () => this.canvas()?.sendToBack(),
+      },
     ]);
     this.shortcutsService.activate();
   }

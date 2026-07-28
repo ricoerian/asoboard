@@ -8,7 +8,7 @@ export interface ShortcutDefinition {
   meta?: boolean;
   alt?: boolean;
   description: string;
-  category: 'canvas' | 'tools' | 'view' | 'general';
+  category: 'canvas' | 'tools' | 'view' | 'general' | 'layer';
   action: () => void;
   allowInInput?: boolean;
 }
