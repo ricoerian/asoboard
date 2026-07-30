@@ -1,5 +1,5 @@
 # ================================================
-# AsoBoard Backend - Production Dockerfile
+# AsoBoard Backend - Production-Ready Dockerfile
 # ================================================
 # Django + Gunicorn + PostgreSQL + Redis
 
@@ -37,7 +37,7 @@ COPY . /app/
 # Create directories
 RUN mkdir -p /app/media /app/staticfiles
 
-# Collect static files
+# Collect static files for production
 RUN python manage.py collectstatic --noinput || true
 
 # Copy and setup entrypoint script
@@ -50,5 +50,5 @@ EXPOSE 8000
 # Entrypoint
 ENTRYPOINT ["/app/entrypoint.sh"]
 
-# Default command
+# Default command (Gunicorn production server)
 CMD ["gunicorn", "config.wsgi:application", "-c", "gunicorn.conf.py"]
