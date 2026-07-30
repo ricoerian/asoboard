@@ -74,12 +74,6 @@ Thumbs.db
 # Media uploads
 backend/media/
 
-# Agent documentation
-# (except README.md files explicitly un-ignored below)
-AGENTS.md
-GUARDRAILS.md
-PLANNING.md
-
 # All .agents/ content
 .agents/
 
